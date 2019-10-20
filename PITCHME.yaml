@@ -51,7 +51,7 @@ footnote : "GitPitch - The Fastest Way From Idea To Presentation"
 # Published Setting
 # Doc: https://gitpitch.com/docs/settings/published
 #
-published : true
+published : false
 
 #
 # Twitter Card Settings [Pro Only]
@@ -60,7 +60,5 @@ published : true
 title : "GitPitch In 60 Seconds"
 description : "A short tutorial introducing the power and simplicity of GitPitch, the markdown presentation service on Git."
 thumbnail : https://gitpitch.com/gpimg/tutorial-thumb.png
-
-
 
 stealth : dev-demo
