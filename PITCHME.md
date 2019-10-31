@@ -48,14 +48,14 @@ One of the biggest benefits FP is that it lets us reason about functions by look
 
 ---
 
-@snap[north-east span-100 text-pink text-06]
-Let the code do the talking!
+@snap[north-east h4-black]
+##Let the code do the talking!
 @snapend
 
 ```scala zoom-18
 trait MappingService[F[_]] {
   type Ship
-  def loopkup(market: String, company: String, shipCode: String): F[Ship]
+  def lookup(market: String, company: String, shipCode: String): F[Ship]
 }
 ```
 
