@@ -17,11 +17,11 @@ com.dreamlines.connectivity
 ## Agenda
 @snapend
 
-@snap[west]
+@snap[west-south]
 ![IMAGE](assets/img/presentation.png)
 @snapend
 
-@snap[west-south span-100]
+@snap[east span-100]
 @ul[list-spaced-bullets text-white text-09]
 - You will be amazed
 - What you can achieve
