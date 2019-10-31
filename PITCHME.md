@@ -83,7 +83,8 @@ trait MappingService[F[_]] {
 
 @snap[west span-40]
 ```scala zoom-12
-def lookup(market: String, company: String,
+def lookup(market: String,
+ company: String,
  shipCode: String): F[Ship]
 ```
 @snapend
