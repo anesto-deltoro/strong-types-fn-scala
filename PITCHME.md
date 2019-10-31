@@ -1,5 +1,7 @@
 @title[Title]
+@snap[north span-400]
 # Strong-typed functions in Scala
+@snapend
 
 @snap[south span-100 text-white]
 Dreamlines-Connectivity
