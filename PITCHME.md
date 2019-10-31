@@ -37,16 +37,16 @@ com.dreamlines.connectivity
 @title[Problem]
 
 @snap[north-east h4-black]
-#### Introduction
+## Introduction
 @snapend
 
-@snap[west span-55]
-One of the biggest benefits FP is that it lets us reason about functions by looking at their *type signature*. However...
-We often end up with weakly-typed functions.
+@snap[west span-50]
+One of the biggest benefits FP is that it lets us reason about functions by looking at their *type signature*.
+However...
 @snapend
 
-@snap[east span-45 black]
-We often end up with weakly-typed functions.
+@snap[east span-50 black]
+**We often end up with weakly-typed functions**
 @snapend
 
 ---
