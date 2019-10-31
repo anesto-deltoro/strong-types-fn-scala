@@ -23,7 +23,6 @@ com.dreamlines.connectivity
 @ul[list-spaced-bullets text-white text-09]
 - Problem
 - Alternatives
-
     - Value classes
     - @newrecord
     - Refined
@@ -37,17 +36,17 @@ com.dreamlines.connectivity
 ---?color=linear-gradient(90deg, #5384AD 35%, white 65%)
 @title[Problem]
 
-@snap[north-east h4-white]
+@snap[north-east h4-black]
 #### Introduction
 @snapend
 
 @snap[west span-55]
-One of the biggest benefits FP is that it lets us reason about functions by looking at their type signature. However...
+One of the biggest benefits FP is that it lets us reason about functions by looking at their *type signature*. However...
 We often end up with weakly-typed functions.
 @snapend
 
-@snap[east span-45]
-@img[shadow](assets/img/conference.png)
+@snap[east span-45 black]
+We often end up with weakly-typed functions.
 @snapend
 
 ---
