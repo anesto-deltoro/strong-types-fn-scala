@@ -58,7 +58,7 @@ One of the biggest benefits FP is that it lets us reason about functions by look
 ---
 
 @snap[north-east h4-black]
-#### Let the code do the talking!
+## Let the code do the talking!
 @snapend
 
 @snap[midpoint span-110]
@@ -92,7 +92,7 @@ def lookup(market: String,
 @snapend
 
 @snap[east span-60]
-@ul[list-spaced-bullets text-white text-09]
+@ul[list-spaced-bullets black text-09]
 - Easy to:
     - confuse the order of the parameters
     - feed our function with invalid data
