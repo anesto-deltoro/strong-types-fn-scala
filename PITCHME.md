@@ -1,5 +1,4 @@
 ---?color=linear-gradient(180deg, white 75%, black 25%)
-
 @title[Title slide]
 @snap[midpoint span-100 h1]
 ## Strong-typed functions in Scala
@@ -10,9 +9,8 @@ com.dreamlines.connectivity
 03.11.2019
 @snapend
 
----?color=linear-gradient(90deg, white 35%, black 65%)
+---?color=linear-gradient(90deg, white 35%, #5384AD 65%)
 
-@title[Agenda]
 @snap[west-north span-40 h3]
 ## Agenda
 @snapend
@@ -29,8 +27,6 @@ com.dreamlines.connectivity
 - And **GitPitch Markdown**
 @ulend
 @snapend
-
-
 
 ---?color=linear-gradient(180deg, white 75%, black 25%)
 @title[Customize Slide Layout]
