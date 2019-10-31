@@ -51,7 +51,7 @@ footnote : "GitPitch - The Fastest Way From Idea To Presentation"
 # Published Setting
 # Doc: https://gitpitch.com/docs/settings/published
 #
-published : false
+published : true
 
 #
 # Twitter Card Settings [Pro Only]
