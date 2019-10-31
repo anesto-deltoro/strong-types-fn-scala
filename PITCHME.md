@@ -76,8 +76,10 @@ trait MappingService[F[_]] {
 @snapend
 
 ---
+
 @title[Problems]
-@snap[west-north h2]
+
+@snap[north-east h4-black]
 ## Issues
 @snapend
 
@@ -91,17 +93,8 @@ def lookup(market: String,
 
 @snap[east span-60]
 @ul[list-spaced-bullets text-white text-09]
-- Easy to confuse the order of the parameters
-- Easy to feed our function with invalid data
+- Easy to:
+    - confuse the order of the parameters
+    - feed our function with invalid data
 @ulend
-@snapend
-
----?image=assets/img/presenter.jpg
-
-@snap[north span-100 h2-white]
-## Now It's Your Turn
-@snapend
-
-@snap[south span-100 text-06]
-[Click here to jump straight into the interactive feature guides in the GitPitch Docs @fa[external-link]](https://gitpitch.com/docs/getting-started/tutorial/)
 @snapend
