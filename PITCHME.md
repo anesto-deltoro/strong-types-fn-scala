@@ -42,8 +42,6 @@ com.dreamlines.connectivity
 
 @snap[midpoint span-100]
 One of the biggest benefits FP is that it lets us reason about functions by looking at their *type signature*. However...
-
- 
 @snapend
 
 ---
@@ -54,8 +52,6 @@ One of the biggest benefits FP is that it lets us reason about functions by look
 @snapend
 
 @snap[midpoint span-100]
-One of the biggest benefits FP is that it lets us reason about functions by looking at their *type signature*. However...
-
 **We often end up with weakly-typed functions**
 @snapend
 
@@ -79,6 +75,25 @@ trait MappingService[F[_]] {
 @[3-4, zoom-18](Do you see any problems with this function?)
 @snapend
 
+---?color=linear-gradient(90deg, white 35%, #5384AD 65%)
+@title[Problems]
+@snap[west-north span-40 h3]
+## Issues
+@snapend
+
+@snap[west span-40]
+```scala zoom-12
+def lookup(market: String, company: String,
+ shipCode: String): F[Ship]
+```
+@snapend
+
+@snap[east span-60]
+@ul[list-spaced-bullets text-white text-09]
+- Easy to confuse the order of the parameters
+- Easy to feed our function with invalid data
+@ulend
+@snapend
 
 ---?image=assets/img/presenter.jpg
 
