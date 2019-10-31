@@ -10,7 +10,7 @@ com.dreamlines.connectivity
 @snapend
 
 ---?color=linear-gradient(90deg, white 35%, #5384AD 65%)
-
+@title[Agenda]
 @snap[west-north span-40 h3]
 ## Agenda
 @snapend
@@ -21,10 +21,13 @@ com.dreamlines.connectivity
 
 @snap[east span-100]
 @ul[list-spaced-bullets text-white text-09]
-- You will be amazed
-- What you can achieve
-- *With a little imagination...*
-- And **GitPitch Markdown**
+- Problem
+- Alternatives
+    - Value classes
+    - @newrecord
+    - Refined
+    - Enforcing types
+- Examples: GreenGinza    
 @ulend
 @snapend
 
