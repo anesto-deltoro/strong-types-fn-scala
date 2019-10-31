@@ -1,8 +1,7 @@
 ---?color=linear-gradie nt(180deg, white 75%, black 25%)
 
-@title[Title]
-@snap[north span-100 h1]
-# Strong-typed functions in Scala
+@snap[north span-100 h2]
+## Strong-typed functions in Scala
 @snapend
 
 @snap[south span-100 text-white]
