@@ -13,8 +13,12 @@ com.dreamlines.connectivity
 ---?color=linear-gradient(90deg, white 35%, #5384AD 65%)
 
 @title[Agenda]
-@snap[west span-50 h2]
+@snap[west-north span-20 h2]
 ## Agenda
+@snapend
+
+@snap[west]
+![IMAGE](assets/img/presentation.png)
 @snapend
 
 @snap[east span-100]
@@ -27,7 +31,6 @@ com.dreamlines.connectivity
 @snapend
 
 
-![IMAGE](assets/img/presentation.png)
 
 ---?color=linear-gradient(180deg, white 75%, black 25%)
 @title[Customize Slide Layout]
