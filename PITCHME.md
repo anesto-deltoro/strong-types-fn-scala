@@ -1,5 +1,5 @@
 @title[Title]
-@snap[north span-400]
+@snap[north span-200]
 # Strong-typed functions in Scala
 @snapend
 
