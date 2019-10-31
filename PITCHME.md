@@ -33,19 +33,17 @@ com.dreamlines.connectivity
 @ulend
 @snapend
 
----?color=linear-gradient(90deg, #5384AD 35%, white 65%)
+---
 @title[Problem]
 
 @snap[north-east h4-black]
 ## Introduction
 @snapend
 
-@snap[west span-50]
+@snap[midpoint span-100]
 One of the biggest benefits FP is that it lets us reason about functions by looking at their *type signature*.
 However...
-@snapend
 
-@snap[east span-50 black]
 **We often end up with weakly-typed functions**
 @snapend
 
