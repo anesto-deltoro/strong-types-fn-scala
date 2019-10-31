@@ -1,11 +1,11 @@
 ---?color=linear-gradient(180deg, white 75%, black 25%)
 
-@snap[north span-150 h2]
+@snap[north span-100 h1]
 ## Strong-typed functions in Scala
 @snapend
 
 @snap[south span-100 text-white]
-Dreamlines-Connectivity
+Dreamlines-Connectivity 2019
 @snapend
 
 ---
