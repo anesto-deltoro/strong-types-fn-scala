@@ -91,7 +91,7 @@ def lookup(market: String,
 ```
 @snapend
 
-@snap[east span-60]
+@snap[east span-50]
 @ul[list-spaced-bullets black text-09]
 - Easy to:
     - confuse the order of the parameters
