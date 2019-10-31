@@ -1,6 +1,6 @@
----?color=linear-gradie nt(180deg, white 75%, black 25%)
+---?color=linear-gradient(180deg, white 75%, black 25%)
 
-@snap[north span-100 h2]
+@snap[north span-150 h2]
 ## Strong-typed functions in Scala
 @snapend
 
