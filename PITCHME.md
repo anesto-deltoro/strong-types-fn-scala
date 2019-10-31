@@ -52,12 +52,14 @@ One of the biggest benefits FP is that it lets us reason about functions by look
 ## Let the code do the talking!
 @snapend
 
+@snap[midpoint span-110]
 ```scala zoom-12
 trait MappingService[F[_]] {
   type Ship
   def lookup(market: String, company: String, shipCode: String): F[Ship]
 }
 ```
+@snapend
 
 @snap[south span-100 text-gray text-08]
 @[3, zoom-14](Using GitPitch live code presenting with optional annotations.)
