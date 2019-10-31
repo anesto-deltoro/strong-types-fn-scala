@@ -52,7 +52,7 @@ One of the biggest benefits FP is that it lets us reason about functions by look
 ## Let the code do the talking!
 @snapend
 
-```scala zoom-17
+```scala zoom-15
 trait MappingService[F[_]] {
   type Ship
   def lookup(market: String, company: String, shipCode: String): F[Ship]
