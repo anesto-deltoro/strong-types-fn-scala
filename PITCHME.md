@@ -1,5 +1,7 @@
+---?color=linear-gradie nt(180deg, white 75%, black 25%)
+
 @title[Title]
-@snap[north span-200]
+@snap[north span-100 h1]
 # Strong-typed functions in Scala
 @snapend
 
@@ -7,7 +9,7 @@
 Dreamlines-Connectivity
 @snapend
 
----?color=linear-gradient(180deg, white 75%, black 25%)
+---
 
 @title[2nd slide]
 ## Add Some Slide Candy
