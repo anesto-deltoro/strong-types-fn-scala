@@ -17,7 +17,7 @@ com.dreamlines.connectivity
 ## Agenda
 @snapend
 
-@snap[west-south span-40]
+@snap[west-south span-50]
 ![IMAGE](assets/img/presentation.png)
 @snapend
 
