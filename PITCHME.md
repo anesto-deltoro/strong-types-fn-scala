@@ -41,12 +41,14 @@ com.dreamlines.connectivity
 @snapend
 
 @snap[midpoint span-100]
-One of the biggest benefits FP is that it lets us reason about functions by looking at their *type signature*.
-However...
+One of the biggest benefits FP is that it lets us reason about functions by looking at their *type signature*. However...
 
 **We often end up with weakly-typed functions**
 @snapend
 
+@snap[south span-85]
+@code[js zoom-13 code-max code-shadow](src/weakfunction.scala)
+@snapend
 ---
 
 @snap[north-east span-100 text-pink text-06]
