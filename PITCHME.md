@@ -7,6 +7,9 @@
 Dreamlines-Connectivity
 @snapend
 
+---?color=linear-gradient(180deg, white 75%, black 25%)
+
+@title[2nd slide]
 ## Add Some Slide Candy
 
 ![IMAGE](assets/img/presentation.png)
