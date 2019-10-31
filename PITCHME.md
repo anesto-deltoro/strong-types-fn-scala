@@ -6,7 +6,8 @@
 @snapend
 
 @snap[south span-100 text-white small]
-com.dreamlines.connectivity.03.11.2019
+com.dreamlines.connectivity
+03.11.2019
 @snapend
 
 ---
