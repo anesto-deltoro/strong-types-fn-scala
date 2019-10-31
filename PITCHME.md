@@ -49,7 +49,7 @@ One of the biggest benefits FP is that it lets us reason about functions by look
 ---
 
 @snap[north-east h4-black]
-## Let the code do the talking!
+#### Let the code do the talking!
 @snapend
 
 @snap[midpoint span-110]
@@ -63,7 +63,7 @@ trait MappingService[F[_]] {
 @snapend
 
 @snap[south span-100 text-gray text-08]
-@[3-4, zoom-18](Using GitPitch live code presenting with optional annotations.)
+@[3-4, zoom-18](Do you see any problems with this function?)
 @snapend
 
 
