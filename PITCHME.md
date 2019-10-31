@@ -13,7 +13,7 @@ com.dreamlines.connectivity
 ---?color=linear-gradient(90deg, white 35%, #5384AD 65%)
 
 @title[Agenda]
-@snap[west-north span-20 h2]
+@snap[west-north span-40 h3]
 ## Agenda
 @snapend
 
@@ -21,7 +21,7 @@ com.dreamlines.connectivity
 ![IMAGE](assets/img/presentation.png)
 @snapend
 
-@snap[east span-100]
+@snap[west-south span-100]
 @ul[list-spaced-bullets text-white text-09]
 - You will be amazed
 - What you can achieve
