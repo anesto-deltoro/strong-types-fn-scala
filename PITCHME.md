@@ -47,7 +47,7 @@ One of the biggest benefits FP is that it lets us reason about functions by look
 @snapend
 
 @snap[south span-85]
-@code[js zoom-13 code-max code-shadow](src/weakfunction.scala)
+@code[scala zoom-13 code-max shadow](src/weakfunction.scala)
 @snapend
 ---
 
