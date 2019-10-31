@@ -63,7 +63,7 @@ trait MappingService[F[_]] {
 @snapend
 
 @snap[south span-100 text-gray text-08]
-@[3, zoom-14](Using GitPitch live code presenting with optional annotations.)
+@[3-4, zoom-18](Using GitPitch live code presenting with optional annotations.)
 @snapend
 
 
