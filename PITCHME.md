@@ -10,10 +10,22 @@ com.dreamlines.connectivity
 03.11.2019
 @snapend
 
----
+---?color=linear-gradient(90deg, white 35%, #5384AD 65%)
 
-@title[2nd slide]
-## Add Some Slide Candy
+@title[Agenda]
+@snap[west span-50 h2]
+## Agenda
+@snapend
+
+@snap[east span-100]
+@ul[list-spaced-bullets text-white text-09]
+- You will be amazed
+- What you can achieve
+- *With a little imagination...*
+- And **GitPitch Markdown**
+@ulend
+@snapend
+
 
 ![IMAGE](assets/img/presentation.png)
 
