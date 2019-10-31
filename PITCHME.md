@@ -1,6 +1,9 @@
-# Let's Get Started
+@title[Title]
+# Strong-typed functions in Scala
 
----
+@snap[south span-100 text-white]
+Dreamlines-Connectivity
+@snapend
 
 ## Add Some Slide Candy
 
@@ -8,7 +11,6 @@
 
 ---?color=linear-gradient(180deg, white 75%, black 25%)
 @title[Customize Slide Layout]
-
 @snap[west span-50]
 ## Customize the Layout
 @snapend
