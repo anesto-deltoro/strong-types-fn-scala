@@ -10,7 +10,7 @@ com.dreamlines.connectivity
 03.11.2019
 @snapend
 
----?color=linear-gradient(90deg, #5384AD 35%, white 65%)
+---?color=linear-gradient(90deg, white 35%, black 65%)
 
 @title[Agenda]
 @snap[west-north span-40 h3]
