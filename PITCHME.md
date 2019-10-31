@@ -6,7 +6,7 @@
 @snapend
 
 @snap[south span-100 text-white small]
-Dreamlines-Connectivity 2019
+com.dreamlines.connectivity.03.11.2019
 @snapend
 
 ---
