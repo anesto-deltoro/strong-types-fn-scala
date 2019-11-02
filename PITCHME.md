@@ -181,12 +181,15 @@ Wrap a single primitive type and extend the AnyVal abstract class to avoid some 
 ```scala zoom-16
 final case class CompanyCode(val value: String) extends AnyVal
 final case class ShipCode(val value: String) extends AnyVal
+
 def lookup(
   market: MarketCode,
   company: CompanyCode,
   shipCode: ShipCode
 ): F[Ship]
+
 ...
+
 val ship = def lookup(
             market = Germany,
             company = CompanyCode("hal"),
