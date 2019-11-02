@@ -84,9 +84,11 @@ trait MappingService[F[_]] {
 
 @snap[west span-40]
 ```scala zoom-12
-def lookup(market: String,
+def lookup(
+ market: String,
  company: String,
- shipCode: String): F[Ship]
+ shipCode: String
+): F[Ship]
 ```
 @snapend
 
@@ -117,9 +119,51 @@ def lookup(
 @snapend
 
 @snap[south span-100 text-gray text-18]
-@[2-2, zoom-20](Finite and fixed number of possible values {de,it,br,nl,ru,us,fr})
-@[3-3, zoom-20](Three lowercase letters, finite but variable per CruiseLine. Polar {hal,sea,ccl,pcl,cun}; NCL {regent,oceania})
-@[4-4, zoom-20](Non empty)
+@[2-2, zoom-18](Finite and fixed number of possible values {de,it,br,nl,ru,us,fr})
+@[3-3, zoom-18](Three lowercase letters, finite set of values but variable per CruiseLine. Polar {hal,sea,ccl,pcl,cun}; NCL {regent,oceania})
+@[4-4, zoom-18](Non empty)
 @snapend
 
+---
 
+@title[Params: market]
+
+@snap[north-east]
+## Params: market
+@snapend
+
+@snap[east]
+```scala zoom-16
+sealed abstract class Market(val code: String) extends EnumEntry
+
+object Market extends Enum[Market] {
+  case object Australia extends Market("au")
+  case object Brazil extends Market("br")
+  case object Germany extends Market("de")
+  case object France extends Market("fr")
+  case object Italy extends Market("it")
+  case object Netherlands extends Market("nl")
+  case object Russia extends Market("ru")
+  case object UnitedStates extends Market("us")
+
+  override def values: immutable.IndexedSeq[Market] = findValues
+
+  def byCode(code: String): Option[Market] = values.find(_.code == code)
+
+  implicit val CirceDecoder: Decoder[Market] = Decoder.instance { c =>
+    Decoder
+      .decodeString(c)
+      .flatMap(
+        s =>
+          byCode(s)
+            .fold[Either[DecodingFailure, Market]](Left(DecodingFailure(s"'$s' is not a valid market", c.history)))(
+              e => Right(e)
+            )
+      )
+  }
+
+  implicit val CirceEncoder: Encoder[Market] = Encoder.encodeString.contramap[Market](_.code)
+
+}
+```
+@snapend
