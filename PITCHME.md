@@ -155,3 +155,38 @@ object Market extends Enum[Market] {
 }
 ```
 @snapend
+
+---
+
+@title[Value classes]
+
+@snap[north-east]
+### 1) Value classes
+@snapend
+
+@snap[north-east span-40]
+Wrap a single primitive type and extend the AnyVal abstract class to avoid some runtime costs.
+[VALUE CLASSES AND UNIVERSAL TRAITS @fa[external-link]](https://docs.scala-lang.org/overviews/core/value-classes.html)
+@snapend
+
+@snap[west]
+```scala zoom-16
+final case class CompanyCode(val value: String) extends AnyVal
+final case class ShipCode(val value: String) extends AnyVal
+def lookup(
+  market: MarketCode,
+  company: CompanyCode,
+  shipCode: ShipCode
+): F[Ship]
+...
+val ship = def lookup(
+            market = Germany,
+            company = CompanyCode("hal"),
+            shipCode = ShipCode("E45AK")
+           ): F[Ship]
+```
+@snapend
+
+
+
+
