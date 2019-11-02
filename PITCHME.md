@@ -135,7 +135,6 @@ def lookup(
 @snap[east]
 ```scala zoom-16
 sealed abstract class Market(val code: String) extends EnumEntry
-
 object Market extends Enum[Market] {
   case object Australia extends Market("au")
   case object Brazil extends Market("br")
@@ -147,23 +146,12 @@ object Market extends Enum[Market] {
   case object UnitedStates extends Market("us")
 
   override def values: immutable.IndexedSeq[Market] = findValues
-
+  
   def byCode(code: String): Option[Market] = values.find(_.code == code)
-
-  implicit val CirceDecoder: Decoder[Market] = Decoder.instance { c =>
-    Decoder
-      .decodeString(c)
-      .flatMap(
-        s =>
-          byCode(s)
-            .fold[Either[DecodingFailure, Market]](Left(DecodingFailure(s"'$s' is not a valid market", c.history)))(
-              e => Right(e)
-            )
-      )
-  }
-
+  
   implicit val CirceEncoder: Encoder[Market] = Encoder.encodeString.contramap[Market](_.code)
-
+  
+  implicit val CirceDecoder: Decoder[Market] = ...
 }
 ```
 @snapend
