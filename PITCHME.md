@@ -161,7 +161,7 @@ object Market extends Enum[Market] {
 @title[Value classes]
 
 @snap[north-west]
-## 1) Value classes
+## 1) Value classes (1/4)
 @snapend
 
 @snap[midpoint span-100]
@@ -173,11 +173,11 @@ Wrap a single primitive type and extend the AnyVal abstract class to avoid some 
 
 @title[Value classes]
 
-@snap[north-east]
-## 1) Value classes
+@snap[north-west]
+## 1) Value classes (2/4)
 @snapend
 
-@snap[east]
+@snap[midpoint]
 ```scala zoom-16
 final case class CompanyCode(val value: String) extends AnyVal
 final case class ShipCode(val value: String) extends AnyVal
