@@ -123,7 +123,7 @@ def lookup(
 
 @snap[south span-100 text-gray text-14]
 @[2-2, zoom-14](Finite and fixed number of possible values {au,de,it,br,nl,ru,us,fr})
-@[3-3, zoom-14](Finite/open set of values. Three lowercase letters)
+@[3-3, zoom-14](Finite/open set of values. Three lowercase letters {msc, ncl, aid,...})
 @[4-4, zoom-14](Non empty)
 @snapend
 
@@ -161,7 +161,7 @@ object Market extends Enum[Market] {
 @snapend
 
 @snap[south span-100 text-red text-18]
-@[18-18, zoom-18](Params: company && shipCode ???)
+@[19-19, zoom-18](Params: company & shipCode ???)
 @snapend
 
 ---
@@ -217,7 +217,7 @@ val ship = def lookup(
 
 ---
 
-@title[Value classes 2]
+@title[Value classes 2a]
 
 @snap[north-west]
 ### Solution 1: Value classes (2)
@@ -232,7 +232,7 @@ Or... can we?
 
 ---
 
-@title[Value classes 3]
+@title[Value classes 2b]
 
 @snap[north-west]
 ### Solution 1: Value classes (2)
@@ -271,7 +271,7 @@ val ship2 = def lookup(
 
 ---
 
-@title[Value classes 4]
+@title[Value classes 3]
 
 @snap[north-west]
 ### Solution 1: Value classes (3)
@@ -279,13 +279,13 @@ val ship2 = def lookup(
 
 @snap[midpoing span-100]
 @ul[list-spaced-bullets black text-08]
-A workaround is to make the case class constructors private and provide smart constructors
+A workaround is to make the case class constructors private and provide smart constructors / factory methods
 @ulend
 @snapend
 
 ---
 
-@title[Value classes 5]
+@title[Value classes 4]
 
 @snap[north-west]
 ### Solution 1: Value classes (4)
@@ -323,14 +323,14 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
 
 ---
 
-@title[Value classes 6a]
+@title[Value classes 5a]
 
 @snap[north-west]
 ### Solution 1: Value classes (5)
 @snapend
 
-@snap[west span-40]
-@ul[list-spaced-bullets black text-09]
+@snap[west span-35]
+@ul[list-spaced-bullets black text-07]
 Yey! We can no longer confuse the order of the parameters neither provide invalid input
 Or... can we?
 @ulend
@@ -338,20 +338,20 @@ Or... can we?
 
 ---
 
-@title[Value classes 6b]
+@title[Value classes 5b]
 
 @snap[north-west]
 ### Solution 1: Value classes (5)
 @snapend
 
-@snap[west span-40]
-@ul[list-spaced-bullets black text-09]
+@snap[west span-35]
+@ul[list-spaced-bullets black text-07]
 Yey! We can no longer confuse the order of the parameters neither provide invalid input
 Or... can we?
 @ulend
 @snapend
 
-@snap[east span-60]
+@snap[east span-65]
 ```scala zoom-16
 (
   mkEmail("hal"),
@@ -368,3 +368,75 @@ Or... can we?
 @snap[south span-100 text-gray text-14]
 @[6-6, zoom-14](We are using case classes; the copy method is still there :()
 @snapend
+
+
+---
+
+@title[Value classes 6]
+
+@snap[north-west]
+### Solution 1: Value classes (6)
+@snapend
+
+@snap[west span-35]
+@ul[list-spaced-bullets black text-07]
+Yey! We can no longer confuse the order of the parameters neither provide invalid input
+Or... can we?
+@ulend
+@snapend
+
+@snap[east span-65]
+```scala zoom-16
+(
+  mkEmail("hal"),
+  createShipCode("E45AK")
+).mapN {
+  case (companyCode, shipCode) =>
+    lookup(Germany, companyCode, shipCode.copy(""))
+}  
+
+...           
+```
+@snapend
+
+@snap[south span-100 text-gray text-14]
+@[6-6, zoom-14](We are using case classes; the copy method is still there :()
+@snapend
+
+---
+
+@title[Value classes 7]
+
+@snap[north-west]
+### Solution 1: Value classes (7)
+@snapend
+
+@snap[west span-100]
+```scala zoom-16
+final case class CompanyCode private(val value: String) extends AnyVal {
+  def copy(s: String = this.value) = CompanyCode(s)  
+}
+
+object CompanyCode {
+  def apply(value: String): Option[CompanyCode] =
+    if ("""[a-z]{3}""".r matches value) CompanyCode(value).some
+    else none[CompanyCode]
+}           
+
+final case class ShipCode private(val value: String) extends AnyVal {
+  private def copy() = ()  
+}
+
+object ShipCode {
+  def apply(value: String): Option[CompanyCode] =
+    if (value.nonEmpty) ShipCode(value).some else none[ShipCode]  
+}
+```
+@snapend
+
+@snap[south span-100 text-gray text-14]
+@[6-8,16-17 zoom-14](Replace the generated apply method within the companion object.)
+@[2-2, zoom-14](Copy should be replaced as well)
+@[12-12, zoom-14](Another possibility is to make the copy method private)
+@snapend
+
