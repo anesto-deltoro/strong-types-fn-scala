@@ -216,13 +216,13 @@ val ship = def lookup(
 ##### Analysis
 @snapend
 
-@snap[east span-50]
+@snap[east span-40]
 @ul[list-spaced-bullets black text-09]
 Yey! We can no longer confuse the order of the parameters
 @ulend
 @snapend
 
-@snap[midpoint]
+@snap[west span-60]
 ```scala zoom-16
 val ship1 = def lookup(
             market = Germany,
