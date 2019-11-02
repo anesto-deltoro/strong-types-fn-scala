@@ -160,11 +160,11 @@ object Market extends Enum[Market] {
 
 @title[Value classes]
 
-@snap[north-east]
+@snap[north-west]
 ## 1) Value classes
 @snapend
 
-@snap[north-east span-40]
+@snap[midpoint span-100]
 Wrap a single primitive type and extend the AnyVal abstract class to avoid some runtime costs.
 [VALUE CLASSES AND UNIVERSAL TRAITS @fa[external-link]](https://docs.scala-lang.org/overviews/core/value-classes.html)
 @snapend
