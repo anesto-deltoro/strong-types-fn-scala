@@ -11,7 +11,7 @@ com.dreamlines.connectivity
 
 ---?color=linear-gradient(90deg, white 35%, #5384AD 65%)
 @title[Agenda]
-@snap[west-north span-40 h3]
+@snap[west-north span-40]
 ## Agenda
 @snapend
 
@@ -24,19 +24,18 @@ com.dreamlines.connectivity
 - Problem
 - Alternatives
     - Value classes
-    - @newrecord
-    - Refined
-    - Enforcing types
+    - Newtypes
+    - Refinement types
+    - Enforcing types*
 - Examples: GreenGinza
 - Conclusions
-    
 @ulend
 @snapend
 
 ---
 @title[Problem]
 
-@snap[north-east h4-black]
+@snap[north-east]
 ## Introduction
 @snapend
 
@@ -47,7 +46,7 @@ One of the biggest benefits FP is that it lets us reason about functions by look
 ---
 @title[Problem]
 
-@snap[north-east h4-black]
+@snap[north-east]
 ## Introduction
 @snapend
 
@@ -57,7 +56,7 @@ One of the biggest benefits FP is that it lets us reason about functions by look
 
 ---
 
-@snap[north-east h4-black]
+@snap[north-east]
 ## Let the code do the talking!
 @snapend
 
