@@ -85,7 +85,7 @@ trait MappingService[F[_]] {
 ### Issues
 @snapend
 
-@snap[west span-40]
+@snap[west span-35]
 ```scala zoom-12
 def lookup(
  market: String,
@@ -95,7 +95,7 @@ def lookup(
 ```
 @snapend
 
-@snap[east span-50]
+@snap[east span-65]
 @ul[list-spaced-bullets black text-09]
 - Easy to:
     - confuse the order of the parameters
@@ -105,7 +105,7 @@ def lookup(
 
 ---
 
-@title[Params detailed]
+@title[Params dissection]
 
 @snap[north-east]
 ### Params dissection
@@ -155,8 +155,13 @@ object Market extends Enum[Market] {
   implicit val CirceEncoder: Encoder[Market] = ...
   
   implicit val CirceDecoder: Decoder[Market] = ...
+   
 }
 ```
+@snapend
+
+@snap[south span-100 text-red text-18]
+@[18-18, zoom-18](Params: company && shipCode ???)
 @snapend
 
 ---
@@ -169,6 +174,9 @@ object Market extends Enum[Market] {
 
 @snap[midpoint span-100]
 Wrap a single primitive type and extend the AnyVal abstract class to avoid some runtime costs.
+@snapend
+
+@snap[south span-100]
 [VALUE CLASSES AND UNIVERSAL TRAITS @fa[external-link]](https://docs.scala-lang.org/overviews/core/value-classes.html)
 @snapend
 
@@ -227,7 +235,7 @@ Or... can we?
 @title[Value classes 3]
 
 @snap[north-west]
-### Solution 1: Value classes (3)
+### Solution 1: Value classes (2)
 @snapend
 
 @snap[west span-40]
@@ -266,7 +274,7 @@ val ship2 = def lookup(
 @title[Value classes 4]
 
 @snap[north-west]
-### Solution 1: Value classes (4)
+### Solution 1: Value classes (3)
 @snapend
 
 @snap[midpoing span-100]
@@ -280,7 +288,7 @@ A workaround is to make the case class constructors private and provide smart co
 @title[Value classes 5]
 
 @snap[north-west]
-### Solution 1: Value classes (5)
+### Solution 1: Value classes (4)
 @snapend
 
 @snap[west span-100]
@@ -292,7 +300,8 @@ def createShipCode(value: String): Option[ShipCode] =
   if (value.nonEmpty) ShipCode(value).some else none[ShipCode]
 
 def createPolarCompanyCode(value: String): Option[CompanyCode] =
-  if ("""[a-z]{3}""".r matches value) CompanyCode(value).some else none[CompanyCode]
+  if ("""[a-z]{3}""".r matches value) CompanyCode(value).some
+  else none[CompanyCode]
 
 ...
 
@@ -309,7 +318,7 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
 @snap[south span-100 text-gray text-14]
 @[1-3, zoom-14](Make case class constructors private)
 @[4-11, zoom-14](Provide functions that create a validated value)
-@[12-19, zoom-14](Perform a ship lookup with valid parameters...)
+@[13-19, zoom-14](Perform a ship lookup with valid parameters...)
 @snapend
 
 ---
@@ -317,7 +326,7 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
 @title[Value classes 6a]
 
 @snap[north-west]
-### Solution 1: Value classes (6)
+### Solution 1: Value classes (5)
 @snapend
 
 @snap[west span-40]
@@ -332,7 +341,7 @@ Or... can we?
 @title[Value classes 6b]
 
 @snap[north-west]
-### Solution 1: Value classes (6)
+### Solution 1: Value classes (5)
 @snapend
 
 @snap[west span-40]
@@ -357,5 +366,5 @@ Or... can we?
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[5-5, zoom-14](We are using case classes and the copy method is still there :()
+@[6-6, zoom-14](We are using case classes; the copy method is still there :()
 @snapend
