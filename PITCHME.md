@@ -35,7 +35,7 @@ com.dreamlines.connectivity
 ---
 @title[Problem]
 
-@snap[north-east]
+@snap[north-west]
 ## Introduction
 @snapend
 
@@ -46,7 +46,7 @@ One of the biggest benefits FP is that it lets us reason about functions by look
 ---
 @title[Problem]
 
-@snap[north-east]
+@snap[north-west]
 ## Introduction
 @snapend
 
@@ -57,7 +57,7 @@ One of the biggest benefits FP is that it lets us reason about functions by look
 ---
 
 @snap[north-east]
-## Let the code do the talking!
+### Let the code do the talking!
 @snapend
 
 @snap[midpoint span-110]
@@ -82,7 +82,7 @@ trait MappingService[F[_]] {
 @title[Problems]
 
 @snap[north-east]
-## Issues
+### Issues
 @snapend
 
 @snap[west span-40]
@@ -108,7 +108,7 @@ def lookup(
 @title[Params detailed]
 
 @snap[north-east]
-## Params analysis
+### Params dissection
 @snapend
 
 @snap[midpoint span-40]
@@ -123,7 +123,7 @@ def lookup(
 
 @snap[south span-100 text-gray text-14]
 @[2-2, zoom-14](Finite and fixed number of possible values {au,de,it,br,nl,ru,us,fr})
-@[3-3, zoom-14](Three lowercase letters, finite set of values but variable per CruiseLine. Polar {hal,sea,ccl,pcl,cun}; NCL {reg,oce})
+@[3-3, zoom-14](Finite/open set of values. Three lowercase letters)
 @[4-4, zoom-14](Non empty)
 @snapend
 
@@ -164,7 +164,7 @@ object Market extends Enum[Market] {
 @title[Value classes]
 
 @snap[north-west]
-## 1) Value classes (1/4)
+## Value classes
 @snapend
 
 @snap[midpoint span-100]
@@ -174,10 +174,10 @@ Wrap a single primitive type and extend the AnyVal abstract class to avoid some 
 
 ---
 
-@title[Value classes]
+@title[Value classes 1]
 
 @snap[north-west]
-## 1) Value classes (2/4)
+### Solution 1: Value classes (1)
 @snapend
 
 @snap[midpoint]
@@ -209,10 +209,10 @@ val ship = def lookup(
 
 ---
 
-@title[Value classes]
+@title[Value classes 2]
 
 @snap[north-west]
-## 1) Value classes (3/4)
+### Solution 1: Value classes (2)
 @snapend
 
 @snap[west span-40]
@@ -224,10 +224,10 @@ Or... can we?
 
 ---
 
-@title[Value classes]
+@title[Value classes 3]
 
 @snap[north-west]
-## 1) Value classes (3/4)
+### Solution 1: Value classes (3)
 @snapend
 
 @snap[west span-40]
@@ -263,25 +263,24 @@ val ship2 = def lookup(
 
 ---
 
-@title[Value classes]
+@title[Value classes 4]
 
 @snap[north-west]
-## 1) Value classes (3/4)
+### Solution 1: Value classes (4)
 @snapend
 
 @snap[midpoing span-100]
 @ul[list-spaced-bullets black text-08]
-A workaround is to make the case class constructors private and provide smart constructors:
-functions which take a raw value and return an optional validated one.
+A workaround is to make the case class constructors private and provide smart constructors
 @ulend
 @snapend
 
 ---
 
-@title[Value classes]
+@title[Value classes 5]
 
 @snap[north-west]
-## 1) Value classes (3/4)
+### Solution 1: Value classes (5)
 @snapend
 
 @snap[west span-100]
@@ -301,7 +300,8 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
   mkEmail("hal"),
   createShipCode("E45AK")
 ).mapN {
-  case (companyCode, shipCode) => lookup(Germany, companyCode, shipCode)
+  case (companyCode, shipCode) =>
+    lookup(Germany, companyCode, shipCode)
 }           
 ```
 @snapend
@@ -309,21 +309,35 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
 @snap[south span-100 text-gray text-14]
 @[1-3, zoom-14](Make case class constructors private)
 @[4-11, zoom-14](Provide functions that create a validated value)
-@[12-17, zoom-14](Perform a ship lookup with valid parameters...)
+@[12-19, zoom-14](Perform a ship lookup with valid parameters...)
 @snapend
-
 
 ---
 
-@title[Value classes]
+@title[Value classes 6a]
 
 @snap[north-west]
-## 1) Value classes (3/4)
+### Solution 1: Value classes (6)
 @snapend
 
 @snap[west span-40]
 @ul[list-spaced-bullets black text-09]
-Yey! We can no longer confuse the order of the parameters nor use invalid input
+Yey! We can no longer confuse the order of the parameters neither provide invalid input
+Or... can we?
+@ulend
+@snapend
+
+---
+
+@title[Value classes 6b]
+
+@snap[north-west]
+### Solution 1: Value classes (6)
+@snapend
+
+@snap[west span-40]
+@ul[list-spaced-bullets black text-09]
+Yey! We can no longer confuse the order of the parameters neither provide invalid input
 Or... can we?
 @ulend
 @snapend
@@ -334,7 +348,8 @@ Or... can we?
   mkEmail("hal"),
   createShipCode("E45AK")
 ).mapN {
-  case (companyCode, shipCode) => lookup(Germany, companyCode, shipCode.copy(""))
+  case (companyCode, shipCode) =>
+    lookup(Germany, companyCode, shipCode.copy(""))
 }  
 
 ...           
@@ -342,5 +357,5 @@ Or... can we?
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[5-5, zoom-14](We are using case classes and the copy method is still there)
+@[5-5, zoom-14](We are using case classes and the copy method is still there :()
 @snapend
