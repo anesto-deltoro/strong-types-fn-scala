@@ -212,17 +212,29 @@ val ship = def lookup(
 ## 1) Value classes (3/4)
 @snapend
 
-@snap[north-west]
-##### Analysis
-@snapend
-
-@snap[east span-40]
+@snap[west span-40]
 @ul[list-spaced-bullets black text-09]
 Yey! We can no longer confuse the order of the parameters
+Or... can we?
 @ulend
 @snapend
 
-@snap[west span-60]
+---
+
+@title[Value classes]
+
+@snap[north-west]
+## 1) Value classes (3/4)
+@snapend
+
+@snap[west span-40]
+@ul[list-spaced-bullets black text-09]
+Yey! We can no longer confuse the order of the parameters
+Or... can we?
+@ulend
+@snapend
+
+@snap[east span-60]
 ```scala zoom-16
 val ship1 = def lookup(
             market = Germany,
@@ -245,7 +257,6 @@ val ship2 = def lookup(
 @[6-10, zoom-14](Validation is missing)
 @[12-12, zoom-18](The compiler doesn’t help us and that is all we need)
 @snapend
-
 
 
 
