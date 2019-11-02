@@ -306,7 +306,7 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
 ...
 
 (
-  mkEmail("hal"),
+  createCompanyCode("hal"),
   createShipCode("E45AK")
 ).mapN {
   case (companyCode, shipCode) =>
@@ -354,7 +354,7 @@ Or... can we?
 @snap[east span-70]
 ```scala zoom-16
 (
-  mkEmail("hal"),
+  createCompanyCode("hal"),
   createShipCode("E45AK")
 ).mapN {
   case (companyCode, shipCode) =>
@@ -388,7 +388,7 @@ Or... can we?
 @snap[east span-65]
 ```scala zoom-16
 (
-  mkEmail("hal"),
+  createCompanyCode("hal"),
   createShipCode("E45AK")
 ).mapN {
   case (companyCode, shipCode) =>
