@@ -329,9 +329,9 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
 #### Solution 1: Value classes + smart constructors (5)
 @snapend
 
-@snap[west span-35]
-@ul[list-spaced-bullets black text-07]
-Yey! We can no longer confuse the order of the parameters neither provide invalid input
+@snap[west span-30]
+@ul[list-spaced-bullets black small]
+Yey! We can't confuse the order of the parameters neither provide invalid input
 Or... can we?
 @ulend
 @snapend
@@ -378,14 +378,14 @@ Or... can we?
 #### Solution 1: Value classes + smart constructors (6)
 @snapend
 
-@snap[west span-35]
-@ul[list-spaced-bullets black text-07]
-Yey! We can no longer confuse the order of the parameters neither provide invalid input
+@snap[west span-30]
+@ul[list-spaced-bullets black small]
+Yey! We can't confuse the order of the parameters neither provide invalid input
 Or... can we?
 @ulend
 @snapend
 
-@snap[east span-65]
+@snap[east span-70]
 ```scala zoom-16
 (
   createCompanyCode("hal"),
@@ -435,7 +435,7 @@ object ShipCode {
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[6-8,16-17 zoom-14](Replace the generated apply method within the companion object.)
+@[6-8,16-17, zoom-14](Replace the generated apply method within the companion object.)
 @[2-2, zoom-14](Copy should be replaced as well)
 @[12-12, zoom-14](Another possibility is to make the copy method private)
 @snapend
