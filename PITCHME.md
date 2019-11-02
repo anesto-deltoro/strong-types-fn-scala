@@ -198,6 +198,10 @@ val ship = def lookup(
 ```
 @snapend
 
-
+@snap[south span-100 text-gray text-18]
+@[1-3, zoom-18](Defining the value classes for CompanyCode and ShipCode)
+@[4-9, zoom-18](New signature of the lookup)
+@[10-14, zoom-18](Example of usage)
+@snapend
 
 
