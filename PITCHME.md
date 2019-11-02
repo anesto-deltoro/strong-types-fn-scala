@@ -421,6 +421,8 @@ object ShipCode {
 @[4-8, zoom-14](Replace the generated apply method within the companion object)
 @snapend
 
+---
+
 @title[Value classes caveats]
 
 @snap[north-west]
