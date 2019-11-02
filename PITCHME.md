@@ -360,55 +360,20 @@ Or... can we?
   case (companyCode, shipCode) =>
     lookup(Germany, companyCode, shipCode.copy(""))
 }  
-
-...           
+           
 ```
 @snapend
 
 @snap[south span-100 text-gray text-14]
 @[6-6, zoom-14](We are using case classes; the copy method is still there :()
 @snapend
-
 
 ---
 
 @title[Value classes 6]
 
 @snap[north-west]
-#### Solution 1: Value classes + smart constructors (6)
-@snapend
-
-@snap[west span-30]
-@ul[list-spaced-bullets black small]
-Yey! We can't confuse the order of the parameters neither provide invalid input
-Or... can we?
-@ulend
-@snapend
-
-@snap[east span-70]
-```scala zoom-16
-(
-  createCompanyCode("hal"),
-  createShipCode("E45AK")
-).mapN {
-  case (companyCode, shipCode) =>
-    lookup(Germany, companyCode, shipCode.copy(""))
-}  
-
-...           
-```
-@snapend
-
-@snap[south span-100 text-gray text-14]
-@[6-6, zoom-14](We are using case classes; the copy method is still there :()
-@snapend
-
----
-
-@title[Value classes 7]
-
-@snap[north-west]
-#### Solution 1: Value classes + factory methods (7)
+#### Solution 1: Value classes + factory methods (6)
 @snapend
 
 @snap[west span-100]
@@ -432,10 +397,10 @@ object CompanyCode {
 
 ---
 
-@title[Value classes 7]
+@title[Value classes 6]
 
 @snap[north-west]
-#### Solution 1: Value classes + factory methods (7)
+#### Solution 1: Value classes + factory methods (6)
 @snapend
 
 @snap[west span-100]
