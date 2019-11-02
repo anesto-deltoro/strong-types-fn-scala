@@ -1,7 +1,7 @@
 ---?color=linear-gradient(180deg, white 75%, black 25%)
 @title[Title slide]
 @snap[midpoint span-100 h1]
-## Strong-typed functions in Scala
+## Exploring strong-typed functions in Scala
 @snapend
 
 @snap[south span-100 text-white small]
@@ -344,14 +344,14 @@ Or... can we?
 ### Solution 1: Value classes (5)
 @snapend
 
-@snap[west span-35]
-@ul[list-spaced-bullets black text-07]
-Yey! We can no longer confuse the order of the parameters neither provide invalid input
+@snap[west span-30]
+@ul[list-spaced-bullets black small]
+Yey! We can't confuse the order of the parameters neither provide invalid input
 Or... can we?
 @ulend
 @snapend
 
-@snap[east span-65]
+@snap[east span-70]
 ```scala zoom-16
 (
   mkEmail("hal"),
