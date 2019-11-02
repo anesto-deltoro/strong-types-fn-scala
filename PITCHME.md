@@ -422,7 +422,24 @@ object CompanyCode {
     if ("""[a-z]{3}""".r matches value) CompanyCode(value).some
     else none[CompanyCode]
 }           
+```
+@snapend
 
+@snap[south span-100 text-gray text-14]
+@[1-4, zoom-14](Copy should be replaced)
+@[5-10, zoom-14](Replace the generated apply method within the companion object)
+@snapend
+
+---
+
+@title[Value classes 7]
+
+@snap[north-west]
+#### Solution 1: Value classes + factory methods (7)
+@snapend
+
+@snap[west span-100]
+```scala zoom-16
 final case class ShipCode private(val value: String) extends AnyVal {
   private def copy() = ()  
 }
@@ -435,9 +452,6 @@ object ShipCode {
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[1-4, zoom-14](Copy should be replaced)
-@[5-10, zoom-14](Replace the generated apply method within the companion object)
-@[11-13, zoom-14](Another possibility is to make the copy method private)
-@[14-18, zoom-14](Replace the generated apply method within the companion object)
+@[1-4, zoom-14](Another possibility is to make the copy method private)
+@[5-8, zoom-14](Replace the generated apply method within the companion object)
 @snapend
-
