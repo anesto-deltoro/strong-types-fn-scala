@@ -435,7 +435,8 @@ object ShipCode {
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[6-8,16-17, zoom-14](Replace the generated apply method within the companion object.)
+@[6-8, zoom-14](Replace the generated apply method within the companion object)
+@[16-17, zoom-14](Replace the generated apply method within the companion object)
 @[2-2, zoom-14](Copy should be replaced as well)
 @[12-12, zoom-14](Another possibility is to make the copy method private)
 @snapend
