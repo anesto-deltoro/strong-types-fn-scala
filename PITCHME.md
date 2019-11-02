@@ -64,14 +64,17 @@ One of the biggest benefits FP is that it lets us reason about functions by look
 ```scala zoom-12
 trait MappingService[F[_]] {
   type Ship
-  def lookup(market: String, company: String,
-    shipCode: String): F[Ship]
+  def lookup(
+    market: String,
+    company: String,
+    shipCode: String
+  ): F[Ship]
 }
 ```
 @snapend
 
-@snap[south span-100 text-gray text-08]
-@[3-4, zoom-18](Do you see any problems with this function?)
+@snap[south span-100 text-gray text-14]
+@[3-7, zoom-14](Do you see any problems with this function?)
 @snapend
 
 ---
@@ -105,7 +108,7 @@ def lookup(
 @title[Params detailed]
 
 @snap[north-east]
-## Params detailed
+## Params analysis
 @snapend
 
 @snap[midpoint span-40]
@@ -120,7 +123,7 @@ def lookup(
 
 @snap[south span-100 text-gray text-14]
 @[2-2, zoom-14](Finite and fixed number of possible values {au,de,it,br,nl,ru,us,fr})
-@[3-3, zoom-14](Three lowercase letters, finite set of values but variable per CruiseLine. Polar {hal,sea,ccl,pcl,cun}; NCL {regent,oceania})
+@[3-3, zoom-14](Three lowercase letters, finite set of values but variable per CruiseLine. Polar {hal,sea,ccl,pcl,cun}; NCL {reg,oce})
 @[4-4, zoom-14](Non empty)
 @snapend
 
@@ -255,7 +258,58 @@ val ship2 = def lookup(
 @snap[south span-100 text-gray text-14]
 @[1-5, zoom-14](We still can mess the parameters)
 @[6-10, zoom-14](Validation is missing)
-@[12-12, zoom-18](The compiler doesn’t help us and that is all we need)
+@[12-12, zoom-18](The compiler doesn’t help us and **that is all we need**)
+@snapend
+
+---
+
+@title[Value classes]
+
+@snap[north-west]
+## 1) Value classes (3/4)
+@snapend
+
+@snap[midpoing span-100]
+@ul[list-spaced-bullets black text-08]
+A workaround is to make the case class constructors private and provide smart constructors:
+functions which take a raw value and return an optional validated one.
+@ulend
+@snapend
+
+---
+
+@title[Value classes]
+
+@snap[north-west]
+## 1) Value classes (3/4)
+@snapend
+
+@snap[west span-100]
+```scala zoom-16
+final case class CompanyCode private(val value: String) extends AnyVal
+final case class ShipCode private(val value: String) extends AnyVal
+           
+def createShipCode(value: String): Option[ShipCode] =
+  if (value.nonEmpty) ShipCode(value).some else none[ShipCode]
+
+def createPolarCompanyCode(value: String): Option[CompanyCode] =
+  if ("""[a-z]{3}""".r matches value) CompanyCode(value).some else none[CompanyCode]
+
+...
+
+(
+  mkEmail("hal"),
+  createShipCode("E45AK")
+).mapN {
+  case (companyCode, shipCode) => lookup(Germany, companyCode, shipCode)
+}           
+```
+@snapend
+
+@snap[south span-100 text-gray text-14]
+@[1-3, zoom-14](Make case class constructors private)
+@[4-11, zoom-14](Provide functions that create a validated value)
+@[12-17, zoom-14](Perform a ship lookup with valid parameters...)
 @snapend
 
 
@@ -269,31 +323,24 @@ val ship2 = def lookup(
 
 @snap[west span-40]
 @ul[list-spaced-bullets black text-09]
-A workaround is to make the case class constructors private and provide smart constructors:
-functions which take a raw value and return an optional validated one.
+Yey! We can no longer confuse the order of the parameters nor use invalid input
+Or... can we?
 @ulend
 @snapend
 
 @snap[east span-60]
 ```scala zoom-16
-final case class CompanyCode private(val value: String) extends AnyVal
-final case class ShipCode private(val value: String) extends AnyVal
-           
-def createShipCode(value: String): Option[ShipCode] =
-  if (value.nonEmpty) ShipCode(value).some else none[ShipCode]
-
-def createPolarCompanyCode(value: String): Option[CompanyCode] =
-  if ("""[a-z]{3}""".r matches value) CompanyCode(value).some else none[CompanyCode]
-
-company = CompanyCode("hal"),
-            shipCode = ShipCode("")
 (
-  mkEmail("hal"), createShipCode("E45AK")
+  mkEmail("hal"),
+  createShipCode("E45AK")
 ).mapN {
-  case (companyCode, shipCode) => lookup(Germany, companyCode, shipCode)
-}           
+  case (companyCode, shipCode) => lookup(Germany, companyCode, shipCode.copy(""))
+}  
+
+...           
 ```
 @snapend
 
-
-
+@snap[south span-100 text-gray text-14]
+@[5-5, zoom-14](We are using case classes and the copy method is still there)
+@snapend
