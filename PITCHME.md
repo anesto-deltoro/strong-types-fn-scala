@@ -430,9 +430,11 @@ object ShipCode {
 @snapend
 
 @snap[midpoint span-100]
+@ul[list-spaced-bullets black text-09]
 - Value classes are fine if used with caution but they have limitations and performance issues.
 - The language can not guarantee that these primitive type wrappers won’t actually allocate more memory.
 - A lot of boilerplate!!!
+@ulend
 @snapend
 
 @snap[south span-100]
