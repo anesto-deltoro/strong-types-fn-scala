@@ -201,7 +201,51 @@ val ship = def lookup(
 @snap[south span-100 text-gray text-14]
 @[1-3, zoom-14](Defining the value classes for CompanyCode and ShipCode)
 @[4-9, zoom-14](New signature of the lookup)
-@[10-14, zoom-14](Example of usage)
+@[10-16, zoom-14](Example of usage)
 @snapend
+
+---
+
+@title[Value classes]
+
+@snap[north-west]
+## 1) Value classes (3/4)
+@snapend
+
+@snap[north-west]
+##### Analysis
+@snapend
+
+@snap[east span-50]
+@ul[list-spaced-bullets black text-09]
+Yey! We can no longer confuse the order of the parameters
+@ulend
+@snapend
+
+@snap[midpoint]
+```scala zoom-16
+val ship1 = def lookup(
+            market = Germany,
+            company = CompanyCode("E45AK"),
+            shipCode = ShipCode("hal")
+           ): F[Ship]
+           
+val ship2 = def lookup(
+            market = Germany,
+            company = CompanyCode("ahls"),
+            shipCode = ShipCode("")
+           ): F[Ship]
+           
+...           
+```
+@snapend
+
+@snap[south span-100 text-gray text-14]
+@[1-5, zoom-14](We still can mess the parameters)
+@[6-10, zoom-14](Validation is missing)
+@[12-12, zoom-18](The compiler doesn’t help us and that is all we need)
+@snapend
+
+
 
 
