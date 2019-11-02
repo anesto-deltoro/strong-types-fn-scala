@@ -149,7 +149,7 @@ object Market extends Enum[Market] {
   
   def byCode(code: String): Option[Market] = values.find(_.code == code)
   
-  implicit val CirceEncoder: Encoder[Market] = Encoder.encodeString.contramap[Market](_.code)
+  implicit val CirceEncoder: Encoder[Market] = ...
   
   implicit val CirceDecoder: Decoder[Market] = ...
 }
