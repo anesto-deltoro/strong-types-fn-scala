@@ -288,7 +288,7 @@ A workaround is to make the case class constructors private and provide smart co
 @title[Value classes 4]
 
 @snap[north-west]
-### Solution 1: Value classes (4)
+#### Solution 1: Value classes + smart constructors (4)
 @snapend
 
 @snap[west span-100]
@@ -326,7 +326,7 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
 @title[Value classes 5a]
 
 @snap[north-west]
-### Solution 1: Value classes (5)
+#### Solution 1: Value classes + smart constructors (5)
 @snapend
 
 @snap[west span-35]
@@ -341,7 +341,7 @@ Or... can we?
 @title[Value classes 5b]
 
 @snap[north-west]
-### Solution 1: Value classes (5)
+#### Solution 1: Value classes + smart constructors (5)
 @snapend
 
 @snap[west span-30]
@@ -375,7 +375,7 @@ Or... can we?
 @title[Value classes 6]
 
 @snap[north-west]
-### Solution 1: Value classes (6)
+#### Solution 1: Value classes + smart constructors (6)
 @snapend
 
 @snap[west span-35]
@@ -408,7 +408,7 @@ Or... can we?
 @title[Value classes 7]
 
 @snap[north-west]
-### Solution 1: Value classes (7)
+#### Solution 1: Value classes + factory methods (7)
 @snapend
 
 @snap[west span-100]
