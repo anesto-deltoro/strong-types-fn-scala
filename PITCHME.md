@@ -78,7 +78,7 @@ trait MappingService[F[_]] {
 
 @title[Problems]
 
-@snap[north-east h4-black]
+@snap[north-east]
 ## Issues
 @snapend
 
@@ -97,3 +97,29 @@ def lookup(market: String,
     - feed our function with invalid data
 @ulend
 @snapend
+
+---
+
+@title[Params detailed]
+
+@snap[north-east]
+## Params detailed
+@snapend
+
+@snap[midpoint span-40]
+```scala zoom-12
+def lookup(
+ market: String,
+ company: String,
+ shipCode: String
+): F[Ship]
+```
+@snapend
+
+@snap[south span-100 text-gray text-12]
+@[2-2, zoom-18](Finite and fixed number of possible values {de,it,br,nl,ru,us,fr})
+@[3-3, zoom-18](Three lowercase letters, finite but variable per CruiseLine. Polar {hal,sea,ccl,pcl,cun}; NCL {regent,oceania})
+@[4-4, zoom-18](Non empty)
+@snapend
+
+
