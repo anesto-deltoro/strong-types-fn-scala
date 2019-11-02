@@ -22,12 +22,11 @@ com.dreamlines.connectivity
 @snap[east span-100]
 @ul[list-spaced-bullets text-white text-09]
 - Problem
-- Alternatives
+- Possible solutions
     - Value classes
     - Newtypes
     - Refinement types
     - Enforcing types*
-- Examples: GreenGinza
 - Conclusions
 @ulend
 @snapend
@@ -174,6 +173,7 @@ object Market extends Enum[Market] {
 
 @snap[midpoint span-100]
 Wrap a single primitive type and extend the AnyVal abstract class to avoid some runtime costs.
+One use case is to get the type safety of a data type without the runtime allocation overhead.
 @snapend
 
 @snap[south span-100]
@@ -419,4 +419,20 @@ object ShipCode {
 @snap[south span-100 text-gray text-14]
 @[1-3, zoom-14](Another possibility is to make the copy method private)
 @[4-8, zoom-14](Replace the generated apply method within the companion object)
+@snapend
+
+@title[Value classes caveats]
+
+@snap[north-west]
+## Value classes caveats
+@snapend
+
+@snap[midpoint span-100]
+- Value classes are fine if used with caution but they have limitations and performance issues.
+- The language can not guarantee that these primitive type wrappers won’t actually allocate more memory.
+- A lot of boilerplate!!!
+@snapend
+
+@snap[south span-100]
+[VALUE CLASSES AND UNIVERSAL TRAITS @fa[external-link]](https://docs.scala-lang.org/overviews/core/value-classes.html)
 @snapend
