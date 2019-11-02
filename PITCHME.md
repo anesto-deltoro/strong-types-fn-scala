@@ -134,6 +134,7 @@ def lookup(
 
 @snap[east]
 ```scala zoom-16
+
 sealed abstract class Market(val code: String) extends EnumEntry
 object Market extends Enum[Market] {
   case object Australia extends Market("au")
