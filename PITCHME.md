@@ -474,7 +474,7 @@ object ShipCode {
 
 ---
 
-@title[Scala newtype 1]
+@title[Scala newtype 1a]
 
 @snap[north-west]
 #### Solution 2: Scala newtype (1)
@@ -487,19 +487,22 @@ import io.estatico.newtype.macros.newtype
 package object greenginza {
 
   @newtype case class CompanyCode(toStr: String)
+  @newtype case class CompanyCode(private val toStr: String)
    
 }
 ```
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[5-5, zoom-16](Defining newtypes for CompanyCode)
-@[5-5,12-22 zoom-16](Using case class gives us a smart constructor (apply) that will accept an String value and return the newtype CompanyCode)
+@[5-6, zoom-16](Defining newtypes for CompanyCode)
+@[5-5 zoom-16](Using case class gives us a smart constructor (apply) that will accept an String value and return the newtype CompanyCode)
+@[5-5 zoom-16](Get an accessor extension method to get the underlying String)
+@[6-6 zoom-16](We can prevent this by defining the field as private)
 @snapend
 
 ---
 
-@title[Scala newtype 2]
+@title[Scala newtype 1b]
 
 @snap[north-west]
 #### Solution 2: Scala newtype (1)
@@ -523,20 +526,20 @@ package object greenginza {
       def toStr: String = $this$.asInstanceOf[String]
     }
   }
-  
-  type ShipCode = ShipCode.Type
-    ...
+
 }
 ```
 @snapend
 
 @snap[south span-100 text-gray text-14]
 @[5-16, zoom-16](Generated code looks similar to the following)
+@[11-11 zoom-16](Smart constructor (apply) that accept an String value and return the newtype CompanyCode)
+@[13-15 zoom-16](Accessor method for your underlying value)
 @snapend
 
 ---
 
-@title[Scala newtype 1]
+@title[Scala newtype 1c]
 
 @snap[north-west]
 #### Solution 2: Scala newtype (1)
@@ -548,8 +551,8 @@ import io.estatico.newtype.macros.newtype
 
 package object greenginza {
 
-  ...
-  @newtype case class ShipCode(private toStr: String)
+  @newtype class ShipCode(val toStr: String)
+  @newtype class ShipCode(private val toStr: String)
   
 }
 ```
@@ -557,4 +560,5 @@ package object greenginza {
 
 @snap[south span-100 text-gray text-14]
 @[6-6, zoom-16](Defining newtypes for ShipCode)
+@[6-6 zoom-16](Using class will not generate a smart constructor (apply))
 @snapend
