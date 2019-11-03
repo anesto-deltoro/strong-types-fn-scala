@@ -752,7 +752,8 @@ package object greenginza {
   type ShipCode = NonEmptyString
 }
 
-def lookup(market: MarketCode, company: CompanyCode, shipCode: ShipCode): F[Ship]
+def lookup(market: MarketCode, company: CompanyCode,
+  shipCode: ShipCode): F[Ship]
 ...
 lookup(Germany, "hal", "E45AK")
 lookup(Germany, "E45AK", "hal")
@@ -763,10 +764,10 @@ lookup(Germany, "ahls", "E45AK")
 
 @snap[south span-100 text-gray text-14]
 @[1-5, zoom-14](Required imports)
-@[6-11, zoom-14](Defining refinement types for CompanyCode and ShipCode)
-@[12-16, zoom-14](lookup function)
-@[18-18, zoom-14](Compiles)
-@[19-19, zoom-14](Error)
-@[20-20, zoom-14](Error)
-@[21-21, zoom-14](Error)
+@[6-10, zoom-14](Defining refinement types for CompanyCode and ShipCode)
+@[11-12, zoom-14](lookup function)
+@[14-14, zoom-14](Compiles)
+@[15-15, zoom-14](Error)
+@[16-16, zoom-14](Error)
+@[17-17, zoom-14](Error)
 @snapend
