@@ -480,7 +480,7 @@ object ShipCode {
 #### Solution 2: Scala newtype (1)
 @snapend
 
-@snap[west span-50]
+@snap[west span-40]
 ```scala zoom-14
 import io.estatico.newtype.macros.newtype
 
@@ -497,7 +497,7 @@ package object types {
 @[5-6, zoom-14](Defining newtypes)
 @snapend
 
-@snap[east span-50]
+@snap[east span-40]
 ```scala zoom-14
 package object types {
   type CompanyCode = CompanyCode.Type
