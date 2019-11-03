@@ -309,7 +309,7 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
 @snap[south span-100 text-gray text-14]
 @[1-3, zoom-14](Make case class constructors private)
 @[4-8, zoom-14](Provide functions that create a validated value)
-@[9-15, zoom-14](Perform a ship lookup with valid parameters...)
+@[9-16, zoom-14](Perform a ship lookup with valid parameters...)
 @snapend
 
 ---
