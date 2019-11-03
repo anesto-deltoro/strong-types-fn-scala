@@ -359,7 +359,8 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
 @snap[west span-100]
 ```scala zoom-16
 final case class CompanyCode private(val value: String) extends AnyVal {
-  def copy(s: String = this.value) = CompanyCode(s)  
+  def copy(s: String = this.value) = CompanyCode(s)
+  
 }
 
 object CompanyCode {
@@ -371,8 +372,8 @@ object CompanyCode {
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[2, zoom-14](Copy should be replaced)
-@[6-7, zoom-14](Replace the generated apply method within the companion object)
+@[2-2, zoom-14](Copy should be replaced)
+@[6-8, zoom-14](Replace the generated apply method within the companion object)
 @snapend
 
 ---
