@@ -373,7 +373,7 @@ object CompanyCode {
 
 @snap[south span-100 text-gray text-14]
 @[2-2, zoom-14](Copy should be replaced)
-@[6-8, zoom-14](Replace the generated apply method within the companion object)
+@[7-9, zoom-14](Replace the generated apply method within the companion object)
 @snapend
 
 ---
