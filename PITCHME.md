@@ -53,7 +53,7 @@ In practice, however...
 @snapend
 
 @snap[midpoint span-100 text-16]
-**We often end up with weakly-typed functions**
+**We often end up with </br> weakly-typed functions**
 @snapend
 
 ---
