@@ -39,8 +39,8 @@ com.dreamlines.connectivity
 ## Introduction
 @snapend
 
-@snap[midpoint span-100 text-10]
-One of the biggest benefits FP is that it lets us reason about functions by looking at their *type signature*. However...
+@snap[midpoint span-100 text-16]
+One of the biggest benefits FP is that it lets us reason about functions by looking at their *type signature*.
 @snapend
 
 ---
