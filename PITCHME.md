@@ -57,7 +57,7 @@ In practice, however...
 @snapend
 
 ---
-@title[Problem 1]
+@title[Problem]
 
 @snap[north-east]
 #### Let the code do the talking!
@@ -84,7 +84,7 @@ trait MappingService[F[_]] {
 @snapend
 
 ---?color=linear-gradient(90deg, white 40%, #5384AD 60%)
-@title[Problem 2]
+@title[Problem: Issues]
 
 @snap[north-east]
 #### Issues
@@ -109,19 +109,18 @@ def lookup(
 @snapend
 
 ---
-
-@title[Params dissection]
+@title[Problem: params dissection]
 
 @snap[north-east]
-### Params dissection
+#### Params dissection
 @snapend
 
 @snap[midpoint span-40]
 ```scala zoom-16
 def lookup(
- market: String,
- company: String,
- shipCode: String
+  marketCode: String,
+  companyCode: String,
+  shipCode: String
 ): F[Ship]
 ```
 @snapend
@@ -133,11 +132,10 @@ def lookup(
 @snapend
 
 ---
-
 @title[Params: market]
 
 @snap[north-east]
-### Params: market
+#### Params: marketCode
 @snapend
 
 @snap[east]
@@ -158,15 +156,13 @@ object Market extends Enum[Market] {
   def byCode(code: String): Option[Market] = values.find(_.code == code)
   
   implicit val CirceEncoder: Encoder[Market] = ...
-  
   implicit val CirceDecoder: Decoder[Market] = ...
-   
 }
 ```
 @snapend
 
 @snap[south span-100 text-red text-18]
-@[19-19, zoom-18](Params: company & shipCode ???)
+@[19-19, zoom-18](companyCode & shipCode?)
 @snapend
 
 ---
