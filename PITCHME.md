@@ -176,7 +176,7 @@ object Market extends Enum[Market] {
 
 @snap[midpoint span-100]
 @ul[list-spaced-bullets black text-09]
-- @size[x-large](**Value classes**)
+- @size[xxx-large](**Value classes**)
   - Wrap a single primitive type and extend the AnyVal abstract class to avoid some runtime costs.
   - One use case is to get the type safety of a data type without the runtime allocation overhead.
 @ulend
