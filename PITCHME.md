@@ -163,7 +163,7 @@ object Market extends Enum[Market] {
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[1-18, zoom-14](Param marketCode => approach recently introduced by Chris in DragonFly)
+@[1-18, zoom-14](marketCode => approach recently introduced by Chris in DragonFly)
 @[19-19, zoom-14](companyCode & shipCode?)
 @snapend
 
