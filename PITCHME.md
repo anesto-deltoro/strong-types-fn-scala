@@ -1,17 +1,18 @@
 ---?color=linear-gradient(180deg, white 75%, black 25%)
-
 @title[Title slide]
+
 @snap[midpoint span-100]
 ## Exploring </br> strong-typed functions in Scala
 @snapend
 
 @snap[south span-100 text-white small]
 com.dreamlines.connectivity
-03.11.2019
+06.11.2019
 @snapend
 
 ---?color=linear-gradient(90deg, white 35%, #5384AD 65%)
 @title[Agenda]
+
 @snap[west-north span-40]
 ## Agenda
 @snapend
@@ -20,14 +21,13 @@ com.dreamlines.connectivity
 ![IMAGE](assets/img/presentation.png)
 @snapend
 
-@snap[east span-100]
+@snap[east span-50]
 @ul[list-spaced-bullets text-white text-09]
 - Problem
 - Possible solutions
     - Value classes
     - Newtypes
     - Refinement types
-    - Enforcing types*
 - Conclusions
 @ulend
 @snapend
