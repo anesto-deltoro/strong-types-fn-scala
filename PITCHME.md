@@ -785,7 +785,25 @@ lookup(Germany, "ahls", "E45AK")
 @snapend
 
 @snap[west span-30]
-Yes... but Wait!
+@ul[list-spaced-bullets black text-07]
+Yes... we are done!
+Or... are we?
+@ulend
+@snapend
+
+---
+
+@title[Refinement types 2]
+
+@snap[north-west]
+### Solution 3: Refinement types (1)
+@snapend
+
+@snap[west span-30]
+@ul[list-spaced-bullets black text-07]
+Yes... we are done!
+Or... are we?
+@ulend
 @snapend
 
 @snap[east span-70]
