@@ -393,12 +393,10 @@ final case class ShipCode private(val value: String) extends AnyVal {
 object ShipCode {
   def apply(value: String): Option[CompanyCode] =
     if (value.nonEmpty) ShipCode(value).some else none[ShipCode]  
+
 }
 
-(
-  CompanyCode("hal"),
-  ShipCode("E45AK")
-).mapN {
+(CompanyCode("hal"), ShipCode("E45AK")).mapN {
   case (companyCode, shipCode) =>
     lookup(Germany, companyCode, shipCode)
 }  
@@ -408,7 +406,7 @@ object ShipCode {
 @snap[south span-100 text-gray text-14]
 @[2-2, zoom-14](Another possibility is to make the copy method private)
 @[7-8, zoom-14](Replace the generated apply method within the companion object)
-@[11-17, zoom-14](Example of usage)
+@[12-15, zoom-14](Example of usage)
 @snapend
 
 ---
