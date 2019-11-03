@@ -494,7 +494,7 @@ package object greenginza {
 
 @snap[south span-100 text-gray text-14]
 @[5-5, zoom-16](Defining newtypes for CompanyCode)
-@[5-5, zoom-16](Using case class gives us a smart constructor (apply) that will accept an String value and return the newtype CompanyCode)
+@[5-5,12-22 zoom-16](Using case class gives us a smart constructor (apply) that will accept an String value and return the newtype CompanyCode)
 @snapend
 
 ---
