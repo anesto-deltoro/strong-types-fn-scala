@@ -1,7 +1,8 @@
 ---?color=linear-gradient(180deg, white 75%, black 25%)
+
 @title[Title slide]
-@snap[midpoint span-100 h1]
-## Exploring strong-typed functions in Scala
+@snap[midpoint span-100]
+## Exploring </br> strong-typed functions </br> in Scala
 @snapend
 
 @snap[south span-100 text-white small]
