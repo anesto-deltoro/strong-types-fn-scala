@@ -477,7 +477,7 @@ object ShipCode {
 @title[Scala newtype 1a]
 
 @snap[north-west]
-#### Solution 2: Scala newtype (1)
+#### Solution 2: Scala newtype case class (1)
 @snapend
 
 @snap[midpoint span-100]
@@ -503,7 +503,7 @@ package object greenginza {
 @title[Scala newtype 1b]
 
 @snap[north-west]
-#### Solution 2: Scala newtype (1)
+#### Solution 2: Scala newtype case class (1)
 @snapend
 
 @snap[midpoint span-100]
@@ -540,7 +540,86 @@ package object greenginza {
 @title[Scala newtype 1c]
 
 @snap[north-west]
-#### Solution 2: Scala newtype (1)
+#### Solution 2: Scala newtype case class (1)
+@snapend
+
+@snap[midpoint span-100]
+```scala zoom-14
+import io.estatico.newtype.macros.newtype
+
+package object greenginza {
+  @newtype case class CompanyCode(toStr: String)
+  @newtype case class ShipCode(toStr: String)
+}
+...
+(
+  CompanyCode("hal"),
+  ShipCode("E45AK")
+).mapN {
+  case (companyCode, shipCode) =>
+    lookup(Germany, companyCode, shipCode)
+}
+```
+@snapend
+
+@snap[south span-100 text-gray text-14]
+@[4-5, zoom-14](Define newtypes case classes for CompanyCode and ShipCode)
+@[13-19, zoom-14](Perform a ship lookup with valid parameters...)
+@snapend
+
+---
+
+@title[Scala newtype 1d]
+
+@snap[north-west]
+#### Solution 2: Scala newtype case class (1)
+@snapend
+
+@snap[west span-30]
+@ul[list-spaced-bullets black small]
+Yey! We can't confuse the order ...
+But... wait!
+@ulend
+@snapend
+
+---
+
+@title[Scala newtype 1e]
+
+@snap[north-west]
+#### Solution 2: Scala newtype case class (1)
+@snapend
+
+@snap[west span-30]
+@ul[list-spaced-bullets black small]
+Yey! We can't confuse the order ...
+But... wait!
+@ulend
+@snapend
+
+@snap[east span-70]
+```scala zoom-16
+(
+  CompanyCode("E45AK"),
+  ShipCode("")
+).mapN {
+  case (companyCode, shipCode) =>
+    lookup(Germany, companyCode, shipCode)
+}       
+```
+@snapend
+
+@snap[south span-100 text-gray text-14]
+@[2-2, zoom-14](We can still mess the parameters :()
+@[3-3, zoom-14](We can still create invalid instances :()
+@snapend
+
+---
+
+@title[Scala newtype 2a]
+
+@snap[north-west]
+#### Solution 2: Scala newtype class (2)
 @snapend
 
 @snap[midpoint span-100]
@@ -552,10 +631,12 @@ package object greenginza {
   @newtype class ShipCode(val toStr: String)
   
   object ShipCode {
-    def fromString(str: String): Option[String] = {
+  
+    def fromString(str: String): Option[ShipCode] = {
       if (str.nonEmpty) Some(str.coerce)
       else none[ShipCode]
     }
+    
   }
 }
 ```
@@ -565,22 +646,37 @@ package object greenginza {
 @[5-5, zoom-16](Defining the newtype for CompanyCode using *class*)
 @[5-5, zoom-16](Using class will not generate a smart constructor (apply))
 @[5-5, zoom-16](Accessor method for the underlying value can be achieved with *val*)
-@[7-12, zoom-16](Using class will not generate a smart constructor (apply). We can specify our own)
-@[9-9, zoom-16](Use the .coerce extension method to cast to your newtype)
+@[7-14, zoom-16](We can specify our own smart constructor)
+@[9-9, zoom-16](Use the .coerce extension method to cast to the newtype)
 @snapend
 
 ---
 
-@title[Scala newtype 1d]
+@title[Scala newtype 2b]
 
 @snap[north-west]
-#### Solution 2: Scala newtype (1)
+#### Solution 2: Scala newtype class (2)
 @snapend
 
 @snap[midpoint span-100]
 ```scala zoom-14
+import io.estatico.newtype.macros.newtype
+
+package object greenginza {
+
+  @newtype class CompanyCode(val toStr: String)
+  @newtype class ShipCode(val toStr: String)
+  
+  object CompanyCode {
+    def fromString(str: String): Option[CompanyCode] = ...
+  }
+  object ShipCode {
+    def fromString(str: String): Option[ShipCode] = ...
+  }
+}
+...
 (
-  CompanyCode("hal"),
+  CompanyCode.fromString("hal"),
   ShipCode.fromString("E45AK")
 ).mapN {
   case (companyCode, shipCode) =>
@@ -590,5 +686,7 @@ package object greenginza {
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[1-7, zoom-16](Example of usage)
+@[5-6, zoom-14](Define newtypes classes for CompanyCode and ShipCode)
+@[7-13, zoom-14](Specify our own smart constructors)
+@[7-13, zoom-14](Perform a ship lookup with valid parameters. Yey!)
 @snapend
