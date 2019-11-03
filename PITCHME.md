@@ -874,3 +874,51 @@ lookup(Germany, "hal", ShipCode("E45AK"), CabinCode("A1"))
 @[19-19, zoom-14](Strong-typed scala function with compile type validation!)
 @snapend
 
+---
+
+@title[Bonus material]
+
+@snap[north-west]
+#### Enforce the right data when handling a GreenGinza request
+@snapend
+
+@snap[east span-100]
+```scala zoom-14
+sealed trait GreenGinzaRequestType
+case object GetAvailableCabins extends GreenGinzaRequestType
+case object GetComponents extends GreenGinzaRequestType
+case object CreateOption extends GreenGinzaRequestType
+
+class GetAvailableCabinsRequest
+class GetComponentsRequest
+class CreateOptionRequest
+ 
+def handle[R](requestType: GreenGinzaRequestType)(data: A): Unit =
+  requestType match {
+    case GetAvailableCabins =>
+      val requestData = data.asInstanceOf[GetAvailableCabinsRequest]
+      // Do some stuff with the requestData
+      ()
+    ...
+    case CreateOption =>
+      val requestData = data.asInstanceOf[CreateOptionRequest]
+      // Do some stuff with the requestData
+      ()    
+  }
+handle(GetAvailableCabins)(new GetAvailableCabinsRequest)  
+handle(GetAvailableCabins)(new GetComponentsRequest)  
+```
+@snapend
+
+@snap[south span-100 text-gray text-14]
+@[1-5, zoom-14](GADTs for GreenGinza request types)
+@[6-9, zoom-14](Dummy types representing the request associated data)
+@[10-21, zoom-14](Handler for requests; exhaustive match)
+@[22-22, zoom-14](Valid call to the handle function)
+@[23-23, zoom-14](Also a valid call to the handle function; but Runtime error)
+@snapend
+
+---
+
+![Cartoon](https://media.giphy.com/media/cLlVn5zC5UOSmQZKJ7/giphy.mp4)
+
