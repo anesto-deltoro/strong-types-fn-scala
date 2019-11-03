@@ -191,13 +191,13 @@ object Market extends Enum[Market] {
 @title[Approach 1: Value classes 1]
 
 @snap[north-west]
-### Approach 1: Value classes (1)
+#### Approach 1: Value classes (1)
 @snapend
 
-@snap[midpoint]
+@snap[west span-100]
 ```scala zoom-16
-case class CompanyCode(val value: String) extends AnyVal
-case class ShipCode(val value: String) extends AnyVal
+final case class CompanyCode(val value: String) extends AnyVal
+final case class ShipCode(val value: String) extends AnyVal
 
 def lookup(
   marketCode: MarketCode,
@@ -225,7 +225,7 @@ val ship = lookup(
 @title[Approach 1: Value classes 2]
 
 @snap[north-west]
-### Approach 1: Value classes (2)
+#### Approach 1: Value classes (2)
 @snapend
 
 @snap[west span-100]
@@ -239,10 +239,10 @@ val ship = lookup(
 @title[Approach 1: Value classes 3]
 
 @snap[north-west]
-### Approach 1: Value classes (3)
+#### Approach 1: Value classes (3)
 @snapend
 
-@snap[east span-100]
+@snap[west span-100]
 ```scala zoom-16
 val ship1 = def lookup(
             marketCode = Germany,
@@ -266,10 +266,10 @@ val ship2 = def lookup(
 @snapend
 
 ---
-@title[Value classes 4]
+@title[Approach 1: Value classes 4]
 
 @snap[north-west]
-### Approach 1: Value classes (4)
+#### Approach 1: Value classes (4)
 @snapend
 
 @snap[midpoing span-100]
@@ -279,11 +279,10 @@ A workaround is to make the case class constructors private and provide smart co
 @snapend
 
 ---
-
-@title[Value classes 4]
+@title[Approach 1a: Value classes + smart constructors 5]
 
 @snap[north-west]
-#### Solution 1: Value classes + smart constructors (4)
+#### Approach 1a: Value classes + smart constructors (5)
 @snapend
 
 @snap[west span-100]
@@ -317,36 +316,27 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
 @snapend
 
 ---
-
-@title[Value classes 5a]
+@title[Approach 1a: Value classes + smart constructors 6]
 
 @snap[north-west]
-#### Solution 1: Value classes + smart constructors (5)
+#### Approach 1a: Value classes + smart constructors (6)
 @snapend
 
-@snap[west span-30]
+@snap[west span-100]
 @ul[list-spaced-bullets black small]
-Yey! We can't confuse the order of the parameters neither provide invalid input
-Or... can we?
+- Yey! We can't confuse the order of the parameters neither provide invalid input
+- Or... can we?
 @ulend
 @snapend
 
 ---
-
-@title[Value classes 5b]
+@title[Approach 1a: Value classes + smart constructors 7]
 
 @snap[north-west]
-#### Solution 1: Value classes + smart constructors (5)
+#### Approach 1a: Value classes + smart constructors (7)
 @snapend
 
-@snap[west span-30]
-@ul[list-spaced-bullets black small]
-Yey! We can't confuse the order of the parameters neither provide invalid input
-Or... can we?
-@ulend
-@snapend
-
-@snap[east span-70]
+@snap[west span-100]
 ```scala zoom-16
 (
   createCompanyCode("hal"),
