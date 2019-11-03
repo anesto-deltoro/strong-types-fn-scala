@@ -828,126 +828,19 @@ lookup(Germany, "hal", ShipCode("E45AK"), CabinCode("A1"))
 @[19-19, zoom-14](Strong-typed scala function with compile type validation!)
 @snapend
 
----
+---?image=assets/img/presenter.jpg
+@title[Conclusions]
 
-@title[Bonus material]
-
-@snap[north-west]
-##### Enforce the right data when handling a GreenGinza request
+@snap[north span-100 h2-white]
+## Conclusiones
 @snapend
 
-@snap[midpoint span-100]
-```scala zoom-14
-class GetAvailableCabinsRequest
-class GetComponentsRequest
-class CreateOptionRequest
 
-sealed trait GreenGinzaRequestType
-case object GetAvailableCabins extends GreenGinzaRequestType
-case object GetComponents extends GreenGinzaRequestType
-case object CreateOption extends GreenGinzaRequestType
-```
-@snapend
-
-@snap[south span-100 text-gray text-14]
-@[1-4, zoom-14](Dummy types representing the request associated data)
-@[5-8, zoom-14](GADTs for GreenGinza request types)
-@snapend
-
----
-
-@title[Bonus material]
-
-@snap[north-west]
-##### Enforce the right data when handling a GreenGinza request
-@snapend
-
-@snap[midpoint span-100]
-```scala zoom-14
-def handle[[A]]((requestType: GreenGinzaRequestType, data: A)): Unit =
-  requestType match {
-    case GetAvailableCabins =>
-      val requestData = data.asInstanceOf[GetAvailableCabinsRequest]
-      // Do some stuff with the requestData
-      ()
-    ...
-    case CreateOption =>
-      val requestData = data.asInstanceOf[CreateOptionRequest]
-      // Do some stuff with the requestData
-      ()    
-  }
-...  
-handle(GetComponents)(new GetComponentsRequest)  
-handle(GetComponents)(new CreateOptionRequest)  
-```
-@snapend
-
-@snap[south span-100 text-gray text-14]
-@[1-12, zoom-14](Handler for requests; exhaustive match)
-@[14-14, zoom-14](Valid call to the handle function)
-@[15-15, zoom-14](Also a valid call to the handle function)
-@[15-15, zoom-14 red](Runtime error: java.lang.ClassCastException: CreateOptionRequest cannot be cast to GetComponentsRequest)
-@snapend
-
----
-
-@title[Bonus material]
-
-@snap[north-west]
-##### Enforce the right data when handling a GreenGinza request
-@snapend
-
-@snap[midpoint span-100]
-```scala zoom-14
-class GetAvailableCabinsRequest
-class GetComponentsRequest
-class CreateOptionRequest
-
-sealed trait GreenGinzaRequestType[A]
-case object GetAvailableCabins extends GreenGinzaRequestType[GetAvailableCabinsRequest]
-case object GetComponents extends GreenGinzaRequestType[GetComponentsRequest]
-case object CreateOption extends GreenGinzaRequestType[CreateOptionRequest]
-
-```
-@snapend
-
-@snap[south span-100 text-gray text-14]
-@[1-4, zoom-14](Dummy types representing the request associated data)
-@[1-5, zoom-14](GADTs for GreenGinza request types)
-@snapend
-
----
-
-@title[Bonus material]
-
-@snap[north-west]
-##### Enforce the right data when handling a GreenGinza request
-@snapend
-
-@snap[midpoint span-100]
-```scala zoom-14
-def handle[[A]](requestType: GreenGinzaRequestType[A])(data: A): Unit =
-  requestType match {
-    case GetAvailableCabins =>
-      val requestData: GetAvailableCabinsRequest = data
-      // Do some stuff with the requestData
-      ()
-    ...
-    case CreateOption =>
-      val requestData: CreateOptionRequest = data
-      // Do some stuff with the requestData
-      ()    
-  }
-...  
-handle(GetComponents)(new GetComponentsRequest)  
-handle(GetComponents)(new CreateOptionRequest)  
-```
-@snapend
-
-@snap[south span-100 text-gray text-14]
-@[1-12, zoom-14](Handler for requests; exhaustive match)
-@[14-14, zoom-14](Valid call to the handle function)
-@[15-15, zoom-14](Compile type error)
+@snap[west span-50]
+@ul[list-spaced-bullets text-white text-09]
+- Problem
+- Possible solutions
+@ulend
 @snapend
 
 ---
