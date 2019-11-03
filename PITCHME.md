@@ -699,10 +699,10 @@ package object greenginza {
 @snapend
 
 ---
-@title[Refinement types 2]
+@title[Approach 3: Refinement types 1]
 
 @snap[north-west]
-### Solution 3: Refinement types (1)
+#### Approach 3: Refinement types (1)
 @snapend
 
 @snap[midpoint span-100]
@@ -742,36 +742,27 @@ lookup(Germany, "ahls", "E45AK")
 ![Cartoon](https://media.giphy.com/media/m8crpzTJFRDPhqqhXJ/giphy.mp4)
 
 ---
-
-@title[Refinement types 2]
+@title[Approach 3: Refinement types 2]
 
 @snap[north-west]
-### Solution 3: Refinement types (1)
+#### Approach 3: Refinement types (2)
 @snapend
 
-@snap[west span-30]
+@snap[west span-100]
 @ul[list-spaced-bullets black text-07]
-Yes... we are done!
-Or... are we?
+- Yey!... we are done!
+- Or... are we?
 @ulend
 @snapend
 
 ---
-
-@title[Refinement types 2]
+@title[Approach 3: Refinement types 3]
 
 @snap[north-west]
-### Solution 3: Refinement types (1)
+#### Approach 3: Refinement types (3)
 @snapend
 
-@snap[west span-30]
-@ul[list-spaced-bullets black text-07]
-Yes... we are done!
-Or... are we?
-@ulend
-@snapend
-
-@snap[east span-70]
+@snap[west span-100]
 ```scala zoom-14
 import eu.timepit.refined._
 import eu.timepit.refined.auto._
@@ -800,7 +791,6 @@ lookup(Germany, "hal", "E45AK", "A1")
 @snapend
 
 ---
-
 @title[Refinement types 2]
 
 @snap[north-west]
