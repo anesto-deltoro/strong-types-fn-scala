@@ -695,11 +695,11 @@ package object greenginza {
 @title[Scala newtypes caveats]
 
 @snap[north-west]
-## Scala newtypes caveats
+## Newtypes caveats
 @snapend
 
 @snap[midpoint span-100]
-@ul[list-spaced-bullets black text-10]
+@ul[list-spaced-bullets black text-07]
 - Newtypes help us tremendously in our strongly-typed functions quest. But...
 - It requires smart constructors to validate input data, which adds boilerplate.
 - We end-up with a bittersweet feeling... 
