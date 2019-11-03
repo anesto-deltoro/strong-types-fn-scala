@@ -462,10 +462,12 @@ object ShipCode {
 @ul[list-spaced-bullets black text-07]
 - Haskell language provides a newtype keyword for creating new types from existing ones without runtime overhead.
 - The newtype scala library gives us zero-cost wrappers with no runtime overhead relying on macros.
+  - libraryDependencies += "io.estatico" %% "newtype" % "0.4.3"
+  - addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.full)
 - Newtypes will eventually be replaced by opaque types (Dotty, a subset in 2.14)
 @ulend
 @snapend
 
-@snap[south span-100]
+@snap[south span-100 text-08]
 [SCALA-NEWTYPE @fa[external-link]](https://github.com/estatico/scala-newtype)
 @snapend
