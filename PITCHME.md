@@ -663,11 +663,10 @@ package object greenginza {
 
 @snap[midpoint span-100]
 ```scala zoom-14
-import io.estatico.newtype.macros.newtype
-
 package object greenginza {
   @newtype class CompanyCode(val toStr: String)
   @newtype class ShipCode(val toStr: String)
+
   object CompanyCode {
     def fromString(str: String): Option[CompanyCode] = ...
   }
@@ -686,9 +685,9 @@ package object greenginza {
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[4-5, zoom-14](Define newtypes classes for CompanyCode and ShipCode)
-@[6-11, zoom-14](Specify our own smart constructors)
-@[14-19, zoom-14](Perform a ship lookup with valid parameters)
+@[2-3, zoom-14](Define newtypes classes for CompanyCode and ShipCode)
+@[5-10, zoom-14](Specify our own smart constructors)
+@[13-18, zoom-14](Perform a ship lookup with valid parameters)
 @snapend
 
 ---
