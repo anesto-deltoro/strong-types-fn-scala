@@ -132,7 +132,7 @@ def lookup(
 @snapend
 
 ---
-@title[Params: market]
+@title[Problem: params abstractions]
 
 @snap[north-east]
 #### Params abstractions
@@ -168,10 +168,10 @@ object Market extends Enum[Market] {
 @snapend
 
 ---
-@title[Value classes]
+@title[Approach 1: value classes]
 
 @snap[north-west]
-## Value classes
+## Approach 1: value classes
 @snapend
 
 @snap[midpoint span-100]
@@ -187,10 +187,10 @@ object Market extends Enum[Market] {
 @snapend
 
 ---
-@title[Solution1: value classes 1]
+@title[Approach 1: value classes 1]
 
 @snap[north-west]
-### Solution 1: value classes (1)
+### Approach 1: value classes (1)
 @snapend
 
 @snap[midpoint]
@@ -221,23 +221,21 @@ val ship = lookup(
 @snapend
 
 ---
-
-@title[Value classes 2a]
+@title[Approach 1: value classes 2a]
 
 @snap[north-west]
-### Solution 1: Value classes (2)
+### Approach 1: value classes (2)
 @snapend
 
 @snap[west span-40]
 @ul[list-spaced-bullets black text-09]
-Yey! We can no longer confuse the order of the parameters
-Or... can we?
+- Yey! We can't confuse the order of the parameters
+- Or... can we?
 @ulend
 @snapend
 
 ---
-
-@title[Value classes 2b]
+@title[Approach 1: value classes 2b]
 
 @snap[north-west]
 ### Solution 1: Value classes (2)
@@ -245,22 +243,22 @@ Or... can we?
 
 @snap[west span-40]
 @ul[list-spaced-bullets black text-09]
-Yey! We can no longer confuse the order of the parameters
-Or... can we?
+- Yey! We can't confuse the order of the parameters
+- Or... can we?
 @ulend
 @snapend
 
 @snap[east span-60]
 ```scala zoom-16
 val ship1 = def lookup(
-            market = Germany,
-            company = CompanyCode("E45AK"),
+            marketCode = Germany,
+            companyCode = CompanyCode("E45AK"),
             shipCode = ShipCode("hal")
            ): F[Ship]
            
 val ship2 = def lookup(
-            market = Germany,
-            company = CompanyCode("ahls"),
+            marketCode = Germany,
+            companyCode = CompanyCode("ahls"),
             shipCode = ShipCode("")
            ): F[Ship]
            
@@ -269,9 +267,9 @@ val ship2 = def lookup(
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[1-5, zoom-14](We still can mess the parameters)
-@[6-10, zoom-14](We still can create invalid instances)
-@[12-12, zoom-18](The compiler doesn’t help us and **that is all we need**)
+@[1-6, zoom-14](We still can mess the parameters)
+@[7-11, zoom-14](We still can create invalid instances)
+@[12-12, zoom-14](The compiler doesn’t help us and **that is all we need**)
 @snapend
 
 ---
