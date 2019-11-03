@@ -773,8 +773,36 @@ lookup(Germany, "ahls", "E45AK")
 @snapend
 
 ---
+
+![Cartoon](https://media.giphy.com/media/m8crpzTJFRDPhqqhXJ/giphy.mp4)
+
+---
+
+@title[Refinement types 2]
+
 @snap[north-west]
 ### Solution 3: Refinement types (1)
 @snapend
 
-![Cartoon](https://media.giphy.com/media/m8crpzTJFRDPhqqhXJ/giphy.mp4)
+@snap[west span-30]
+Yes... but Wait!
+@snapend
+
+@snap[east span-70]
+```scala zoom-14
+import eu.timepit.refined._
+import eu.timepit.refined.auto._
+import eu.timepit.refined.types.string.NonEmptyString
+
+def lookup(
+  market: MarketCode,
+  company: CompanyCode,
+  shipCode: NonEmptyString,
+  cabinCode: NonEmptyString
+): F[Cabin]
+```
+@snapend
+
+@snap[south span-100 text-gray text-14]
+@[8-9, zoom-14](Same refined type for more than param :()
+@snapend
