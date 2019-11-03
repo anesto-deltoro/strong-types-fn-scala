@@ -222,13 +222,13 @@ val ship = lookup(
 @snapend
 
 ---
-@title[Approach 1: value classes 2a]
+@title[Approach 1: value classes 2]
 
 @snap[north-west]
 ### Approach 1: value classes (2)
 @snapend
 
-@snap[west span-40]
+@snap[west span-100]
 @ul[list-spaced-bullets black text-09]
 - Yey! We can't confuse the order of the parameters
 - Or... can we?
@@ -236,20 +236,13 @@ val ship = lookup(
 @snapend
 
 ---
-@title[Approach 1: value classes 2b]
+@title[Approach 1: value classes 3]
 
 @snap[north-west]
-### Solution 1: Value classes (2)
+### Approach 1: Value classes (3)
 @snapend
 
-@snap[west span-40]
-@ul[list-spaced-bullets black text-09]
-- Yey! We can't confuse the order of the parameters
-- Or... can we?
-@ulend
-@snapend
-
-@snap[east span-60]
+@snap[east span-100]
 ```scala zoom-16
 val ship1 = def lookup(
             marketCode = Germany,
@@ -274,7 +267,6 @@ val ship2 = def lookup(
 @snapend
 
 ---
-
 @title[Value classes 3]
 
 @snap[north-west]
