@@ -519,7 +519,7 @@ package object greenginza {
 @title[Approach 2: scala newtype case class 3]
 
 @snap[north-west]
-#### Solution 2: Scala newtype case class (3)
+#### Approach 2: Scala newtype case class (3)
 @snapend
 
 @snap[midpoint span-100]
@@ -547,33 +547,24 @@ package object greenginza {
 @snapend
 
 ---
-
-@title[Scala newtype 1d]
+@title[Approach 2: scala newtype case class 4]
 
 @snap[north-west]
-#### Solution 2: Scala newtype case class (1)
+#### Approach 2: Scala newtype case class (4)
 @snapend
 
-@snap[west span-30]
+@snap[west span-100]
 @ul[list-spaced-bullets black small]
-Yey! We can't confuse the order ...
-But... wait!
+- Yey! We can't confuse the order ...
+- But... wait!
 @ulend
 @snapend
 
 ---
-
-@title[Scala newtype 1e]
+@title[Approach 2: scala newtype case class 5]
 
 @snap[north-west]
-#### Solution 2: Scala newtype case class (1)
-@snapend
-
-@snap[west span-30]
-@ul[list-spaced-bullets black small]
-Yey! We can't confuse the order ...
-But... wait!
-@ulend
+#### Approach 2: Scala newtype case class (5)
 @snapend
 
 @snap[east span-70]
