@@ -769,8 +769,7 @@ import eu.timepit.refined.auto._
 import eu.timepit.refined.types.string.NonEmptyString
 
 package object greenginza {
-  type CompanyCode =
-   String Refined MatchesRegex[W.'"[a-z]{3}"'.T]]
+  type CompanyCode = String Refined MatchesRegex[W.'"[a-z]{3}"'.T]]
 }
 
 def lookup(
