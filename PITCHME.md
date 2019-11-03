@@ -442,7 +442,7 @@ object ShipCode {
 
 @snap[midpoint span-100]
 @ul[list-spaced-bullets black text-07]
-- @size[xxx-large](**scala library newtype**)
+- @size[xxx-large](**Scala library newtype**)
   - @size[x-large](Haskell language provides a newtype keyword for creating new types from existing ones without runtime overhead.)
   - @size[x-large](The newtype scala library gives us zero-cost wrappers with no runtime overhead relying on macros.)
     - @size[large](libraryDependencies += "io.estatico" %% "newtype" % "0.4.3")
@@ -457,10 +457,10 @@ object ShipCode {
 
 ---
 
-@title[Scala newtype 1a]
+@title[Approach 2: scala newtype case class]
 
 @snap[north-west]
-#### Solution 2: Scala newtype case class (1)
+#### Approach 2: Scala newtype case class (1)
 @snapend
 
 @snap[midpoint span-100]
@@ -475,18 +475,17 @@ package object greenginza {
 ```
 @snapend
 
-@snap[south span-100 text-gray text-12]
-@[1-7, zoom-16](Defining the newtype for CompanyCode using *case class*)
-@[5-5, zoom-16](Using case class gives us a smart constructor (apply) that will accept an String value and return the newtype CompanyCode)
-@[5-5, zoom-16](Get an accessor extension method to get the underlying String (private*))
+@snap[south span-100 text-gray text-14]
+@[1-7, zoom-14](Defining the newtype for CompanyCode using *case class*)
+@[5-5, zoom-14](Using case class gives us a smart constructor (apply) that will accept an String value and return the newtype CompanyCode)
+@[5-5, zoom-14](Get an accessor extension method to get the underlying String (private*))
 @snapend
 
 ---
-
 @title[Scala newtype 1b]
 
 @snap[north-west]
-#### Solution 2: Scala newtype case class (1)
+#### Approach 2: Scala newtype case class (2)
 @snapend
 
 @snap[midpoint span-100]
@@ -507,7 +506,6 @@ package object greenginza {
       def toStr: String = $this$.asInstanceOf[String]
     }
   }
-
 }
 ```
 @snapend
@@ -519,7 +517,6 @@ package object greenginza {
 @snapend
 
 ---
-
 @title[Scala newtype 1c]
 
 @snap[north-west]
