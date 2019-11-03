@@ -480,7 +480,7 @@ object ShipCode {
 #### Solution 2: Scala newtype (1)
 @snapend
 
-@snap[north-west black h5]
+@snap[north-west black text-08]
 Defining newtypes for CompanyCode
 @snapend
 
