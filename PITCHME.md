@@ -25,9 +25,9 @@ com.dreamlines.connectivity
 @ul[list-spaced-bullets text-white text-09]
 - Problem
 - Possible solutions
-    - Value classes
-    - Newtypes
-    - Refinement types
+  - Value classes
+  - Newtypes
+  - Refinement types
 - Conclusions
 @ulend
 @snapend
@@ -39,7 +39,7 @@ com.dreamlines.connectivity
 ## Introduction
 @snapend
 
-@snap[midpoint span-100]
+@snap[midpoint span-100 text-10]
 One of the biggest benefits FP is that it lets us reason about functions by looking at their *type signature*. However...
 @snapend
 
