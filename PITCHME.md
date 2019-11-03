@@ -301,8 +301,7 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
   createCompanyCode("hal"),
   createShipCode("E45AK")
 ).mapN {
-  case (companyCode, shipCode) =>
-    lookup(Germany, companyCode, shipCode)
+  case (companyCode, shipCode) => lookup(Germany, companyCode, shipCode)
 }           
 ```
 @snapend
@@ -310,7 +309,7 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
 @snap[south span-100 text-gray text-14]
 @[1-3, zoom-14](Make case class constructors private)
 @[4-9, zoom-14](Provide functions that create a validated value)
-@[10-17, zoom-14](Perform a ship lookup with valid parameters...)
+@[10-16, zoom-14](Perform a ship lookup with valid parameters...)
 @snapend
 
 ---
