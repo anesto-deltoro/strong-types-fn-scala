@@ -748,16 +748,11 @@ import eu.timepit.refined.types.string.NonEmptyString
 import eu.timepit.refined.types.string.MatchesRegex
 
 package object greenginza {
-  type CompanyCode =
-    String Refined MatchesRegex[W.'"[a-z]{3}"'.T]]
+  type CompanyCode = String Refined MatchesRegex[W.'"[a-z]{3}"'.T]]
   type ShipCode = NonEmptyString
 }
 
-def lookup(
-  market: MarketCode,
-  company: CompanyCode,
-  shipCode: ShipCode
-): F[Ship]
+def lookup(market: MarketCode, company: CompanyCode, shipCode: ShipCode): F[Ship]
 ...
 lookup(Germany, "hal", "E45AK")
 lookup(Germany, "E45AK", "hal")
