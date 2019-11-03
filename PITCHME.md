@@ -722,9 +722,8 @@ package object greenginza {
 @ul[list-spaced-bullets black text-07]
 - It started as a port of the refined Haskell library
 - Is a Scala library for refining types with type-level predicates which constrain the set of values described by the refined type.
-- Refinement types allow us to validate data in compile time as well as in runtime.
+- Refinement types allow us to validate data in **compile time** as well as in runtime.
 - Multiple optional extensions and library integrations.
-
 @ulend
 @snapend
 
@@ -732,3 +731,83 @@ package object greenginza {
 [SIMPLE REFINEMENT TYPES FOR SCALA @fa[external-link]](https://github.com/fthomas/refined)
 @snapend
 
+---
+
+@title[Refinement types 1]
+
+@snap[north-west]
+### Solution 3: Refinement types (1)
+@snapend
+
+@snap[midpoint]
+```scala zoom-16
+libraryDependencies += "eu.timepit" %% "refined"                 % "0.9.10"
+...
+import eu.timepit.refined._
+import eu.timepit.refined.auto._
+import eu.timepit.refined.types.string.NonEmptyString
+import eu.timepit.refined.types.string.MatchesRegex
+
+package object greenginza {
+  type CompanyCode = String Refined MatchesRegex[W.`"[a-z]{3}"`.T]]
+  type ShipCode = NonEmptyString
+}
+
+def lookup(
+  market: MarketCode,
+  company: CompanyCode,
+  shipCode: ShipCode
+): F[Ship]
+```
+@snapend
+
+@snap[south span-100 text-gray text-14]
+@[1-1, zoom-14](Refinement library dependency)
+@[3-7, zoom-14](Required imports)
+@[10-16, zoom-14](Example of usage)
+@snapend
+
+---
+
+@title[Refinement types 2]
+
+@snap[north-west]
+### Solution 3: Refinement types (1)
+@snapend
+
+@snap[midpoint]
+```scala zoom-16
+libraryDependencies += "eu.timepit" %% "refined" % "0.9.10"
+...
+import eu.timepit.refined._
+import eu.timepit.refined.auto._
+import eu.timepit.refined.types.string.NonEmptyString
+import eu.timepit.refined.types.string.MatchesRegex
+
+package object greenginza {
+  type CompanyCode = String Refined MatchesRegex[W.`"[a-z]{3}"`.T]]
+  type ShipCode = NonEmptyString
+}
+
+def lookup(
+  market: MarketCode,
+  company: CompanyCode,
+  shipCode: ShipCode
+): F[Ship]
+...
+lookup(Germany, "hal", "E45AK")
+lookup(Germany, "E45AK", "hal")
+lookup(Germany, "hal", "")
+lookup(Germany, "ahls", "E45AK")
+```
+@snapend
+
+@snap[south span-100 text-gray text-14]
+@[1-1, zoom-14](Refinement library dependency)
+@[3-7, zoom-14](Required imports)
+@[10-16, zoom-14](Example of usage)
+@[18-18, zoom-14](Compiles)
+@[19-19, zoom-14](Error)
+@[20-20, zoom-14](Error)
+@[20-20, zoom-14](Error)
+@snapend
