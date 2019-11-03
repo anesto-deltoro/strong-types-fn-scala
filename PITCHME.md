@@ -833,3 +833,44 @@ lookup(Germany, "hal", "E45AK", "A1")
 @[13-14, zoom-14](Same refined type for more than param :()
 @[17-18, zoom-14](Again we can confuse the order of the parameters :()
 @snapend
+
+---
+
+@title[Refinement types 2]
+
+@snap[north-west]
+### Solution 4: Refinement types + newtypes (1)
+@snapend
+
+@snap[east span-100]
+```scala zoom-14
+import eu.timepit.refined._
+import eu.timepit.refined.auto._
+import eu.timepit.refined.types.string.NonEmptyString
+import eu.timepit.refined.types.string.MatchesRegex
+
+package object greenginza {
+  type CompanyCode = String Refined MatchesRegex[W.'"[a-z]{3}"'.T]]
+  @newtype case class ShipCode(value: NonEmptyString)
+  @newtype case class CabinCode(value: NonEmptyString)
+}
+
+def lookup(
+  market: MarketCode,
+  company: CompanyCode,
+  shipCode: ShipCode,
+  cabinCode: CabinCode
+): F[Cabin]
+...
+lookup(Germany, "hal", ShipCode("E45AK"), CabinCode("A1"))
+```
+@snapend
+
+@snap[south span-100 text-gray text-14]
+@[7-7, zoom-14](Refined type with regex based validation)
+@[8-9, zoom-14](These two types share the same validation rule (we use refinement types)
+@[8-9, zoom-14](but since they represent different concepts, we create a newtype for each of them))
+@[12-17, zoom-14](Final signature of the lookup function)
+@[19-19, zoom-14](Strong-typed scala function with compile type validation!)
+@snapend
+
