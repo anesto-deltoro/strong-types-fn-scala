@@ -471,3 +471,52 @@ object ShipCode {
 @snap[south span-100 text-08]
 [SCALA-NEWTYPE @fa[external-link]](https://github.com/estatico/scala-newtype)
 @snapend
+
+---
+
+@title[Scala newtype 1]
+
+@snap[north-west]
+#### Solution 2: Scala newtype (1)
+@snapend
+
+@snap[west span-50]
+```scala zoom-14
+import io.estatico.newtype.macros.newtype
+
+package object types {
+
+  @newtype case class CompanyCode(toStr: String)
+  @newtype case class ShipCode(toStr: String)
+  
+}
+```
+@snapend
+
+@snap[south span-100 text-gray text-14]
+@[5-6, zoom-14](Defining newtypes)
+@snapend
+
+@snap[east span-50]
+```scala zoom-14
+package object types {
+  type CompanyCode = CompanyCode.Type
+  object CompanyCode {
+    type Repr = Int
+    type Base = Any { type CompanyCode$newtype }
+    trait Tag extends Any
+    type Type <: Base with Tag
+
+    def apply(x: String): CompanyCode = x.asInstanceOf[CompanyCode]
+
+    implicit final class Ops$newtype(val $this$: Type) extends AnyVal {
+      def toStr: String = $this$.asInstanceOf[String]
+    }
+  }
+  type ShipCode = ShipCode.Type
+  object ShipCode {
+    ...
+  }
+}
+```
+@snapend
