@@ -387,16 +387,17 @@ object CompanyCode {
 ```scala zoom-16
 final case class ShipCode private(val value: String) extends AnyVal {
   private def copy() = ()
-  
 }
 
 object ShipCode {
   def apply(value: String): Option[CompanyCode] =
     if (value.nonEmpty) ShipCode(value).some else none[ShipCode]  
-
 }
 
-(CompanyCode("hal"), ShipCode("E45AK")).mapN {
+(
+  CompanyCode("hal"),
+  ShipCode("E45AK")
+).mapN {
   case (companyCode, shipCode) =>
     lookup(Germany, companyCode, shipCode)
 }  
@@ -404,9 +405,9 @@ object ShipCode {
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[2-3, zoom-14](Another possibility is to make the copy method private)
-@[7-9, zoom-14](Replace the generated apply method within the companion object)
-@[12-15, zoom-14](Example of usage)
+@[1-3, zoom-14](Another possibility is to make the copy method private)
+@[4-7, zoom-14](Replace the generated apply method within the companion object)
+@[10-16, zoom-14](Example of usage)
 @snapend
 
 ---
