@@ -724,18 +724,6 @@ package object greenginza {
 - Is a Scala library for refining types with type-level predicates which constrain the set of values described by the refined type.
 - Refinement types allow us to validate data in compile time as well as in runtime.
 - Multiple optional extensions and library integrations.
-libraryDependencies ++= Seq(
-  "eu.timepit" %% "refined"                 % "0.9.10",
-  "eu.timepit" %% "refined-cats"            % "0.9.10", // optional
-  "eu.timepit" %% "refined-eval"            % "0.9.10", // optional, JVM-only
-  "eu.timepit" %% "refined-jsonpath"        % "0.9.10", // optional, JVM-only
-  "eu.timepit" %% "refined-pureconfig"      % "0.9.10", // optional, JVM-only
-  "eu.timepit" %% "refined-scalacheck"      % "0.9.10", // optional
-  "eu.timepit" %% "refined-scalaz"          % "0.9.10", // optional
-  "eu.timepit" %% "refined-scodec"          % "0.9.10", // optional
-  "eu.timepit" %% "refined-scopt"           % "0.9.10", // optional
-  "eu.timepit" %% "refined-shapeless"       % "0.9.10"  // optional
-)
 
 @ulend
 @snapend
