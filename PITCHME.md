@@ -487,15 +487,14 @@ import io.estatico.newtype.macros.newtype
 package object greenginza {
 
   @newtype case class CompanyCode(toStr: String)
-  
-  @newtype case class ShipCode(toStr: String)
-  
+   
 }
 ```
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[5-7, zoom-16](Defining newtypes for CompanyCode and ShipCode)
+@[5-5, zoom-16](Defining newtypes for CompanyCode)
+@[5-5, zoom-16](Using case class gives us a smart constructor (apply) that will accept an String value and return the newtype CompanyCode)
 @snapend
 
 ---
@@ -535,3 +534,27 @@ package object greenginza {
 @[5-16, zoom-16](Generated code looks similar to the following)
 @snapend
 
+---
+
+@title[Scala newtype 1]
+
+@snap[north-west]
+#### Solution 2: Scala newtype (1)
+@snapend
+
+@snap[midpoint span-100]
+```scala zoom-16
+import io.estatico.newtype.macros.newtype
+
+package object greenginza {
+
+  ...
+  @newtype case class ShipCode(private toStr: String)
+  
+}
+```
+@snapend
+
+@snap[south span-100 text-gray text-14]
+@[6-6, zoom-16](Defining newtypes for ShipCode)
+@snapend
