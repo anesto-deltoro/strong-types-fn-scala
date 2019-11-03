@@ -910,7 +910,7 @@ class CreateOptionRequest
 
 @snap[midpoint span-100]
 ```scala zoom-14
-def handle[R](requestType: GreenGinzaRequestType)(data: A): Unit =
+def handle[[R]](requestType: GreenGinzaRequestType)(data: A): Unit =
   requestType match {
     case GetAvailableCabins =>
       val requestData = data.asInstanceOf[GetAvailableCabinsRequest]
