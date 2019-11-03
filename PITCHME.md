@@ -748,7 +748,8 @@ import eu.timepit.refined.types.string.NonEmptyString
 import eu.timepit.refined.types.string.MatchesRegex
 
 package object greenginza {
-  type CompanyCode = String Refined MatchesRegex[W.`"[a-z]{3}"`.T]]
+  type CompanyCode =
+    String Refined MatchesRegex[W.`"[a-z]{3}"`.T]]
   type ShipCode = NonEmptyString
 }
 
@@ -767,10 +768,10 @@ lookup(Germany, "ahls", "E45AK")
 
 @snap[south span-100 text-gray text-14]
 @[1-5, zoom-14](Required imports)
-@[6-10, zoom-14](Defining refinement types for CompanyCode and ShipCode)
-@[11-15, zoom-14](lookup function)
-@[17-17, zoom-14](Compiles)
-@[18-18, zoom-14](Error)
+@[6-11, zoom-14](Defining refinement types for CompanyCode and ShipCode)
+@[12-16, zoom-14](lookup function)
+@[18-18, zoom-14](Compiles)
 @[19-19, zoom-14](Error)
 @[20-20, zoom-14](Error)
+@[21-21, zoom-14](Error)
 @snapend
