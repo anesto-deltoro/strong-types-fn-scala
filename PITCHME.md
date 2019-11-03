@@ -296,9 +296,7 @@ def createShipCode(value: String): Option[ShipCode] =
 def createPolarCompanyCode(value: String): Option[CompanyCode] =
   if ("""[a-z]{3}""".r matches value) CompanyCode(value).some
   else none[CompanyCode]
-
 ...
-
 (
   createCompanyCode("hal"),
   createShipCode("E45AK")
@@ -311,8 +309,8 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
 
 @snap[south span-100 text-gray text-14]
 @[1-3, zoom-14](Make case class constructors private)
-@[4-11, zoom-14](Provide functions that create a validated value)
-@[13-19, zoom-14](Perform a ship lookup with valid parameters...)
+@[4-9, zoom-14](Provide functions that create a validated value)
+@[10-17, zoom-14](Perform a ship lookup with valid parameters...)
 @snapend
 
 ---
