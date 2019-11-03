@@ -823,11 +823,12 @@ def lookup(
   cabinCode: NonEmptyString
 ): F[Cabin]
 ...
-lookup(Germany, "hal", "A1", E45AK")
+lookup(Germany, "hal", "A1", "E45AK")
+lookup(Germany, "hal", "E45AK", "A1")
 ```
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[8-9, zoom-14](Same refined type for more than param :()
-@[12-12, zoom-14](Again we can confuse the order of the parameters :()
+@[12-13, zoom-14](Same refined type for more than param :()
+@[16-17, zoom-14](Again we can confuse the order of the parameters :()
 @snapend
