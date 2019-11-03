@@ -80,7 +80,7 @@ trait MappingService[F[_]] {
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[3-7, zoom-14](Do you see any problems with this function?)
+@[5-9, zoom-14](Do you see any problems with this function?)
 @snapend
 
 ---
