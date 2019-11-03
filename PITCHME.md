@@ -434,10 +434,10 @@ object ShipCode {
 @snapend
 
 ---
-@title[NewType]
+@title[Approach 2]
 
 @snap[north-west]
-## Scala library: newtype
+## Approach 2: scala library newtype
 @snapend
 
 @snap[midpoint span-100]
