@@ -369,10 +369,10 @@ Or... can we?
 
 ---
 
-@title[Value classes 6]
+@title[Value classes 6a]
 
 @snap[north-west]
-#### Solution 1: Value classes + factory methods (6)
+#### Solution 1: Value classes + factory methods (6a)
 @snapend
 
 @snap[west span-100]
@@ -396,10 +396,10 @@ object CompanyCode {
 
 ---
 
-@title[Value classes 6]
+@title[Value classes 6b]
 
 @snap[north-west]
-#### Solution 1: Value classes + factory methods (6)
+#### Solution 1: Value classes + factory methods (6b)
 @snapend
 
 @snap[west span-100]
@@ -414,7 +414,8 @@ object ShipCode {
 }
 
 (CompanyCode("hal"), ShipCode("E45AK")).mapN {
-  case (companyCode, shipCode) => lookup(Germany, companyCode, shipCode)
+  case (companyCode, shipCode) =>
+    ookup(Germany, companyCode, shipCode)
 }  
 ```
 @snapend
@@ -422,7 +423,7 @@ object ShipCode {
 @snap[south span-100 text-gray text-14]
 @[1-3, zoom-14](Another possibility is to make the copy method private)
 @[4-7, zoom-14](Replace the generated apply method within the companion object)
-@[8-12, zoom-14](Example of usage)
+@[8-13, zoom-14](Example of usage)
 @snapend
 
 ---
@@ -436,9 +437,29 @@ object ShipCode {
 @snap[midpoint span-100]
 @ul[list-spaced-bullets black text-09]
 - Value classes are fine if used with caution but they have limitations and performance issues.
-- The language can not guarantee that these primitive type wrappers won’t actually allocate more memory.
+- The language can not guarantee that these primitive type wrappers won’t actually allocate more memory. Is actually instantiated when:
+  - a value class is treated as another type.
+  - a value class is assigned to an array.
+  - doing runtime type tests, such as pattern matching.
 - A lot of boilerplate!!!
 @ulend
+@snapend
+
+@snap[south span-100]
+[VALUE CLASSES AND UNIVERSAL TRAITS @fa[external-link]](https://docs.scala-lang.org/overviews/core/value-classes.html)
+@snapend
+
+---
+
+@title[NewType]
+
+@snap[north-west]
+## Newtypes library
+@snapend
+
+@snap[midpoint span-100]
+The newtype library which gives us zero-cost wrappers with no runtime overhead
+One use case is to get the type safety of a data type without the runtime allocation overhead.
 @snapend
 
 @snap[south span-100]
