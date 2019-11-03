@@ -589,7 +589,7 @@ package object greenginza {
 @title[Approach 2b: scala newtype case class 1]
 
 @snap[north-west]
-#### Approach 2: Scala newtype class (2)
+#### Approach 2b: Scala newtype class (2)
 @snapend
 
 @snap[midpoint span-100]
@@ -624,7 +624,7 @@ package object greenginza {
 @title[Approach 2b: scala newtype case class 2]
 
 @snap[north-west]
-#### Approach 2: Scala newtype class (2)
+#### Approach 2b: Scala newtype class (2)
 @snapend
 
 @snap[midpoint span-100]
@@ -680,16 +680,17 @@ package object greenginza {
 @title[Refinement types]
 
 @snap[north-west]
-## Refinement types
+## Approach 3
 @snapend
 
 @snap[midpoint span-100]
 @ul[list-spaced-bullets black text-07]
-- It started as a port of the refined Haskell library
-- Is a Scala library for refining types with type-level predicates which constrain the set of values described by the refined type.
-- Refinement types allow us to validate data in **compile time** as well as in runtime.
-- Multiple optional extensions and library integrations.
-  - libraryDependencies += "eu.timepit" %% "refined" % "0.9.10"
+- @size[xxx-large](Refinement types)
+  - @size[x-large](It started as a port of the refined Haskell library)
+  - @size[x-large](Is a Scala library for refining types with type-level predicates which constrain the set of values described by the refined type.)
+  - @size[x-large](Refinement types allow us to validate data in **compile time** as well as in runtime.)
+  - @size[x-large](Multiple optional extensions and library integrations.)
+    - @size[large](libraryDependencies += "eu.timepit" %% "refined" % "0.9.10")
 @ulend
 @snapend
 
@@ -698,7 +699,6 @@ package object greenginza {
 @snapend
 
 ---
-
 @title[Refinement types 2]
 
 @snap[north-west]
