@@ -407,7 +407,7 @@ object ShipCode {
 @snap[south span-100 text-gray text-14]
 @[2-2, zoom-14](Another possibility is to make the copy method private)
 @[6-7, zoom-14](Replace the generated apply method within the companion object)
-@[10-16, zoom-14](Example of usage)
+@[9-16, zoom-14](Example of usage)
 @snapend
 
 ---
