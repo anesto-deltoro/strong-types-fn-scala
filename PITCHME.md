@@ -666,10 +666,8 @@ package object greenginza {
 import io.estatico.newtype.macros.newtype
 
 package object greenginza {
-
   @newtype class CompanyCode(val toStr: String)
   @newtype class ShipCode(val toStr: String)
-  
   object CompanyCode {
     def fromString(str: String): Option[CompanyCode] = ...
   }
@@ -679,8 +677,7 @@ package object greenginza {
 }
 ...
 (
-  CompanyCode.fromString("hal"),
-  ShipCode.fromString("E45AK")
+  CompanyCode.fromString("hal"), ShipCode.fromString("E45AK")
 ).mapN {
   case (companyCode, shipCode) =>
     lookup(Germany, companyCode, shipCode)
@@ -689,9 +686,9 @@ package object greenginza {
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[5-6, zoom-14](Define newtypes classes for CompanyCode and ShipCode)
-@[7-13, zoom-14](Specify our own smart constructors)
-@[7-13, zoom-14](Perform a ship lookup with valid parameters)
+@[4-5, zoom-14](Define newtypes classes for CompanyCode and ShipCode)
+@[6-11, zoom-14](Specify our own smart constructors)
+@[14-19, zoom-14](Perform a ship lookup with valid parameters)
 @snapend
 
 ---
