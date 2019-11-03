@@ -191,7 +191,7 @@ object Market extends Enum[Market] {
 @title[Approach 1: Value classes 1]
 
 @snap[north-west]
-#### Approach 1: Value classes (1)
+#### Approach 1: Value classes (1/10)
 @snapend
 
 @snap[west span-100]
@@ -225,7 +225,7 @@ val ship = lookup(
 @title[Approach 1: Value classes 2]
 
 @snap[north-west]
-#### Approach 1: Value classes (2)
+#### Approach 1: Value classes (2/10)
 @snapend
 
 @snap[west span-100]
@@ -239,7 +239,7 @@ val ship = lookup(
 @title[Approach 1: Value classes 3]
 
 @snap[north-west]
-#### Approach 1: Value classes (3)
+#### Approach 1: Value classes (3/10)
 @snapend
 
 @snap[west span-100]
@@ -269,7 +269,7 @@ val ship2 = def lookup(
 @title[Approach 1: Value classes 4]
 
 @snap[north-west]
-#### Approach 1: Value classes (4)
+#### Approach 1: Value classes (4/10)
 @snapend
 
 @snap[midpoing span-100]
@@ -282,7 +282,7 @@ A workaround is to make the case class constructors private and provide smart co
 @title[Approach 1a: Value classes+smart constructors 5]
 
 @snap[north-west]
-#### Approach 1a: Value classes+smart constructors (5)
+#### Approach 1a: Value classes+smart constructors (5/10)
 @snapend
 
 @snap[west span-100]
@@ -316,7 +316,7 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
 @title[Approach 1a: Value classes+smart constructors 6]
 
 @snap[north-west]
-#### Approach 1a: Value classes+smart constructors (6)
+#### Approach 1a: Value classes+smart constructors (6/10)
 @snapend
 
 @snap[west span-100]
@@ -330,7 +330,7 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
 @title[Approach 1a: Value classes+smart constructors 7]
 
 @snap[north-west]
-#### Approach 1a: Value classes+smart constructors (7)
+#### Approach 1a: Value classes+smart constructors (7/10)
 @snapend
 
 @snap[west span-100]
@@ -353,7 +353,7 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
 @title[Approach 1b: Value classes+factory methods 8]
 
 @snap[north-west]
-#### Approach 1b: Value classes + factory methods (8)
+#### Approach 1b: Value classes+factory methods (8/10)
 @snapend
 
 @snap[west span-100]
@@ -380,7 +380,7 @@ object CompanyCode {
 @title[Approach 1b: Value classes+factory methods 9]
 
 @snap[north-west]
-#### Approach 1b: Value classes+factory methods (9)
+#### Approach 1b: Value classes+factory methods (9/10)
 @snapend
 
 @snap[west span-100]
@@ -434,7 +434,6 @@ object ShipCode {
 @snapend
 
 ---
-
 @title[NewType]
 
 @snap[north-west]
