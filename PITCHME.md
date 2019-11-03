@@ -171,13 +171,14 @@ object Market extends Enum[Market] {
 @title[Approach 1: value classes]
 
 @snap[north-west]
-## Approach 1: value classes
+## Approach 1
 @snapend
 
 @snap[midpoint span-100]
 @ul[list-spaced-bullets black text-09]
-- Wrap a single primitive type and extend the AnyVal abstract class to avoid some runtime costs.
-- One use case is to get the type safety of a data type without the runtime allocation overhead.
+- Value classes
+  - Wrap a single primitive type and extend the AnyVal abstract class to avoid some runtime costs.
+  - One use case is to get the type safety of a data type without the runtime allocation overhead.
 @ulend
 
 @snapend
