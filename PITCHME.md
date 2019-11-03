@@ -835,8 +835,8 @@ lookup(Germany, "hal", ShipCode("E45AK"), CabinCode("A1"))
 ## Conclusions
 @snapend
 
-@snap[west span-50]
-@ul[list-spaced-bullets text-white text-09]
+@snap[west span-60]
+@ul[list-spaced-bullets text-white text-07]
 - We should be able to reason about functions by looking at their *type signature*.
 - We should rely more on the help of the compiler.
 - Aim for type safety without runtime allocation overhead.
