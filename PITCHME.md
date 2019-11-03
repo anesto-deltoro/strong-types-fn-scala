@@ -456,10 +456,10 @@ object ShipCode {
 @snapend
 
 ---
-@title[Approach 2: scala newtype case class 1]
+@title[Approach 2a: scala newtype case class 1]
 
 @snap[north-west]
-#### Approach 2: Scala newtype case class (1)
+#### Approach 2a: Scala newtype case class (1)
 @snapend
 
 @snap[midpoint span-100]
@@ -481,10 +481,10 @@ package object greenginza {
 @snapend
 
 ---
-@title[Approach 2: scala newtype case class 2]
+@title[Approach 2a: scala newtype case class 2]
 
 @snap[north-west]
-#### Approach 2: Scala newtype case class (2)
+#### Approach 2a: Scala newtype case class (2)
 @snapend
 
 @snap[midpoint span-100]
@@ -516,10 +516,10 @@ package object greenginza {
 @snapend
 
 ---
-@title[Approach 2: scala newtype case class 3]
+@title[Approach 2a: scala newtype case class 3]
 
 @snap[north-west]
-#### Approach 2: Scala newtype case class (3)
+#### Approach 2a: Scala newtype case class (3)
 @snapend
 
 @snap[midpoint span-100]
@@ -547,10 +547,10 @@ package object greenginza {
 @snapend
 
 ---
-@title[Approach 2: scala newtype case class 4]
+@title[Approach 2a: scala newtype case class 4]
 
 @snap[north-west]
-#### Approach 2: Scala newtype case class (4)
+#### Approach 2a: Scala newtype case class (4)
 @snapend
 
 @snap[west span-100]
@@ -561,10 +561,10 @@ package object greenginza {
 @snapend
 
 ---
-@title[Approach 2: scala newtype case class 5]
+@title[Approach 2a: scala newtype case class 5]
 
 @snap[north-west]
-#### Approach 2: Scala newtype case class (5)
+#### Approach 2a: Scala newtype case class (5)
 @snapend
 
 @snap[east span-70]
@@ -585,11 +585,10 @@ package object greenginza {
 @snapend
 
 ---
-
-@title[Scala newtype 2a]
+@title[Approach 2b: scala newtype case class 1]
 
 @snap[north-west]
-#### Solution 2: Scala newtype class (2)
+#### Approach 2: Scala newtype class (2)
 @snapend
 
 @snap[midpoint span-100]
@@ -621,11 +620,10 @@ package object greenginza {
 @snapend
 
 ---
-
-@title[Scala newtype 2b]
+@title[Approach 2b: scala newtype case class 2]
 
 @snap[north-west]
-#### Solution 2: Scala newtype class (2)
+#### Approach 2: Scala newtype class (2)
 @snapend
 
 @snap[midpoint span-100]
@@ -658,7 +656,6 @@ package object greenginza {
 @snapend
 
 ---
-
 @title[Scala newtypes caveats]
 
 @snap[north-west]
