@@ -172,8 +172,11 @@ object Market extends Enum[Market] {
 @snapend
 
 @snap[midpoint span-100]
-Wrap a single primitive type and extend the AnyVal abstract class to avoid some runtime costs.
-One use case is to get the type safety of a data type without the runtime allocation overhead.
+@ul[list-spaced-bullets black text-14]
+- Wrap a single primitive type and extend the AnyVal abstract class to avoid some runtime costs.
+- One use case is to get the type safety of a data type without the runtime allocation overhead.
+@ulend
+
 @snapend
 
 @snap[south span-100]
@@ -240,8 +243,8 @@ Or... can we?
 
 @snap[west span-40]
 @ul[list-spaced-bullets black text-09]
-Yey! We can no longer confuse the order of the parameters
-Or... can we?
+- Yey! We can no longer confuse the order of the parameters
+- Or... can we?
 @ulend
 @snapend
 
@@ -265,7 +268,7 @@ val ship2 = def lookup(
 
 @snap[south span-100 text-gray text-14]
 @[1-5, zoom-14](We still can mess the parameters)
-@[6-10, zoom-14](Validation is missing)
+@[6-10, zoom-14](We still can create invalid instances)
 @[12-12, zoom-18](The compiler doesn’t help us and **that is all we need**)
 @snapend
 
