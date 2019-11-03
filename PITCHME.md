@@ -649,8 +649,8 @@ package object greenginza {
 @[5-5, zoom-16](Defining the newtype for CompanyCode using *class*)
 @[5-5, zoom-16](Using class will not generate a smart constructor (apply))
 @[5-5, zoom-16](Accessor method for the underlying value can be achieved with *val*)
-@[7-14, zoom-16](We can specify our own smart constructor)
-@[9-9, zoom-16](Use the .coerce extension method to cast to the newtype)
+@[9-12, zoom-16](We can specify our own smart constructor)
+@[10-10, zoom-16](Use the .coerce extension method to cast to the newtype)
 @snapend
 
 ---
