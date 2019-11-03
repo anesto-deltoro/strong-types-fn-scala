@@ -493,7 +493,7 @@ package object greenginza {
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[1-6 zoom-16](Defining the newtype for CompanyCode)
+@[1-6 zoom-16](Defining the newtype for CompanyCode using *case class*)
 @[5-5 zoom-16](Using case class gives us a smart constructor (apply) that will accept an String value and return the newtype CompanyCode)
 @[5-5 zoom-16](Get an accessor extension method to get the underlying String (private))
 @snapend
@@ -530,9 +530,9 @@ package object greenginza {
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[5-16, zoom-16](Generated code looks similar to the following)
+@[5-16, zoom-16](Generated code looks similar this)
 @[11-11 zoom-16](Smart constructor (apply) that accept an String value and return the newtype CompanyCode)
-@[13-15 zoom-16](Accessor method for your underlying value)
+@[13-15 zoom-16](Accessor method for the underlying value)
 @snapend
 
 ---
@@ -550,13 +550,44 @@ import io.estatico.newtype.macros.newtype
 package object greenginza {
 
   @newtype class ShipCode(val toStr: String)
-  @newtype class ShipCode(private val toStr: String)
   
+  object ShipCode {
+    def fromString(str: String): Option[String] = {
+      if (str.nonEmpty) Some(str.coerce)
+      else none[ShipCode]
+    }
+  }
 }
 ```
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[6-6, zoom-16](Defining newtypes for ShipCode)
-@[6-6 zoom-16](Using class will not generate a smart constructor (apply))
+@[5-5 zoom-16](Defining the newtype for CompanyCode using *class*)
+@[5-5 zoom-16](Accessor method for the underlying value can be achieved with *val*)
+@[7-12 zoom-16](Using class will not generate a smart constructor (apply). We can specify our own)
+@[9-9 zoom-16](Use the .coerce extension method to cast to your newtype)
+@snapend
+
+---
+
+@title[Scala newtype 1d]
+
+@snap[north-west]
+#### Solution 2: Scala newtype (1)
+@snapend
+
+@snap[midpoint span-100]
+```scala zoom-14
+(
+  CompanyCode("hal"),
+  ShipCode.fromString("E45AK")
+).mapN {
+  case (companyCode, shipCode) =>
+    lookup(Germany, companyCode, shipCode)
+}
+```
+@snapend
+
+@snap[south span-100 text-gray text-14]
+@[1-7, zoom-16](Example of usage)
 @snapend
