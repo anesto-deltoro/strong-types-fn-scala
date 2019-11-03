@@ -688,5 +688,49 @@ package object greenginza {
 @snap[south span-100 text-gray text-14]
 @[5-6, zoom-14](Define newtypes classes for CompanyCode and ShipCode)
 @[7-13, zoom-14](Specify our own smart constructors)
-@[7-13, zoom-14](Perform a ship lookup with valid parameters. Yey!)
+@[7-13, zoom-14](Perform a ship lookup with valid parameters)
+@snapend
+
+---
+
+@title[Scala newtype 1d]
+
+@snap[north-west]
+#### Solution 2: Scala newtype case class (1)
+@snapend
+
+@snap[west span-30]
+@ul[list-spaced-bullets black small]
+- Yey! We can't confuse the order ...
+- Yey! We can't create invalid instances ...
+- Or... can we?
+@ulend
+@snapend
+
+---
+
+@title[Scala newtype 1c]
+
+@snap[north-west]
+#### Solution 2: Scala newtype case class (1)
+@snapend
+
+@snap[west span-30]
+@ul[list-spaced-bullets black small]
+- Yey! We can't confuse the order ...
+- Yey! We can't create invalid instances ...
+- Or... can we?
+@ulend
+@snapend
+
+@snap[east span-70]
+```scala zoom-16
+(
+  "ahls".coerce[CompanyCode],
+  "".coerce[ShipCode]
+).mapN {
+  case (companyCode, shipCode) =>
+    lookup(Germany, companyCode, shipCode)
+}       
+```
 @snapend
