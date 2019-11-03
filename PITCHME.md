@@ -434,7 +434,7 @@ object ShipCode {
 ## Value classes caveats
 @snapend
 
-@snap[south span-90]
+@snap[midpoint span-90]
 @ul[list-spaced-bullets black text-06]
 - Value classes are fine if used with caution but they have limitations and performance issues.
 - The language can not guarantee that these primitive type wrappers won’t actually allocate more memory. Is actually instantiated when:
@@ -445,7 +445,7 @@ object ShipCode {
 @ulend
 @snapend
 
-@snap[south span-10]
+@snap[south span-50]
 [VALUE CLASSES AND UNIVERSAL TRAITS @fa[external-link]](https://docs.scala-lang.org/overviews/core/value-classes.html)
 @snapend
 
