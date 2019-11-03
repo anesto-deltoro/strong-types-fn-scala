@@ -158,10 +158,12 @@ object Market extends Enum[Market] {
   implicit val CirceEncoder: Encoder[Market] = ...
   implicit val CirceDecoder: Decoder[Market] = ...
 }
+
 ```
 @snapend
 
-@snap[south span-100 text-red text-18]
+@snap[south span-100 text-black text-18]
+@[1-18, zoom-18](Param marketCode => approach recently introduced by Chris in DragonFly)
 @[19-19, zoom-18](companyCode & shipCode?)
 @snapend
 
