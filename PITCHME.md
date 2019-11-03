@@ -437,16 +437,17 @@ object ShipCode {
 @title[Approach 2]
 
 @snap[north-west]
-## Approach 2: scala library newtype
+## Approach 2
 @snapend
 
 @snap[midpoint span-100]
 @ul[list-spaced-bullets black text-07]
-- Haskell language provides a newtype keyword for creating new types from existing ones without runtime overhead.
-- The newtype scala library gives us zero-cost wrappers with no runtime overhead relying on macros.
-  - libraryDependencies += "io.estatico" %% "newtype" % "0.4.3"
-  - addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.full)
-- Newtypes will eventually be replaced by opaque types (Dotty, a subset in 2.14)
+- @size[xxx-large](**scala library newtype**)
+  - Haskell language provides a newtype keyword for creating new types from existing ones without runtime overhead.
+  - The newtype scala library gives us zero-cost wrappers with no runtime overhead relying on macros.
+    - libraryDependencies += "io.estatico" %% "newtype" % "0.4.3"
+    - addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.full)
+  - Newtypes will eventually be replaced by opaque types (Dotty, a subset in 2.14)
 @ulend
 @snapend
 
