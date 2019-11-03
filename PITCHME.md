@@ -459,10 +459,13 @@ object ShipCode {
 @snapend
 
 @snap[midpoint span-100]
-The newtype library which gives us zero-cost wrappers with no runtime overhead
-One use case is to get the type safety of a data type without the runtime allocation overhead.
+@ul[list-spaced-bullets black text-07]
+- Haskell language provides a newtype keyword for creating new types from existing ones without runtime overhead.
+- The newtype scala library gives us zero-cost wrappers with no runtime overhead relying on macros.
+- Newtypes will eventually be replaced by opaque types (Dotty, a subset in 2.14)
+@ulend
 @snapend
 
 @snap[south span-100]
-[VALUE CLASSES AND UNIVERSAL TRAITS @fa[external-link]](https://docs.scala-lang.org/overviews/core/value-classes.html)
+[SCALA-NEWTYPE @fa[external-link]](https://github.com/estatico/scala-newtype)
 @snapend
