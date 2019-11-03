@@ -813,7 +813,8 @@ import eu.timepit.refined.auto._
 import eu.timepit.refined.types.string.NonEmptyString
 
 package object greenginza {
-  type CompanyCode = String Refined MatchesRegex[W.'"[a-z]{3}"'.T]]
+  type CompanyCode =
+   String Refined MatchesRegex[W.'"[a-z]{3}"'.T]]
 }
 
 def lookup(
@@ -829,6 +830,6 @@ lookup(Germany, "hal", "E45AK", "A1")
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[12-13, zoom-14](Same refined type for more than param :()
-@[16-17, zoom-14](Again we can confuse the order of the parameters :()
+@[13-14, zoom-14](Same refined type for more than param :()
+@[17-18, zoom-14](Again we can confuse the order of the parameters :()
 @snapend
