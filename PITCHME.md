@@ -2,7 +2,7 @@
 
 @title[Title slide]
 @snap[midpoint span-100]
-## Exploring </br> strong-typed functions </br> in Scala
+## Exploring </br> strong-typed functions in Scala
 @snapend
 
 @snap[south span-100 text-white small]
