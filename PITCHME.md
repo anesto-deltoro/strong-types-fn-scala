@@ -83,20 +83,19 @@ trait MappingService[F[_]] {
 @[5-9, zoom-14](Do you see any problems with this function?)
 @snapend
 
----
-
-@title[Problems]
+---?color=linear-gradient(90deg, white 35%, #5384AD 65%)
+@title[Problem 2]
 
 @snap[north-east]
-### Issues
+#### Issues
 @snapend
 
 @snap[west span-35]
 ```scala zoom-12
 def lookup(
- market: String,
- company: String,
- shipCode: String
+  marketCode: String,
+  companyCode: String,
+  shipCode: String
 ): F[Ship]
 ```
 @snapend
@@ -104,8 +103,8 @@ def lookup(
 @snap[east span-65]
 @ul[list-spaced-bullets black text-09]
 - Easy to:
-    - confuse the order of the parameters
-    - feed our function with invalid data
+  - confuse the order of the parameters
+  - feed our function with invalid data
 @ulend
 @snapend
 
