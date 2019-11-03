@@ -166,7 +166,6 @@ object Market extends Enum[Market] {
 @snapend
 
 ---
-
 @title[Value classes]
 
 @snap[north-west]
@@ -186,31 +185,30 @@ object Market extends Enum[Market] {
 @snapend
 
 ---
-
-@title[Value classes 1]
+@title[Solution1: value classes 1]
 
 @snap[north-west]
-### Solution 1: Value classes (1)
+### Solution 1: value classes (1)
 @snapend
 
 @snap[midpoint]
 ```scala zoom-16
-final case class CompanyCode(val value: String) extends AnyVal
-final case class ShipCode(val value: String) extends AnyVal
+case class CompanyCode(val value: String) extends AnyVal
+case class ShipCode(val value: String) extends AnyVal
 
 def lookup(
-  market: MarketCode,
-  company: CompanyCode,
+  marketCode: MarketCode,
+  companyCode: CompanyCode,
   shipCode: ShipCode
 ): F[Ship]
 
 ...
 
-val ship = def lookup(
-            market = Germany,
-            company = CompanyCode("hal"),
-            shipCode = ShipCode("E45AK")
-           ): F[Ship]
+val ship = lookup(
+  marketCode = Germany,
+  companyCode = CompanyCode("hal"),
+  shipCode = ShipCode("E45AK")
+)
 ```
 @snapend
 
