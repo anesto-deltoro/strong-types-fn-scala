@@ -188,10 +188,10 @@ object Market extends Enum[Market] {
 @snapend
 
 ---
-@title[Approach 1: value classes 1]
+@title[Approach 1: Value classes 1]
 
 @snap[north-west]
-### Approach 1: value classes (1)
+### Approach 1: Value classes (1)
 @snapend
 
 @snap[midpoint]
@@ -222,10 +222,10 @@ val ship = lookup(
 @snapend
 
 ---
-@title[Approach 1: value classes 2]
+@title[Approach 1: Value classes 2]
 
 @snap[north-west]
-### Approach 1: value classes (2)
+### Approach 1: Value classes (2)
 @snapend
 
 @snap[west span-100]
@@ -236,7 +236,7 @@ val ship = lookup(
 @snapend
 
 ---
-@title[Approach 1: value classes 3]
+@title[Approach 1: Value classes 3]
 
 @snap[north-west]
 ### Approach 1: Value classes (3)
@@ -255,8 +255,7 @@ val ship2 = def lookup(
             companyCode = CompanyCode("ahls"),
             shipCode = ShipCode("")
            ): F[Ship]
-           
-...           
+      
 ```
 @snapend
 
@@ -267,10 +266,10 @@ val ship2 = def lookup(
 @snapend
 
 ---
-@title[Value classes 3]
+@title[Value classes 4]
 
 @snap[north-west]
-### Solution 1: Value classes (3)
+### Approach 1: Value classes (4)
 @snapend
 
 @snap[midpoing span-100]
