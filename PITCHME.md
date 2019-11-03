@@ -456,8 +456,7 @@ object ShipCode {
 @snapend
 
 ---
-
-@title[Approach 2: scala newtype case class]
+@title[Approach 2: scala newtype case class 1]
 
 @snap[north-west]
 #### Approach 2: Scala newtype case class (1)
@@ -482,7 +481,7 @@ package object greenginza {
 @snapend
 
 ---
-@title[Scala newtype 1b]
+@title[Approach 2: scala newtype case class 2]
 
 @snap[north-west]
 #### Approach 2: Scala newtype case class (2)
@@ -517,10 +516,10 @@ package object greenginza {
 @snapend
 
 ---
-@title[Scala newtype 1c]
+@title[Approach 2: scala newtype case class 3]
 
 @snap[north-west]
-#### Solution 2: Scala newtype case class (1)
+#### Solution 2: Scala newtype case class (3)
 @snapend
 
 @snap[midpoint span-100]
@@ -544,7 +543,7 @@ package object greenginza {
 
 @snap[south span-100 text-gray text-14]
 @[4-5, zoom-14](Define newtypes case classes for CompanyCode and ShipCode)
-@[13-19, zoom-14](Perform a ship lookup with valid parameters...)
+@[8-14, zoom-14](Perform a ship lookup with valid parameters...)
 @snapend
 
 ---
