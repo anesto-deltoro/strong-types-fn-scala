@@ -480,6 +480,10 @@ object ShipCode {
 #### Solution 2: Scala newtype (1)
 @snapend
 
+@snap[north-west black h5]
+Defining newtypes for CompanyCode
+@snapend
+
 @snap[midpoint span-100]
 ```scala zoom-16
 import io.estatico.newtype.macros.newtype
@@ -494,7 +498,6 @@ package object greenginza {
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[5-6, zoom-16](Defining newtypes for CompanyCode)
 @[5-5 zoom-16](Using case class gives us a smart constructor (apply) that will accept an String value and return the newtype CompanyCode)
 @[5-5 zoom-16](Get an accessor extension method to get the underlying String)
 @[6-6 zoom-16](We can prevent this by defining the field as private)
