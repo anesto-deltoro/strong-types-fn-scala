@@ -556,7 +556,7 @@ package object greenginza {
 @snap[west span-100]
 @ul[list-spaced-bullets black small]
 - Yey! We can't confuse the order ...
-- But... wait!
+- Or... can we?
 @ulend
 @snapend
 
@@ -575,7 +575,8 @@ package object greenginza {
 ).mapN {
   case (companyCode, shipCode) =>
     lookup(Germany, companyCode, shipCode)
-}       
+} 
+    
 ```
 @snapend
 
