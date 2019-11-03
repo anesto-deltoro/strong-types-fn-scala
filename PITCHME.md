@@ -90,7 +90,7 @@ trait MappingService[F[_]] {
 #### Issues
 @snapend
 
-@snap[west span-35]
+@snap[west span-40]
 ```scala zoom-12
 def lookup(
   marketCode: String,
@@ -100,7 +100,7 @@ def lookup(
 ```
 @snapend
 
-@snap[east span-65]
+@snap[east span-60]
 @ul[list-spaced-bullets black text-09]
 - Easy to:
   - confuse the order of the parameters
