@@ -749,7 +749,7 @@ import eu.timepit.refined.types.string.MatchesRegex
 
 package object greenginza {
   type CompanyCode =
-    String Refined MatchesRegex[W.``"[a-z]{3}"``.T]]
+    String Refined MatchesRegex[W.'"[a-z]{3}"'.T]]
   type ShipCode = NonEmptyString
 }
 
