@@ -373,7 +373,7 @@ object CompanyCode {
 
 @snap[south span-100 text-gray text-14]
 @[2-2, zoom-14](Copy should be replaced)
-@[7-9, zoom-14](Replace the generated apply method within the companion object)
+@[7-9, zoom-14](Replace* the generated apply method within the companion object)
 @snapend
 
 ---
@@ -386,7 +386,8 @@ object CompanyCode {
 @snap[west span-100]
 ```scala zoom-16
 final case class ShipCode private(val value: String) extends AnyVal {
-  private def copy() = ()  
+  private def copy() = ()
+  
 }
 
 object ShipCode {
@@ -394,7 +395,10 @@ object ShipCode {
     if (value.nonEmpty) ShipCode(value).some else none[ShipCode]  
 }
 
-(CompanyCode("hal"), ShipCode("E45AK")).mapN {
+(
+  CompanyCode("hal"),
+  ShipCode("E45AK")
+).mapN {
   case (companyCode, shipCode) =>
     lookup(Germany, companyCode, shipCode)
 }  
@@ -403,8 +407,8 @@ object ShipCode {
 
 @snap[south span-100 text-gray text-14]
 @[2-2, zoom-14](Another possibility is to make the copy method private)
-@[5-9, zoom-14](Replace the generated apply method within the companion object)
-@[10-13, zoom-14](Example of usage)
+@[7-8, zoom-14](Replace the generated apply method within the companion object)
+@[11-17, zoom-14](Example of usage)
 @snapend
 
 ---
