@@ -495,8 +495,7 @@ package object greenginza {
 @snap[south span-100 text-gray text-14]
 @[1-6 zoom-16](Defining the newtype for CompanyCode)
 @[5-5 zoom-16](Using case class gives us a smart constructor (apply) that will accept an String value and return the newtype CompanyCode)
-@[5-5 zoom-16](Get an accessor extension method to get the underlying String)
-@[5-5 zoom-16](We can prevent this by defining the field as private)
+@[5-5 zoom-16](Get an accessor extension method to get the underlying String (private))
 @snapend
 
 ---
