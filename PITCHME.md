@@ -692,44 +692,55 @@ package object greenginza {
 
 ---
 
-@title[Scala newtype 1d]
+@title[Scala newtypes caveats]
 
 @snap[north-west]
-#### Solution 2: Scala newtype case class (1)
+## Scala newtypes caveats
 @snapend
 
-@snap[west span-30]
-@ul[list-spaced-bullets black small]
-- Yey! We can't confuse the order ...
-- Yey! We can't create invalid instances ...
-- Or... can we?
+@snap[midpoint span-100]
+@ul[list-spaced-bullets black text-10]
+- Newtypes help us tremendously in our strongly-typed functions quest. But...
+- It requires smart constructors to validate input data, which adds boilerplate.
+- We end-up with a bittersweet feeling... 
 @ulend
+@snapend
+
+@snap[south span-100 text-08]
+[SCALA-NEWTYPE @fa[external-link]](https://github.com/estatico/scala-newtype)
 @snapend
 
 ---
 
-@title[Scala newtype 1c]
+@title[Refinement types]
 
 @snap[north-west]
-#### Solution 2: Scala newtype case class (1)
+## Refinement types
 @snapend
 
-@snap[west span-30]
-@ul[list-spaced-bullets black small]
-- Yey! We can't confuse the order ...
-- Yey! We can't create invalid instances ...
-- Or... can we?
+@snap[midpoint span-100]
+@ul[list-spaced-bullets black text-07]
+- It started as a port of the refined Haskell library
+- Is a Scala library for refining types with type-level predicates which constrain the set of values described by the refined type.
+- Refinement types allow us to validate data in compile time as well as in runtime.
+- Multiple optional extensions and library integrations.
+libraryDependencies ++= Seq(
+  "eu.timepit" %% "refined"                 % "0.9.10",
+  "eu.timepit" %% "refined-cats"            % "0.9.10", // optional
+  "eu.timepit" %% "refined-eval"            % "0.9.10", // optional, JVM-only
+  "eu.timepit" %% "refined-jsonpath"        % "0.9.10", // optional, JVM-only
+  "eu.timepit" %% "refined-pureconfig"      % "0.9.10", // optional, JVM-only
+  "eu.timepit" %% "refined-scalacheck"      % "0.9.10", // optional
+  "eu.timepit" %% "refined-scalaz"          % "0.9.10", // optional
+  "eu.timepit" %% "refined-scodec"          % "0.9.10", // optional
+  "eu.timepit" %% "refined-scopt"           % "0.9.10", // optional
+  "eu.timepit" %% "refined-shapeless"       % "0.9.10"  // optional
+)
+
 @ulend
 @snapend
 
-@snap[east span-70]
-```scala zoom-16
-(
-  "ahls".coerce[CompanyCode],
-  "".coerce[ShipCode]
-).mapN {
-  case (companyCode, shipCode) =>
-    lookup(Germany, companyCode, shipCode)
-}       
-```
+@snap[south span-100 text-08]
+[SIMPLE REFINEMENT TYPES FOR SCALA @fa[external-link]](https://github.com/fthomas/refined)
 @snapend
+
