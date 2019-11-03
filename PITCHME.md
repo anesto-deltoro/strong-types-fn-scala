@@ -484,9 +484,10 @@ object ShipCode {
 ```scala zoom-16
 import io.estatico.newtype.macros.newtype
 
-package object types {
+package object greenginza {
 
   @newtype case class CompanyCode(toStr: String)
+  
   @newtype case class ShipCode(toStr: String)
   
 }
@@ -494,7 +495,7 @@ package object types {
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[5-6, zoom-16](Defining newtypes for CompanyCode and ShipCode)
+@[5-7, zoom-16](Defining newtypes for CompanyCode and ShipCode)
 @snapend
 
 ---
@@ -507,7 +508,8 @@ package object types {
 
 @snap[midpoint span-100]
 ```scala zoom-14
-package object types {
+package object greenginza {
+
   type CompanyCode = CompanyCode.Type
   
   object CompanyCode {
@@ -524,10 +526,12 @@ package object types {
   }
   
   type ShipCode = ShipCode.Type
-  
-  object ShipCode {
     ...
-  }
 }
 ```
 @snapend
+
+@snap[south span-100 text-gray text-14]
+@[5-16, zoom-16](Generated code looks similar to the following)
+@snapend
+
