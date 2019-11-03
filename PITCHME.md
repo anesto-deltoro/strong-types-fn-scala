@@ -839,7 +839,7 @@ lookup(Germany, "hal", "E45AK", "A1")
 @title[Refinement types 2]
 
 @snap[north-west]
-### Solution 4: Refinement types + newtypes (1)
+#### Solution 4: Refinement types + newtypes (1)
 @snapend
 
 @snap[east span-100]
