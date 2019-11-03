@@ -33,7 +33,7 @@ com.dreamlines.connectivity
 @snapend
 
 ---
-@title[Problem]
+@title[Introduction 1]
 
 @snap[north-west]
 ## Introduction
@@ -46,31 +46,35 @@ In practice, however...
 @snapend
 
 ---
-@title[Problem]
+@title[Introduction 2]
 
 @snap[north-west]
 ## Introduction
 @snapend
 
-@snap[midpoint span-100]
+@snap[midpoint span-100 text-16]
 **We often end up with weakly-typed functions**
 @snapend
 
 ---
+@title[Problem 1]
 
 @snap[north-east]
-### Let the code do the talking!
+#### Let the code do the talking!
 @snapend
 
 @snap[midpoint span-110]
 ```scala zoom-12
 trait MappingService[F[_]] {
+
   type Ship
+  
   def lookup(
-    market: String,
-    company: String,
+    marketCode: String,
+    companyCode: String,
     shipCode: String
   ): F[Ship]
+  
 }
 ```
 @snapend
