@@ -771,3 +771,10 @@ lookup(Germany, "ahls", "E45AK")
 @[16-16, zoom-14](Error)
 @[17-17, zoom-14](Error)
 @snapend
+
+---
+@snap[north-west]
+### Solution 3: Refinement types (1)
+@snapend
+
+![Cartoon](https://media.giphy.com/media/m8crpzTJFRDPhqqhXJ/giphy.mp4)
