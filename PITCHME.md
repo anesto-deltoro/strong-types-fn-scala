@@ -480,8 +480,8 @@ object ShipCode {
 #### Solution 2: Scala newtype (1)
 @snapend
 
-@snap[west span-40]
-```scala zoom-14
+@snap[midpoint span-100]
+```scala zoom-16
 import io.estatico.newtype.macros.newtype
 
 package object types {
@@ -494,13 +494,22 @@ package object types {
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[5-6, zoom-14](Defining newtypes)
+@[5-6, zoom-16](Defining newtypes for CompanyCode and ShipCode)
 @snapend
 
-@snap[east span-40]
+---
+
+@title[Scala newtype 2]
+
+@snap[north-west]
+#### Solution 2: Scala newtype (1)
+@snapend
+
+@snap[midpoint span-100]
 ```scala zoom-14
 package object types {
   type CompanyCode = CompanyCode.Type
+  
   object CompanyCode {
     type Repr = Int
     type Base = Any { type CompanyCode$newtype }
@@ -513,7 +522,9 @@ package object types {
       def toStr: String = $this$.asInstanceOf[String]
     }
   }
+  
   type ShipCode = ShipCode.Type
+  
   object ShipCode {
     ...
   }
