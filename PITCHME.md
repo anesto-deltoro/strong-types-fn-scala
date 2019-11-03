@@ -228,8 +228,8 @@ val ship = def lookup(
 
 @snap[west span-40]
 @ul[list-spaced-bullets black text-09]
-Yey! We can no longer confuse the order of the parameters
-Or... can we?
+- Yey! We can no longer confuse the order of the parameters
+- Or... can we?
 @ulend
 @snapend
 
@@ -242,7 +242,7 @@ Or... can we?
 @snapend
 
 @snap[west span-40]
-@ul[list-spaced-bullets black text-09]
+@ul[list-bullets black text-09]
 - Yey! We can no longer confuse the order of the parameters
 - Or... can we?
 @ulend
