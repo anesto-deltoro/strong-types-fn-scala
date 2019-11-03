@@ -350,11 +350,10 @@ def createPolarCompanyCode(value: String): Option[CompanyCode] =
 @snapend
 
 ---
-
-@title[Value classes 6a]
+@title[Approach 1b: Value classes+factory methods 8]
 
 @snap[north-west]
-#### Solution 1: Value classes + factory methods (6a)
+#### Approach 1b: Value classes + factory methods (8)
 @snapend
 
 @snap[west span-100]
@@ -377,11 +376,10 @@ object CompanyCode {
 @snapend
 
 ---
-
-@title[Value classes 6b]
+@title[Approach 1b: Value classes+factory methods 9]
 
 @snap[north-west]
-#### Solution 1: Value classes + factory methods (6b)
+#### Approach 1b: Value classes+factory methods (9)
 @snapend
 
 @snap[west span-100]
@@ -397,7 +395,7 @@ object ShipCode {
 
 (CompanyCode("hal"), ShipCode("E45AK")).mapN {
   case (companyCode, shipCode) =>
-    ookup(Germany, companyCode, shipCode)
+    lookup(Germany, companyCode, shipCode)
 }  
 ```
 @snapend
@@ -409,7 +407,6 @@ object ShipCode {
 @snapend
 
 ---
-
 @title[Value classes caveats]
 
 @snap[north-west]
