@@ -980,10 +980,8 @@ import io.circe.{Decoder, DecodingFailure, Encoder}
 
 package object greenginza {
   type CompanyCode = String Refined MatchesRegex[W.'"[a-z]{3}"'.T]]
-  
   implicit val CirceEncoder: Encoder[CompanyCode] =
     Encoder.encodeString.contramap[[CompanyCode]](_.value)
-    
   implicit val CirceDecoder: Decoder[CompanyCode] = Decoder.instance {
     c => Decoder.decodeString(c).flatMap(s =>
       RefType.applyRef[[CompanyCode]](s) match {
