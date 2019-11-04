@@ -709,7 +709,6 @@ package object greenginza {
 @snapend
 
 ---
-
 @title[Refinement types]
 
 @snap[north-west]
@@ -719,10 +718,32 @@ package object greenginza {
 @snap[midpoint span-100]
 @ul[list-spaced-bullets black text-07]
 - It started as a port of the refined Haskell library
-- Is a Scala library for refining types with type-level predicates which constrain the set of values described by the refined type.
+- Is a Scala library for refining types with *type-level predicates* which constrain the set of values described by the refined type.
 - Refinement types allow us to validate data in **compile time** as well as in runtime.
 - Multiple optional extensions and library integrations.
     - libraryDependencies += "eu.timepit" %% "refined" % "0.9.10"
+@ulend
+@snapend
+
+@snap[south span-100 text-08]
+[SIMPLE REFINEMENT TYPES FOR SCALA @fa[external-link]](https://github.com/fthomas/refined)
+@snapend
+
+---
+@title[Refinement types]
+
+@snap[north-west]
+#### Refinement types: basics
+@snapend
+
+@snap[midpoint span-100]
+@ul[list-spaced-bullets black text-07]
+- refinement type = @css[text-green](base type) + @css[text-red](predicate)
+- values of a refinement type = @css[text-green](all values of the base type) that @css[text-red](satisfy the predicate)
+
+Examples
+ - sda
+ - asda
 @ulend
 @snapend
 
