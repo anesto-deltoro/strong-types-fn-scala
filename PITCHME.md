@@ -176,7 +176,7 @@ object Market extends Enum[Market] {
 @size[xx-large](**Type aliases**)
 @snapend
 
-@snap[west]
+@snap[west span-100]
 ```scala zoom-16
 object greenginza {
 
@@ -190,12 +190,12 @@ def lookup(market: MarketCode, companyCode: CompanyCode,
   
 ...
 
-lookup(market = Germany, companyCode = "hal", shipCode = "E45AK")
-lookup(market = Germany, companyCode = "E45AK", shipCode = "hal")
-lookup(market = Germany, companyCode = "ahls", shipCode = "")
+lookup(marketCode = Germany, companyCode = "hal", shipCode = "E45AK")
+lookup(marketCode = Germany, companyCode = "E45AK", shipCode = "hal")
+lookup(marketCode = Germany, companyCode = "ahls", shipCode = "")
 
 ```
-@snap[south-west span-100 text-gray text-14]
+@snap[south span-100 text-gray text-14]
 @[1-6, zoom-14](Defining the type aliases for CompanyCode and ShipCode)
 @[4-5, zoom-14](Signature of the lookup)
 @[9-9, zoom-14](Ok)
