@@ -327,7 +327,7 @@ final case class ShipCode private(val value: String) extends AnyVal
            
 def createShipCode(value: String): Option[ShipCode] =
   if (value.nonEmpty) ShipCode(value).some else none[ShipCode]
-def createPolarCompanyCode(value: String): Option[CompanyCode] =
+def createCompanyCode(value: String): Option[CompanyCode] =
   if ("""[a-z]{3}""".r matches value) CompanyCode(value).some
   else none[CompanyCode]
 ...
@@ -835,7 +835,7 @@ lookup(Germany, "hal", "E45AK", "A1")
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[12-13, zoom-14](Same refined type for more than param :()
+@[12-13, zoom-14](Same refined type for more than one param :()
 @[16-17, zoom-14](Again we can confuse the order of the parameters :()
 @snapend
 
@@ -913,7 +913,7 @@ val (company, ship) = "hal" -> "E45AK"
 @[8-9, zoom-14](Refinement types for CompanyCode and ShipCode)
 @[11-11, zoom-14](Most of the time with don't work with literals)
 @[13-14, zoom-14](Enforcing validation!)
-@[17-17, zoom-14](Strong-typed scala function with compile type validation!)
+@[12-18, zoom-14](Strong-typed scala function with compile type validation!)
 @snapend
 
 ---
