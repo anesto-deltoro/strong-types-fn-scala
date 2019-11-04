@@ -958,7 +958,7 @@ package object Twitter {
       MaxSize[[W.'16'.T]] ::
       Not[[MatchesRegex[[W.'"(?i:.*twitter.*)"'.T]]]] ::
       Not[[MatchesRegex[[W.'"(?i:.*admin.*)"'.T]]]] ::
-      Tail[[Or[[LetterOrDigit, Equal[[W.`'_'`.T]]]]]] ::
+      Tail[[Or[[LetterOrDigit, Equal[[W.''_''.T]]]]]] ::
       HNil
     ]]
 }
