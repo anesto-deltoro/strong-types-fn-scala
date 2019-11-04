@@ -172,6 +172,8 @@ object Market extends Enum[Market] {
 
 @snap[north-west]
 ## Approach 0
+
+@size[xx-large](**Type aliases**)
 @snapend
 
 @snap[west span-100]
@@ -199,7 +201,7 @@ lookup(marketCode = Germany, companyCode = "ahls", shipCode = "")
 @[8-10, zoom-14](Signature of the lookup)
 @[13-13, zoom-14](Example of usage Ok)
 @[14-14, zoom-14](We can mess the parameters)
-@[14-14, zoom-14](We can provide invalid input)
+@[15-15, zoom-14](We can provide invalid input)
 @snapend
 
 ---
