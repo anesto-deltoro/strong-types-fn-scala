@@ -173,7 +173,7 @@ object Market extends Enum[Market] {
 @snap[north-west]
 ## Approach 0
 
-@size[x-large](**Type aliases**)
+@size[xx-large](**Type aliases**)
 @snapend
 
 @snap[west]
@@ -191,7 +191,7 @@ lookup(market = Germany, companyCode = "E45AK", shipCode = "hal")
 lookup(market = Germany, companyCode = "ahls", shipCode = "")
 
 ```
-@snap[south span-100 text-gray text-14]
+@snap[south-west span-100 text-gray text-14]
 @[1-3, zoom-14](Defining the type aliases for CompanyCode and ShipCode)
 @[4-5, zoom-14](Signature of the lookup)
 @[9-9, zoom-14](Ok)
