@@ -736,19 +736,19 @@ package object greenginza {
 #### Refinement types: basics
 @snapend
 
-@snap[midpoint span-100]
+@snap[north-west span-100]
 @ul[list-spaced-bullets black text-07]
-- refinement type = @css[text-green](base type) + @css[text-red](predicate)
-- values of a refinement type = @css[text-green](all values of the base type) that @css[text-red](satisfy the predicate)
-
-Examples
- - sda
- - asda
+- refinement type = @css[text-green](base type) + @css[text-blue](predicate)
+- values of a refinement type = @css[text-green](all values of the base type) that @css[text-blue](satisfy the predicate)
 @ulend
 @snapend
 
-@snap[south span-100 text-08]
-[SIMPLE REFINEMENT TYPES FOR SCALA @fa[external-link]](https://github.com/fthomas/refined)
+@snap[south-west span-100]
+@ul[list-spaced-bullets black text-07]
+Examples
+- refinement type = @css[text-green](base type) + @css[text-blue](predicate)
+- values of a refinement type = @css[text-green](all values of the base type) that @css[text-blue](satisfy the predicate)
+@ulend
 @snapend
 
 ---
