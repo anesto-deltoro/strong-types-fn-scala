@@ -171,15 +171,15 @@ object Market extends Enum[Market] {
 @title[Approach 0: Type aliases]
 
 @snap[north-west]
-## Approach 0
+#### Approach 0
 @snapend
 
 @snap[west span-100]
 ```scala zoom-16
 object greenginza {
 
-type CompanyCode = String
-type ShipCode = String
+    type CompanyCode = String
+    type ShipCode = String
 
 }
 
