@@ -22,7 +22,7 @@ com.dreamlines.connectivity
 @snapend
 
 @snap[east span-50]
-@ul[list-spaced-bullets text-white text-09]
+@ul[list-spaced-bullets text-black text-09]
 - Problem
 - Possible solutions
   - Value classes
