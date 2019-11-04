@@ -915,6 +915,24 @@ val (company, ship) = "hal" -> "E45AK"
 @[17-17, zoom-14](Strong-typed scala function with compile type validation!)
 @snapend
 
+---
+@title[Refinement types: combining predicates]
+
+@snap[north-west]
+#### Refinement types: combining predicates
+@snapend
+
+@snap[midpoint span-100]
+@ul[list-spaced-bullets black text-07]
+- The library comes with a LOT of predefined predicates for: boolean, char, collection, numeric and generic [CHECK HERE @fa[external-link]](https://github.com/fthomas/refined) 
+- Simple predicates can be combined using the boolean predicates into a more complex predicate
+- Example: TwitterUserName
+  - Usernames containing the words 'Twitter' or 'Admin' cannot be claimed.
+  - Usernames cannot be longer than 15 characters. (not including '@').
+  - Usernames can only contain alphanumeric characters (letters A-Z, numbers 0-9) with the exception of underscores.
+@ulend
+@snapend
+
 ---?image=assets/img/presenter.jpg
 @title[Conclusions]
 
