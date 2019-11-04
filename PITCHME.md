@@ -168,6 +168,40 @@ object Market extends Enum[Market] {
 @snapend
 
 ---
+@title[Approach 0: Type aliases]
+
+@snap[north-west]
+## Approach 0
+@snapend
+
+@snap[west span-100]
+@size[xxx-large](**Type aliases**)
+@snapend
+
+@snap[east]
+```scala zoom-16
+type CompanyCode = String
+type ShipCode = String
+
+def lookup(marketCode: MarketCode, companyCode: CompanyCode,
+  shipCode: ShipCode): F[Ship]
+  
+...
+
+lookup(marketCode = Germany, companyCode = "hal", shipCode = "E45AK")
+lookup(marketCode = Germany, companyCode = "E45AK", shipCode = "hal")
+lookup(marketCode = Germany, companyCode = "ahls", shipCode = "")
+
+```
+@snap[south span-100 text-gray text-14]
+@[1-3, zoom-14](Defining the type aliases for CompanyCode and ShipCode)
+@[4-5, zoom-14](Signature of the lookup)
+@[9-9, zoom-14](Ok)
+@[10-10, zoom-14](We can mess the parameters)
+@[11-11, zoom-14](We can provide invalid params)
+@snapend
+
+---
 @title[Approach 1: value classes]
 
 @snap[north-west]
@@ -244,17 +278,17 @@ val ship = lookup(
 
 @snap[west span-100]
 ```scala zoom-16
-val ship1 = def lookup(
-            marketCode = Germany,
-            companyCode = CompanyCode("E45AK"),
-            shipCode = ShipCode("hal")
-           ): F[Ship]
+val ship1 = lookup(
+  marketCode = Germany,
+  companyCode = CompanyCode("E45AK"),
+  shipCode = ShipCode("hal")
+)
            
-val ship2 = def lookup(
-            marketCode = Germany,
-            companyCode = CompanyCode("ahls"),
-            shipCode = ShipCode("")
-           ): F[Ship]
+val ship2 = lookup(
+  marketCode = Germany,
+  companyCode = CompanyCode("ahls"),
+  shipCode = ShipCode("")
+)
       
 ```
 @snapend
