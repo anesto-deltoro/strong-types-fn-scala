@@ -877,6 +877,54 @@ lookup(Germany, "hal", ShipCode("E45AK"), CabinCode("A1"))
 @[19-19, zoom-14](Strong-typed scala function with compile type validation!)
 @snapend
 
+---
+@title[Refinement types extended]
+
+@snap[north-west]
+#### Refinement types: extended
+@snapend
+
+@snap[midpoint span-100]
+@ul[list-spaced-bullets black text-07]
+Most of the time we don't work with literals
+@ulend
+@snapend
+
+@snap[east span-100]
+```scala zoom-14
+import eu.timepit.refined._
+import eu.timepit.refined.auto._
+import eu.timepit.refined.types.string.NonEmptyString
+import eu.timepit.refined.types.string.MatchesRegex
+import eu.timepit.refined.api.RefType
+
+package object greenginza {
+  type CompanyCode = String Refined MatchesRegex[W.'"[a-z]{3}"'.T]]
+  type ShipCode = NonEmptyString
+}
+val company = "hal"
+val ship = "E45AK"
+(
+  RefType.applyRef[greenginza.CompanyCode](company).toOpt,
+  RefType.applyRef[greenginza.ShipCode](shipCode).toOpt
+).mapN {
+  case (companyCode, shipCode) =>
+    lookup(Germany, companyCode, shipCode)
+}
+scala> RefType.applyRef[greenginza.CompanyCode](company)
+res1: Either[String,greenginza.CompanyCode] = Right(hal)
+```
+@snapend
+
+@snap[south span-100 text-gray text-14]
+@[7-7, zoom-14](Refined type with regex based validation)
+@[8-9, zoom-14](These two types share the same validation rule (we use refinement types)
+@[8-9, zoom-14](but since they represent different concepts, we create a newtype for each of them))
+@[12-17, zoom-14](Final signature of the lookup function)
+@[19-19, zoom-14](Strong-typed scala function with compile type validation!)
+@snapend
+
+
 ---?image=assets/img/presenter.jpg
 @title[Conclusions]
 
