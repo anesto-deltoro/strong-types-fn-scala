@@ -83,7 +83,7 @@ trait MappingService[F[_]] {
 @[5-9, zoom-14](Do you see any problems with this function?)
 @snapend
 
----?color=linear-gradient(90deg, white 40%, #5384AD 60%)
+---
 @title[Problem: Issues]
 
 @snap[north-east]
