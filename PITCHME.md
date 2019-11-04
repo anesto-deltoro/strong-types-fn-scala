@@ -100,7 +100,7 @@ def lookup(
 ```
 @snapend
 
-@snap[east span-37]
+@snap[east span-60]
 @ul[list-spaced-bullets black text-09]
 - Easy to:
   - confuse the order of the parameters
