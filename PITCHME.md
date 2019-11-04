@@ -916,7 +916,7 @@ val (company, ship) = "hal" -> "E45AK"
 @[12-18, zoom-14](Strong-typed scala function with compile type validation!)
 @snapend
 
----?image=assets/img/bonus.jpg
+---
 @title[Bonus]
 
 @snap[north-west]
