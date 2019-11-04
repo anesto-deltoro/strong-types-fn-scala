@@ -964,6 +964,14 @@ type TwitterUserName = String Refined AllOf[
 ```
 @snapend
 
+@snap[south span-100 text-gray text-14]
+@[12-12, zoom-14](Starts with @)
+@[13-13, zoom-14](Max length 16 characters)
+@[14-14, zoom-14](Can't contain twitter substring)
+@[15-15, zoom-14](Can't contain admin substring)
+@[12-18, zoom-14](Only letter, digits and _ are allowed)
+@snapend
+
 ---
 @title[Refinement types: circe]
 
