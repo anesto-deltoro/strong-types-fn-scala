@@ -778,6 +778,7 @@ lookup(Germany, "ahls", "E45AK")
 @snap[south span-100 text-gray text-14]
 @[1-5, zoom-14](Required imports)
 @[6-10, zoom-14](Defining refinement types for CompanyCode and ShipCode)
+@[7-7, zoom-14](Some predicates require encoding literals at the type-level (shapeless witness macro is used))
 @[11-12, zoom-14](lookup function)
 @[14-14, zoom-14](Compiles)
 @[15-15, zoom-14](Error)
