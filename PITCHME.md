@@ -25,6 +25,7 @@ com.dreamlines.connectivity
 @ul[list-spaced-bullets text-black text-09]
 - Problem
 - Possible solutions
+  - Type aliases
   - Value classes
   - Newtypes
   - Refinement types
