@@ -178,8 +178,12 @@ object Market extends Enum[Market] {
 
 @snap[west]
 ```scala zoom-16
+object greenginza {
+
 type CompanyCode = String
 type ShipCode = String
+
+}
 
 def lookup(market: MarketCode, companyCode: CompanyCode,
   shipCode: ShipCode): F[Ship]
@@ -192,7 +196,7 @@ lookup(market = Germany, companyCode = "ahls", shipCode = "")
 
 ```
 @snap[south-west span-100 text-gray text-14]
-@[1-3, zoom-14](Defining the type aliases for CompanyCode and ShipCode)
+@[1-6, zoom-14](Defining the type aliases for CompanyCode and ShipCode)
 @[4-5, zoom-14](Signature of the lookup)
 @[9-9, zoom-14](Ok)
 @[10-10, zoom-14](We can mess the parameters)
