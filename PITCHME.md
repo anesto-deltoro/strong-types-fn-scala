@@ -176,22 +176,21 @@ object Market extends Enum[Market] {
 
 @snap[west span-100]
 ```scala zoom-16
-final case class CompanyCode(val value: String) extends AnyVal
-final case class ShipCode(val value: String) extends AnyVal
+object greenginza {
 
-def lookup(
-  marketCode: MarketCode,
-  companyCode: CompanyCode,
-  shipCode: ShipCode
-): F[Ship]
+    type CompanyCode = String
+    type ShipCode = String
 
+}
+
+def lookup(market: MarketCode, companyCode: CompanyCode,
+  shipCode: ShipCode): F[Ship]
+  
 ...
 
-val ship = lookup(
-  marketCode = Germany,
-  companyCode = CompanyCode("hal"),
-  shipCode = ShipCode("E45AK")
-)
+lookup(marketCode = Germany, companyCode = "hal", shipCode = "E45AK")
+lookup(marketCode = Germany, companyCode = "E45AK", shipCode = "hal")
+lookup(marketCode = Germany, companyCode = "ahls", shipCode = "")
 ```
 @snapend
 
