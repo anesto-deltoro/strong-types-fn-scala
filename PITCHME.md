@@ -172,25 +172,23 @@ object Market extends Enum[Market] {
 
 @snap[north-west]
 ## Approach 0
-@snapend
 
-@snap[north span-100]
 @size[x-large](**Type aliases**)
 @snapend
 
-@snap[east]
+@snap[west]
 ```scala zoom-16
 type CompanyCode = String
 type ShipCode = String
 
-def lookup(marketCode: MarketCode, companyCode: CompanyCode,
+def lookup(market: MarketCode, companyCode: CompanyCode,
   shipCode: ShipCode): F[Ship]
   
 ...
 
-lookup(marketCode = Germany, companyCode = "hal", shipCode = "E45AK")
-lookup(marketCode = Germany, companyCode = "E45AK", shipCode = "hal")
-lookup(marketCode = Germany, companyCode = "ahls", shipCode = "")
+lookup(market = Germany, companyCode = "hal", shipCode = "E45AK")
+lookup(market = Germany, companyCode = "E45AK", shipCode = "hal")
+lookup(market = Germany, companyCode = "ahls", shipCode = "")
 
 ```
 @snap[south span-100 text-gray text-14]
