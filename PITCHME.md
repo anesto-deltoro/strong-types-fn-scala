@@ -984,7 +984,7 @@ package object greenginza {
     Encoder.encodeString.contramap[CompanyCode] (_.value)
   implicit val CirceDecoder: Decoder[CompanyCode] = Decoder.instance {
     c => Decoder.decodeString(c).flatMap(s =>
-      RefType.applyRef[CompanyCode]( s ) match {
+      RefType.applyRef[CompanyCode] (s) match {
         case Right(v) => v.asRight[DecodingFailure]
         case Left(err) => err.asLeft[CompanyCode]
       }
