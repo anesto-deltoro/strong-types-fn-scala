@@ -923,6 +923,10 @@ val (company, ship) = "hal" -> "E45AK"
 #### Bonus
 @snapend
 
+@snap[midpoint span-100]
+AAAaaasa asdsadsadsaa 
+@snapend
+
 ---
 @title[Refinement types: combining predicates]
 
