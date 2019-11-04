@@ -471,7 +471,7 @@ object ShipCode {
 @title[Approach 2]
 
 @snap[north-west]
-## Approach 2: @css[text-06 text-black](Scala library newtype)
+## Approach 2: @css[text-06 text-black](Library newtype)
 @snapend
 
 @snap[midpoint span-100]
