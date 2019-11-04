@@ -898,8 +898,8 @@ package object greenginza {
 }
 val (company, ship) = "hal" -> "E45AK"
 (
-  RefType.applyRef[greenginza.CompanyCode](company).toOpt,
-  RefType.applyRef[greenginza.ShipCode](shipCode).toOpt
+  RefType.applyRef[[greenginza.CompanyCode]](company).toOpt,
+  RefType.applyRef[[greenginza.ShipCode]](shipCode).toOpt
 ).mapN {
   case (companyCode, shipCode) =>
     lookup(Germany, companyCode, shipCode)
