@@ -878,6 +878,9 @@ lookup(Germany, "hal", ShipCode("E45AK"), CabinCode("A1"))
 @[19-19, zoom-14](Strong-typed scala function with compile type validation!)
 @snapend
 
+---?image=assets/img/bonus.jpg
+@title[Bonus]
+
 ---
 @title[Refinement types extended]
 
@@ -914,17 +917,6 @@ val (company, ship) = "hal" -> "E45AK"
 @[11-11, zoom-14](Most of the time with don't work with literals)
 @[13-14, zoom-14](Enforcing validation!)
 @[12-18, zoom-14](Strong-typed scala function with compile type validation!)
-@snapend
-
----
-@title[Bonus]
-
-@snap[north-west]
-#### Bonus
-@snapend
-
-@snap[midpoint span-100]
-AAAaaasa asdsadsadsaa 
 @snapend
 
 ---
