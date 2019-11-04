@@ -933,6 +933,38 @@ val (company, ship) = "hal" -> "E45AK"
 @ulend
 @snapend
 
+---
+@title[Refinement types: TwitterUsername]
+
+@snap[north-west]
+#### Refinement types: complex predicate
+@snapend
+
+@snap[west span-100]
+```scala zoom-14
+import eu.timepit.refined.api.Refined
+import eu.timepit.refined.boolean.{AllOf, Not, Or, And}
+import eu.timepit.refined.string.{MatchesRegex, StartsWith}
+import eu.timepit.refined.W
+import eu.timepit.refined.char.LetterOrDigit
+import eu.timepit.refined.collection.{NonEmpty, MaxSize, Tail}
+import eu.timepit.refined.generic.Equal
+import shapeless.::
+import shapeless.HNil
+
+package object Twitter {
+  type TwitterHandle = String Refined AllOf[[
+      StartsWith[[W.'"@"'.T]] ::
+      MaxSize[[W.'16'.T]] ::
+      Not[[MatchesRegex[[W.'"(?i:.*twitter.*)"'.T]]]] ::
+      Not[[MatchesRegex[[W.'"(?i:.*admin.*)"'.T]]]] ::
+      Tail[[Or[[LetterOrDigit, Equal[[W.`'_'`.T]]]]]] ::
+      HNil
+    ]]
+}
+```
+@snapend
+
 ---?image=assets/img/presenter.jpg
 @title[Conclusions]
 
