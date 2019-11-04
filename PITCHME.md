@@ -919,6 +919,10 @@ val (company, ship) = "hal" -> "E45AK"
 ---?image=assets/img/bonus.jpg
 @title[Bonus]
 
+@snap[north-west]
+#### Bonus
+@snapend
+
 ---
 @title[Refinement types: combining predicates]
 
