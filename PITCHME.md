@@ -969,7 +969,7 @@ type TwitterUserName = String Refined AllOf[
 @[13-13, zoom-14](Max length 16 characters)
 @[14-14, zoom-14](Can't contain twitter substring)
 @[15-15, zoom-14](Can't contain admin substring)
-@[12-18, zoom-14](Only letter, digits and _ are allowed)
+@[16-16, zoom-14](Only letter, digits and _ are allowed)
 @snapend
 
 ---
@@ -1012,9 +1012,10 @@ package object greenginza {
 @snap[west span-60]
 @ul[list-spaced-bullets text-white text-07]
 - We should be able to reason about functions by looking at their *type signature*.
-- We should rely more on the help of the compiler.
-- Aim for type safety without runtime allocation overhead.
+- Aim to catch bugs at compile time (type safety on steroids).
 - Refinement types + newtypes are an excellent start.
+  - Lot of integrations: cats, pureconfig, scalacheck, play, slick, ...
+  - There are some gotcha's to take into account
 @ulend
 @snapend
 
