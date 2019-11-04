@@ -172,8 +172,6 @@ object Market extends Enum[Market] {
 
 @snap[north-west]
 ## Approach 0
-
-@size[xx-large](**Type aliases**)
 @snapend
 
 @snap[west span-100]
