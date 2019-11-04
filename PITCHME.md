@@ -736,18 +736,13 @@ package object greenginza {
 #### Refinement types: basics
 @snapend
 
-@snap[north-west span-100]
+@snap[midpoint span-100]
 @ul[list-spaced-bullets black text-07]
 - refinement type = @css[text-green](base type) + @css[text-blue](predicate)
 - values of a refinement type = @css[text-green](all values of the base type) that @css[text-blue](satisfy the predicate)
-@ulend
-@snapend
-
-@snap[south-west span-100]
-@ul[list-spaced-bullets black text-07]
-Examples
-- refinement type = @css[text-green](base type) + @css[text-blue](predicate)
-- values of a refinement type = @css[text-green](all values of the base type) that @css[text-blue](satisfy the predicate)
+- Examples
+  - ShipCode = @css[text-green](String) + @css[text-blue]((∀ s => s.nonEmpty))
+  - CompanyCode = @css[text-green](String) + @css[text-blue]((∀ s => """[a-z]{3}""".r matches s))
 @ulend
 @snapend
 
