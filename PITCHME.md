@@ -741,8 +741,8 @@ package object greenginza {
 - refinement type = @css[text-green](base type) + @css[text-blue](predicate)
 - values of a refinement type = @css[text-green](all values of the base type) that @css[text-blue](satisfy the predicate)
 - Examples
-  - ShipCode = @css[text-green](String) + @css[text-blue]((∀ s => s.nonEmpty))
-  - CompanyCode = @css[text-green](String) + @css[text-blue]((∀ s => """[a-z]{3}""".r matches s))
+  - ShipCode = @css[text-green text-08](String) + @css[text-blue text-08]((∀ s => s.nonEmpty))
+  - CompanyCode = @css[text-green text-08](String) + @css[text-blue text-08]((∀ s => """[a-z]{3}""".r matches s))
 @ulend
 @snapend
 
