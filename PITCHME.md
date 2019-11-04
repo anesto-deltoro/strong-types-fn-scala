@@ -171,7 +171,7 @@ object Market extends Enum[Market] {
 @title[Approach 0: Type aliases]
 
 @snap[north-west]
-## Approach 0: @css[text-07 text-black](**Type aliases**)
+## Approach 0: @css[text-06 text-black](Type aliases)
 @snapend
 
 @snap[west span-100]
