@@ -198,6 +198,8 @@ lookup(marketCode = Germany, companyCode = "ahls", shipCode = "")
 @[1-7, zoom-14](Defining the type aliases for CompanyCode and ShipCode)
 @[8-10, zoom-14](Signature of the lookup)
 @[13-13, zoom-14](Example of usage Ok)
+@[14-14, zoom-14](We can mess the parameters)
+@[14-14, zoom-14](We can provide invalid input)
 @snapend
 
 ---
