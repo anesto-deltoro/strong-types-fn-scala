@@ -176,29 +176,29 @@ object Market extends Enum[Market] {
 
 @snap[west span-100]
 ```scala zoom-16
-object greenginza {
+final case class CompanyCode(val value: String) extends AnyVal
+final case class ShipCode(val value: String) extends AnyVal
 
-    type CompanyCode = String
-    type ShipCode = String
+def lookup(
+  marketCode: MarketCode,
+  companyCode: CompanyCode,
+  shipCode: ShipCode
+): F[Ship]
 
-}
-
-def lookup(market: MarketCode, companyCode: CompanyCode,
-  shipCode: ShipCode): F[Ship]
-  
 ...
 
-lookup(marketCode = Germany, companyCode = "hal", shipCode = "E45AK")
-lookup(marketCode = Germany, companyCode = "E45AK", shipCode = "hal")
-lookup(marketCode = Germany, companyCode = "ahls", shipCode = "")
-
+val ship = lookup(
+  marketCode = Germany,
+  companyCode = CompanyCode("hal"),
+  shipCode = ShipCode("E45AK")
+)
 ```
+@snapend
+
 @snap[south span-100 text-gray text-14]
-@[1-6, zoom-14](Defining the type aliases for CompanyCode and ShipCode)
-@[4-5, zoom-14](Signature of the lookup)
-@[9-9, zoom-14](Ok)
-@[10-10, zoom-14](We can mess the parameters)
-@[11-11, zoom-14](We can provide invalid params)
+@[1-3, zoom-14](Defining the value classes for CompanyCode and ShipCode)
+@[4-9, zoom-14](New signature of the lookup)
+@[10-16, zoom-14](Example of usage)
 @snapend
 
 ---
