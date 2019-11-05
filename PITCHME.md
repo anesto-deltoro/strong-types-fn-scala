@@ -970,10 +970,10 @@ type TwitterUserName = String Refined AllOf[
 @ul[list-spaced-bullets text-07]
 - We should mostly focus on integration points
 - Luckily there are a lot of libraries for that:
-  - Parsing url parameters: @css[text-06 text-blue](play-refined)
-  - Json serialization: @css[text-06 text-blue](circe-refined, play-json-refined)
-  - Loading app configuration: @css[text-06 text-blue](validated-config, ciris-refined)
-  - Retrieving/Storing refined values from data: @css[text-06 text-blue](refined-anorm, slick-refined, doobie-refined, scanamo-refined, kantan.csv-refined)
+  - Parsing url parameters: @css[text-08 text-blue](play-refined)
+  - Json serialization: @css[text-08 text-blue](circe-refined, play-json-refined)
+  - Loading app configuration: @css[text-08 text-blue](validated-config, ciris-refined)
+  - Retrieving/Storing refined values from data: @css[text-08 text-blue](refined-anorm, slick-refined, doobie-refined, scanamo-refined, kantan.csv-refined)
 @ulend
 @snapend
 
