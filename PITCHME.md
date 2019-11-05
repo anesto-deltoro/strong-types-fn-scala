@@ -863,9 +863,6 @@ lookup(Germany, "hal", ShipCode("E45AK"), CabinCode("A1"))
 @[17-17, zoom-14](Strong-typed scala function with compile type validation!)
 @snapend
 
----?image=assets/img/bonus.jpg
-@title[Bonus]
-
 ---
 @title[Refinement types extended]
 
@@ -883,26 +880,28 @@ import eu.timepit.refined.api.RefType
 
 package object greenginza {
   type CompanyCode = String Refined MatchesRegex[W.'"[a-z]{3}"'.T]]
-  type ShipCode = NonEmptyString
+  @newtype case class ShipCode(value: NonEmptyString)
+  @newtype case class CabinCode(value: NonEmptyString)
 }
 val (company, ship) = "hal" -> "E45AK"
-(
-  RefType.applyRef[[greenginza.CompanyCode]](company).toOpt,
-  RefType.applyRef[[greenginza.ShipCode]](shipCode).toOpt
-).mapN {
-  case (companyCode, shipCode) =>
-    lookup(Germany, companyCode, shipCode)
-}
+for {
+  companyCode <- RefType.applyRef[CompanyCode](company).toOption
+  shipCode <- RefType.applyRef[NonEmptyString](ship).toOption
+  result <- lookup(Germany, companyCode, ShipCode(shipCode))
+} yield result
 ```
 @snapend
 
 @snap[south span-100 text-gray text-14]
 @[1-6, zoom-14](Required imports)
-@[8-9, zoom-14](Refinement types for CompanyCode and ShipCode)
-@[11-11, zoom-14](Most of the time with don't work with literals)
-@[13-14, zoom-14](Enforcing validation!)
-@[12-18, zoom-14](Strong-typed scala function with compile type validation!)
+@[8-9, zoom-14](Refinement types and newtypes for CompanyCode, ShipCode and CabinCode)
+@[12-12, zoom-14](Most of the time with don't work with literals)
+@[14-15, zoom-14](Enforcing validation!)
+@[13-19, zoom-14](Strong-typed scala function with compile type validation!)
 @snapend
+
+---?image=assets/img/bonus.jpg
+@title[Bonus]
 
 ---
 @title[Refinement types: combining predicates]
