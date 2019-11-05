@@ -428,20 +428,20 @@ object ShipCode {
     if (value.nonEmpty) new ShipCode(value).some else none[ShipCode]  
 }
 
-(
-  CompanyCode("hal"),
-  ShipCode("E45AK")
-).mapN {
-  case (companyCode, shipCode) =>
-    lookup(Germany, companyCode, shipCode)
-}  
+...
+
+for {
+  companyCode <- CompanyCodeType("hal")
+  shipCode <- ShipCodeType("E45AK")
+  result <- lookup(Germany, companyCode, shipCode)
+} yield result 
 ```
 @snapend
 
 @snap[south span-100 text-gray text-14]
 @[2-2, zoom-14](Another possibility is to make the copy method private)
 @[6-7, zoom-14](Replace the generated apply method within the companion object)
-@[9-16, zoom-14](Example of usage)
+@[11-15, zoom-14](Example of usage)
 @snapend
 
 ---
