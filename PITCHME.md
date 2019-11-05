@@ -980,8 +980,8 @@ type TwitterUserName = String Refined AllOf[
 ---?image=assets/img/presenter.jpg
 @title[Conclusions]
 
-@snap[east span-100]
-@css[h2-text text-white](Conclusions)
+@snap[north-east span-100]
+@css[h1-text text-white](Conclusions)
 @snapend
 
 @snap[west span-60]
