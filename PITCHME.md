@@ -331,7 +331,9 @@ def createShipCode(value: String): Option[ShipCode] =
 def createCompanyCode(value: String): Option[CompanyCode] =
   if ("""[a-z]{3}""".r matches value) CompanyCode(value).some
   else none[CompanyCode]
+
 ...
+
 for {
   companyCode <- createCompanyCode("hal")
   shipCode <- createShipCode("E45AK")
@@ -343,7 +345,7 @@ for {
 @snap[south span-100 text-gray text-14]
 @[1-3, zoom-14](Make case class constructors private)
 @[4-9, zoom-14](Provide functions that create a validated value)
-@[10-15, zoom-14](Perform a ship lookup with valid parameters...)
+@[12-17, zoom-14](Perform a ship lookup with valid parameters...)
 @snapend
 
 ---
