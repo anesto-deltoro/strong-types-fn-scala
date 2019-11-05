@@ -845,7 +845,6 @@ package object greenginza {
   @newtype case class ShipCode(value: NonEmptyString)
   @newtype case class CabinCode(value: NonEmptyString)
 }
-
 def lookup(
   market: MarketCode, company: CompanyCode,
   shipCode: ShipCode,
@@ -860,8 +859,8 @@ lookup(Germany, "hal", ShipCode("E45AK"), CabinCode("A1"))
 @[7-7, zoom-14](Refined type with regex based validation)
 @[8-9, zoom-14](These two types share the same validation rule (we use refinement types)
 @[8-9, zoom-14](but since they represent different concepts, we create a newtype for each of them))
-@[12-16, zoom-14](Final signature of the lookup function)
-@[18-18, zoom-14](Strong-typed scala function with compile type validation!)
+@[11-15, zoom-14](Final signature of the lookup function)
+@[17-17, zoom-14](Strong-typed scala function with compile type validation!)
 @snapend
 
 ---?image=assets/img/bonus.jpg
