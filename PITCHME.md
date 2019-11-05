@@ -231,8 +231,8 @@ lookup(marketCode = Germany, companyCode = "ahls", shipCode = "")
 
 @snap[west span-100]
 ```scala zoom-16
-final case class CompanyCode(val value: String) extends AnyVal
-final case class ShipCode(val value: String) extends AnyVal
+final case class CompanyCode(value: String) extends AnyVal
+final case class ShipCode(value: String) extends AnyVal
 
 def lookup(
   marketCode: MarketCode,
@@ -322,8 +322,8 @@ A workaround is to make the case class constructors private and provide smart co
 
 @snap[west span-100]
 ```scala zoom-16
-final case class CompanyCode private(val value: String) extends AnyVal
-final case class ShipCode private(val value: String) extends AnyVal
+final case class CompanyCode private(value: String) extends AnyVal
+final case class ShipCode private(value: String) extends AnyVal
            
 def createShipCode(value: String): Option[ShipCode] =
   if (value.nonEmpty) ShipCode(value).some else none[ShipCode]
@@ -331,20 +331,18 @@ def createCompanyCode(value: String): Option[CompanyCode] =
   if ("""[a-z]{3}""".r matches value) CompanyCode(value).some
   else none[CompanyCode]
 ...
-(
-  createCompanyCode("hal"),
-  createShipCode("E45AK")
-).mapN {
-  case (companyCode, shipCode) =>
-   lookup(Germany, companyCode, shipCode)
-}           
+for {
+  companyCode <- createCompanyCode("hal")
+  shipCode <- createShipCode("E45AK")
+  result <- lookup(Germany, companyCode, shipCode)
+} yield result
 ```
 @snapend
 
 @snap[south span-100 text-gray text-14]
 @[1-3, zoom-14](Make case class constructors private)
 @[4-8, zoom-14](Provide functions that create a validated value)
-@[9-16, zoom-14](Perform a ship lookup with valid parameters...)
+@[9-13, zoom-14](Perform a ship lookup with valid parameters...)
 @snapend
 
 ---
@@ -370,18 +368,16 @@ def createCompanyCode(value: String): Option[CompanyCode] =
 
 @snap[west span-100]
 ```scala zoom-16
-(
-  createCompanyCode("hal"),
-  createShipCode("E45AK")
-).mapN {
-  case (companyCode, shipCode) =>
-    lookup(Germany, companyCode, shipCode.copy(""))
-}       
+for {
+  companyCode <- createCompanyCode("hal")
+  shipCode <- createShipCode("E45AK")
+  result <- lookup(Germany, companyCode, shipCode.copy(""))
+} yield result      
 ```
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[6-6, zoom-14](We are using case classes; the copy method is still there :()
+@[4-4, zoom-14](We are using case classes; the copy method is still there :()
 @snapend
 
 ---
@@ -393,14 +389,14 @@ def createCompanyCode(value: String): Option[CompanyCode] =
 
 @snap[west span-100]
 ```scala zoom-16
-final case class CompanyCode private(val value: String) extends AnyVal {
+final case class CompanyCode private(value: String) extends AnyVal {
   def copy(s: String = this.value) = CompanyCode(s)
   
 }
 
 object CompanyCode {
   def apply(value: String): Option[CompanyCode] =
-    if ("""[a-z]{3}""".r matches value) CompanyCode(value).some
+    if ("""[a-z]{3}""".r matches value) new CompanyCode(value).some
     else none[CompanyCode]
 }
 ```
@@ -420,13 +416,13 @@ object CompanyCode {
 
 @snap[west span-100]
 ```scala zoom-16
-final case class ShipCode private(val value: String) extends AnyVal {
+final case class ShipCode private(value: String) extends AnyVal {
   private def copy() = ()
 }
 
 object ShipCode {
   def apply(value: String): Option[CompanyCode] =
-    if (value.nonEmpty) ShipCode(value).some else none[ShipCode]  
+    if (value.nonEmpty) new ShipCode(value).some else none[ShipCode]  
 }
 
 (
@@ -565,19 +561,13 @@ package object greenginza {
   @newtype case class ShipCode(toStr: String)
 }
 ...
-(
-  CompanyCode("hal"),
-  ShipCode("E45AK")
-).mapN {
-  case (companyCode, shipCode) =>
-    lookup(Germany, companyCode, shipCode)
-}
+lookup(Germany, CompanyCode("hal"), ShipCode("E45AK"))
 ```
 @snapend
 
 @snap[south span-100 text-gray text-14]
 @[4-5, zoom-14](Define newtypes case classes for CompanyCode and ShipCode)
-@[8-14, zoom-14](Perform a ship lookup with valid parameters...)
+@[8-8, zoom-14](Perform a ship lookup with valid parameters...)
 @snapend
 
 ---
@@ -603,20 +593,13 @@ package object greenginza {
 
 @snap[east span-70]
 ```scala zoom-16
-(
-  CompanyCode("E45AK"),
-  ShipCode("")
-).mapN {
-  case (companyCode, shipCode) =>
-    lookup(Germany, companyCode, shipCode)
-} 
-    
+lookup(Germany, CompanyCode("E45AK"), ShipCode(""))
 ```
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[2-2, zoom-14](We can still mess the parameters :()
-@[3-3, zoom-14](We can still create invalid instances :()
+@[1-1, zoom-14](We can still mess the parameters :()
+@[2-2, zoom-14](We can still create invalid instances :()
 @snapend
 
 ---
