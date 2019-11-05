@@ -992,9 +992,16 @@ type TwitterUserName = String Refined AllOf[
 - No free lunch...
   - Intellij squiggly lines
   - Unclear validation error messages
-  - Boxing
+  - Refined primitives are always boxed
   - Compile times
 @ulend
+@snapend
+
+@snap[south-west span-40]
+[Value classes @fa[external-link]](https://docs.scala-lang.org/overviews/core/value-classes.html)
+[Newtypes @fa[external-link]](https://github.com/estatico/scala-newtype)
+[Refined types @fa[external-link]](https://github.com/fthomas/refined)
+[Gitpitch @fa[external-link]](https://gitpitch.com/docs/getting-started/)
 @snapend
 
 ---
