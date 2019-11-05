@@ -7,7 +7,7 @@
 
 @snap[south span-100 text-white small]
 com.dreamlines.connectivity
-06.11.2019
+05.11.2019
 @snapend
 
 ---
@@ -329,7 +329,7 @@ def createShipCode(value: String): Option[ShipCode] =
   if (value.nonEmpty) ShipCode(value).some else none[ShipCode]
   
 def createCompanyCode(value: String): Option[CompanyCode] =
-  if ("""[a-z]{3}""".r matches value) CompanyCode(value).some
+  if ("[a-z]{3}".r matches value) CompanyCode(value).some
   else none[CompanyCode]
 
 ...
@@ -665,7 +665,7 @@ package object greenginza {
 }
 ...
 for {
-  companyCode <- CompanyCodeType.fromString("hal")
+  companyCode <- CompanyCode.fromString("hal")
   shipCode <- ShipCodeType.fromString("E45AK")
   result <- lookup(Germany, companyCode, shipCode)
 } yield result
