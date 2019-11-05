@@ -563,14 +563,16 @@ package object greenginza {
   @newtype case class CompanyCode(toStr: String)
   @newtype case class ShipCode(toStr: String)
 }
+
 ...
+
 lookup(Germany, CompanyCode("hal"), ShipCode("E45AK"))
 ```
 @snapend
 
 @snap[south span-100 text-gray text-14]
 @[4-5, zoom-14](Define newtypes case classes for CompanyCode and ShipCode)
-@[8-8, zoom-14](Perform a ship lookup with valid parameters...)
+@[10-10, zoom-14](Perform a ship lookup with valid parameters...)
 @snapend
 
 ---
@@ -615,6 +617,7 @@ lookup(Germany, CompanyCode("E45AK"), ShipCode(""))
 @snap[midpoint span-100]
 ```scala zoom-16
 import io.estatico.newtype.macros.newtype
+import io.estatico.newtype.ops._
 
 package object greenginza {
 
@@ -633,11 +636,11 @@ package object greenginza {
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[5-5, zoom-16](Defining the newtype for CompanyCode using *class*)
-@[5-5, zoom-16](Using class will not generate a smart constructor (apply))
-@[5-5, zoom-16](Accessor method for the underlying value can be achieved with *val*)
-@[9-12, zoom-16](We can specify our own smart constructor)
-@[10-10, zoom-16](Use the .coerce extension method to cast to the newtype)
+@[6-6, zoom-16](Defining the newtype for CompanyCode using *class*)
+@[6-6, zoom-16](Using class will not generate a smart constructor (apply))
+@[6-6, zoom-16](Accessor method for the underlying value can be achieved with *val*)
+@[10-13, zoom-16](We can specify our own smart constructor)
+@[11-11, zoom-16](Use the .coerce extension method to cast to the newtype)
 @snapend
 
 ---
