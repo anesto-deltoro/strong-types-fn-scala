@@ -980,8 +980,8 @@ type TwitterUserName = String Refined AllOf[
 ---?image=assets/img/presenter.jpg
 @title[Conclusions]
 
-@snap[east span-100 text-white]
-### Conclusions
+@snap[east span-100]
+@css[h2-text text-white](Conclusions)
 @snapend
 
 @snap[west span-60]
@@ -993,7 +993,7 @@ type TwitterUserName = String Refined AllOf[
   - Intellij squiggly lines
   - Unclear validation error messages
   - Boxing
-  - Compile
+  - Compile times
 @ulend
 @snapend
 
