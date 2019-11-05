@@ -399,7 +399,7 @@ final case class CompanyCode private(value: String) extends AnyVal {
 
 object CompanyCode {
   def apply(value: String): Option[CompanyCode] =
-    if ("[a-z]{3}".r.pattern.matcher(value).matches()) new CompanyCode(value).some
+    if ("[a-z]{3}".r matches value) new CompanyCode(value).some
     else none[CompanyCode]
 }
 ```
