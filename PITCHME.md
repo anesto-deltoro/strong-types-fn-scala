@@ -989,7 +989,7 @@ type TwitterUserName = String Refined AllOf[
 - We should be able to reason about functions by looking at their *type signature*.
 - Aim to catch bugs at compile time (type safety on steroids).
 - Refinement types + newtypes are an excellent start.
-- There are some gotcha's to take into account
+- No free lunch...
   - Intellij squiggly lines
   - Unclear validation error messages
   - Boxing
