@@ -963,30 +963,18 @@ type TwitterUserName = String Refined AllOf[
 @title[Refinement types: circe]
 
 @snap[north-west]
-#### Refinement types: circe example
+#### Refinement types: Integrations
 @snapend
 
 @snap[west span-100]
-```scala zoom-14
-import eu.timepit.refined._
-import eu.timepit.refined.auto._
-import eu.timepit.refined.types.string.MatchesRegex
-import eu.timepit.refined.api.RefType
-import io.circe.{Decoder, DecodingFailure, Encoder}
-
-package object greenginza {
-  type CompanyCode = String Refined MatchesRegex[W.'"[a-z]{3}"'.T]]
-  implicit val CirceEncoder: Encoder[CompanyCode] =
-    Encoder.encodeString.contramap[CompanyCode] (_.value)
-  implicit val CirceDecoder: Decoder[CompanyCode] = Decoder.instance {
-    c => Decoder.decodeString(c).flatMap(s =>
-      RefType.applyRef[CompanyCode] (s) match {
-        case Right(v) => v.asRight[DecodingFailure]
-        case Left(err) => err.asLeft[CompanyCode]
-      }
-    )
-}
-```
+@ul[list-spaced-bullets text-white text-07]
+- We should mostly focus on integration points
+- Luckily there are a lot of libraries for that:
+  - Parsing url parameters: @css[text-06 text-blue](play-refined)
+  - Json serialization: @css[text-06 text-blue](circe-refined, play-json-refined)
+  - Loading app configuration: @css[text-06 text-blue](validated-config, ciris-refined)
+  - Retrieving/Storing refined values from data: @css[text-06 text-blue](refined-anorm, slick-refined, doobie-refined, scanamo-refined, kantan.csv-refined)
+@ulend
 @snapend
 
 ---?image=assets/img/presenter.jpg
@@ -1001,8 +989,11 @@ package object greenginza {
 - We should be able to reason about functions by looking at their *type signature*.
 - Aim to catch bugs at compile time (type safety on steroids).
 - Refinement types + newtypes are an excellent start.
-  - Lot of integrations: cats, pureconfig, scalacheck, play, slick, ...
-  - There are some gotcha's to take into account
+- There are some gotcha's to take into account
+  - Intellij squiggly lines
+  - Unclear validation error messages
+  - Boxing
+  - Compile
 @ulend
 @snapend
 
