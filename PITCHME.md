@@ -327,6 +327,7 @@ final case class ShipCode private(value: String) extends AnyVal
            
 def createShipCode(value: String): Option[ShipCode] =
   if (value.nonEmpty) ShipCode(value).some else none[ShipCode]
+  
 def createCompanyCode(value: String): Option[CompanyCode] =
   if ("""[a-z]{3}""".r matches value) CompanyCode(value).some
   else none[CompanyCode]
@@ -341,8 +342,8 @@ for {
 
 @snap[south span-100 text-gray text-14]
 @[1-3, zoom-14](Make case class constructors private)
-@[4-8, zoom-14](Provide functions that create a validated value)
-@[9-13, zoom-14](Perform a ship lookup with valid parameters...)
+@[4-9, zoom-14](Provide functions that create a validated value)
+@[10-15, zoom-14](Perform a ship lookup with valid parameters...)
 @snapend
 
 ---
