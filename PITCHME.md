@@ -555,7 +555,7 @@ package object greenginza {
 #### Approach 2a: Scala newtype case class (3)
 @snapend
 
-@snap[midpoint span-100]
+@snap[west span-100]
 ```scala zoom-14
 import io.estatico.newtype.macros.newtype
 
@@ -594,7 +594,7 @@ lookup(Germany, CompanyCode("hal"), ShipCode("E45AK"))
 #### Approach 2a: Scala newtype case class (5)
 @snapend
 
-@snap[east span-70]
+@snap[west span-100]
 ```scala zoom-16
 lookup(Germany, CompanyCode("E45AK"), ShipCode(""))
 ```
