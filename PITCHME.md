@@ -885,8 +885,8 @@ package object greenginza {
 }
 val (company, ship) = "hal" -> "E45AK"
 for {
-  companyCode <- RefType.applyRef[CompanyCode](company).toOption
-  shipCode <- RefType.applyRef[NonEmptyString](ship).toOption
+  companyCode <- RefType.applyRef[CompanyCode] (company).toOption
+  shipCode <- RefType.applyRef[NonEmptyString] (ship).toOption
   result <- lookup(Germany, companyCode, ShipCode(shipCode))
 } yield result
 ```
