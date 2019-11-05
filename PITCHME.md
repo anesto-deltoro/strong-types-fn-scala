@@ -731,7 +731,7 @@ for {
 - values of a refinement type = @css[text-green](all values of the base type) that @css[text-blue](satisfy the predicate)
 - Examples
   - ShipCode = @css[text-green text-12](String) + @css[text-blue text-12]((∀ s => s.nonEmpty))
-  - CompanyCode = @css[text-green text-12](String) + @css[text-blue text-12]((∀ s => """[a-z]{3}""".r matches s))
+  - CompanyCode = @css[text-green text-12](String) + @css[text-blue text-12]((∀ s => "[a-z]{3}".r matches s))
 @ulend
 @snapend
 
@@ -770,7 +770,7 @@ lookup(Germany, "ahls", "E45AK")
 @[7-7, zoom-14](Some predicates require encoding literals at the type-level (shapeless witness macro is used))
 @[11-12, zoom-14](lookup function)
 @[14-14, zoom-14](Compiles)
-@[15-15, zoom-14](Error)
+@[15-15, zoom-14 text-blue](Error)
 @[16-16, zoom-14](Error)
 @[17-17, zoom-14](Error)
 @snapend
