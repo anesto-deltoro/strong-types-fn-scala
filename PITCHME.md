@@ -770,7 +770,7 @@ lookup(Germany, "ahls", "E45AK")
 @[7-7, zoom-14](Some predicates require encoding literals at the type-level (shapeless witness macro is used))
 @[11-12, zoom-14](lookup function)
 @[14-14, zoom-14](Compiles)
-@[15-15, zoom-14 text-blue](Error)
+@[15-15, zoom-14](Error)
 @[16-16, zoom-14](Error)
 @[17-17, zoom-14](Error)
 @snapend
@@ -811,8 +811,7 @@ package object greenginza {
 }
 
 def lookup(
-  market: MarketCode,
-  company: CompanyCode,
+  market: MarketCode, company: CompanyCode,
   shipCode: NonEmptyString,
   cabinCode: NonEmptyString
 ): F[Cabin]
@@ -823,8 +822,8 @@ lookup(Germany, "hal", "E45AK", "A1")
 @snapend
 
 @snap[south span-100 text-gray text-14]
-@[12-13, zoom-14](Same refined type for more than one param :()
-@[16-17, zoom-14](Again we can confuse the order of the parameters :()
+@[11-12, zoom-14](Same refined type for more than one param :()
+@[15-16, zoom-14](Again we can confuse the order of the parameters :()
 @snapend
 
 ---
