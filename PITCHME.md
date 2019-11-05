@@ -830,7 +830,7 @@ lookup(Germany, "hal", "E45AK", "A1")
 @title[Final approach: Refinement types + newtypes]
 
 @snap[north-west]
-#### Final approach: Refinement types + newtypes
+#### Final approach: Refinement types + newtypes (1)
 @snapend
 
 @snap[east span-100]
@@ -867,7 +867,7 @@ lookup(Germany, "hal", ShipCode("E45AK"), CabinCode("A1"))
 @title[Refinement types extended]
 
 @snap[north-west]
-#### Refinement types: extended
+#### Final approach: Refinement types + newtypes (2)
 @snapend
 
 @snap[east span-100]
@@ -894,7 +894,7 @@ for {
 
 @snap[south span-100 text-gray text-14]
 @[1-6, zoom-14](Required imports)
-@[8-9, zoom-14](Refinement types and newtypes for CompanyCode, ShipCode and CabinCode)
+@[8-10, zoom-14](Refinement types and newtypes for CompanyCode, ShipCode and CabinCode)
 @[12-12, zoom-14](Most of the time with don't work with literals)
 @[14-15, zoom-14](Enforcing validation!)
 @[13-19, zoom-14](Strong-typed scala function with compile type validation!)
