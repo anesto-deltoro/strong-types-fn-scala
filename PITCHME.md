@@ -663,20 +663,21 @@ package object greenginza {
     def fromString(str: String): Option[ShipCode] = ...
   }
 }
+
 ...
-(
-  CompanyCode.fromString("hal"), ShipCode.fromString("E45AK")
-).mapN {
-  case (companyCode, shipCode) =>
-    lookup(Germany, companyCode, shipCode)
-}
+
+for {
+  companyCode <- CompanyCodeType.fromString("hal")
+  shipCode <- ShipCodeType.fromString("E45AK")
+  result <- lookup(Germany, companyCode, shipCode)
+} yield result
 ```
 @snapend
 
 @snap[south span-100 text-gray text-14]
 @[2-3, zoom-14](Define newtypes classes for CompanyCode and ShipCode)
 @[5-10, zoom-14](Specify our own smart constructors)
-@[13-18, zoom-14](Perform a ship lookup with valid parameters)
+@[15-19, zoom-14](Perform a ship lookup with valid parameters)
 @snapend
 
 ---
