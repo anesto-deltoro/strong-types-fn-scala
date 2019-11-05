@@ -663,9 +663,7 @@ package object greenginza {
     def fromString(str: String): Option[ShipCode] = ...
   }
 }
-
 ...
-
 for {
   companyCode <- CompanyCodeType.fromString("hal")
   shipCode <- ShipCodeType.fromString("E45AK")
@@ -677,7 +675,7 @@ for {
 @snap[south span-100 text-gray text-14]
 @[2-3, zoom-14](Define newtypes classes for CompanyCode and ShipCode)
 @[5-10, zoom-14](Specify our own smart constructors)
-@[15-19, zoom-14](Perform a ship lookup with valid parameters)
+@[13-18, zoom-14](Perform a ship lookup with valid parameters)
 @snapend
 
 ---
