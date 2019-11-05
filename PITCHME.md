@@ -967,7 +967,7 @@ type TwitterUserName = String Refined AllOf[
 @snapend
 
 @snap[west span-100]
-@ul[list-spaced-bullets text-10]
+@ul[list-spaced-bullets text-08]
 - We should mostly focus on integration points
 - Luckily there are a lot of libraries for that:
   - Parsing url parameters: @css[text-09 text-blue](play-refined)
